@@ -99,8 +99,10 @@ changerequest/change_requests
 
 ## 关于作者
 
-- 4 年英文技术规范文档撰写与文档体系建设（HLD / 接口规范 / 需求文档），此前 10 年为 C++ 软件研发；
-- 7 年项目管理（PMP / Scrum Master），主导跨国跨团队三方 PR 评审，把模块级新人 onboarding 压到 3-5 天；
+- 4 年英文技术规范文档撰写与文档体系建设（HLD / 接口规范 / 需求文档），此前 10 年 C++ 软件研发，
+  能直接读懂实现、与开发团队对话；
+- 设计并落地跨国跨团队三方 PR 评审机制（领域技术主管 / 集成测试主管 / 关联模块 Owner），
+  模块级新人 onboarding 周期压缩至 3-5 天；
 - 熟悉 Docs-as-Code 全流程（Sphinx + GitHub + CI + 静态站双版本对比评审）；
-- 本站点由本人在 AI 协助下独立设计并搭建（Sphinx + MyST 构建、GitHub Actions 自动发布），
+- 英语为日常工作语言；本站点由本人在 AI 协助下独立设计并搭建（Sphinx + MyST 构建、GitHub Actions 自动发布），
   结构对照曦望 AI 推理 GPU 软件栈的开发者文档场景设计。
