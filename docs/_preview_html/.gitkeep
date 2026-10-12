@@ -1,0 +1,3 @@
+"""
+占位文件，确保 docs/_preview_html 目录被加入版本控制（可由 preview_rst.py 生成真实 html 覆盖）。
+"""

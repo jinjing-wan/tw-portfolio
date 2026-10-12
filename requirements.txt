@@ -1,0 +1,9 @@
+# 构建依赖：pip install -r requirements.txt
+sphinx>=7.0
+sphinxcontrib-mermaid>=1.0
+myst-parser>=4.0
+
+# -- 可选：本地渲染 PlantUML（HLD 图示）----------------------
+# jdk4py 从 PyPI 提供内置 JRE，免去系统安装 Java 的门槛；
+# plantuml.jar 由 scripts/render_uml.py 在首次运行时自动获取。
+jdk4py>=21.0.2.0

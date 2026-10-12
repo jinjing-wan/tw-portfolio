@@ -1,0 +1,48 @@
+@startuml download_file_sequence
+' HLD — one OAM downloadFile API call sent to the RU
+' Render: python scripts/render_uml.py
+skinparam dpi 160
+skinparam shadowing false
+skinparam maxMessageSize 220
+skinparam NoteBackgroundColor #FFF6D5
+skinparam NoteBorderColor #B58900
+autonumber "<b>[0]"
+
+title downloadFile — one OAM API call to the RU
+
+participant "OAM Client\n(operator)" as U
+participant "OAM Agent" as O
+participant "FTP Server" as F
+participant "RU\n(Radio Unit)" as R
+
+U -> O : downloadFile(reqId, fileName, fileType, fileSize,\nchecksum, ftpServerIp, ftpServerPort, ftpUserName,\ntransferMode, targetPath, timeoutSec)
+
+group pre-check on the FTP server
+  O -> F : STAT fileName
+  alt file available
+    F --> O : 226 file available
+  else file does not exist
+    F --> O : 550 file not found
+    O --> U : downloadFileResponse(FAIL, FILE_NOT_EXIST)
+    note right of O : the download is not triggered on the RU
+  end
+end
+
+O -> R : OAM downloadFile API, FTP parameters included
+
+alt RU replies within timeoutSec
+  R -> F : RETR fileName (BINARY, PASSIVE)
+  F --> R : file data stream
+  R --> O : downloadFileResponse(SUCCESS, transferredBytes,\nchecksumVerified)
+  O --> U : downloadFileResponse(SUCCESS)
+else RU does not reply within timeoutSec
+  note over O : no reply from the RU before the timeout expires
+  O --> U : downloadFileResponse(TIMEOUT)
+  note over O #FFD5D5 : raise fault 1806 - RU not responding
+else RU returns an error
+  R --> O : downloadFileResponse(FAIL, errorCode)
+  O --> U : downloadFileResponse(FAIL, errorCode)
+  note over O #FFD5D5 : raise fault 1900 - RU returned error
+end
+
+@enduml

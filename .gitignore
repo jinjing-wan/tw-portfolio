@@ -1,0 +1,16 @@
+# Sphinx 构建产物（仅源文件入版本库；发布用 gh-pages 分支承载构建结果）
+docs/_build/
+
+# Visual Studio 工作区缓存（绝不入版本库）
+.vs/
+
+# 本地预览产物目录（仅保留空目录占位 .gitkeep）
+docs/_preview_html/*
+!docs/_preview_html/.gitkeep
+
+# PlantUML 引擎（约 30MB，由 scripts/render_uml.py 自动获取，不入版本库）
+tools/plantuml/*.jar
+
+# 临时截图
+_shot*.png
+
