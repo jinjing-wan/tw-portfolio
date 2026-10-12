@@ -1,7 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
-# 曦望 Sunrise AI 推理 GPU 软件栈文档中心（作品集示例）——Docs-as-Code 全流程
+# 曦望 Sunrise AI 推理 GPU 软件栈文档中心 —— Docs-as-Code 全流程
 
-project = "曦望 Sunrise AI 推理 GPU 软件栈文档中心（作品集示例）"
+project = "曦望 Sunrise AI 推理 GPU 软件栈文档中心"
 author = "Wan Jinjing"
 copyright = "2026, Wan Jinjing"
 
@@ -55,7 +55,7 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 html_extra_path = ["../.nojekyll"]  # 部署 GitHub Pages 时自动带 .nojekyll
 
-# 部署到 GitHub Pages 时改成你的实际地址，例如：
+# 部署到 GitHub Pages 时填实际站点地址，例如：
 # html_baseurl = "https://yourname.github.io/tw-portfolio/"
 html_baseurl = ""
 

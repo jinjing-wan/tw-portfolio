@@ -1,4 +1,4 @@
-# HLD Release 3.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 框架接口与推理优化（作品集示例）
+# HLD Release 3.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 框架接口与推理优化
 
 :::{note}
 相对 [R2.0](hld_r2.md) 的 **变更摘要与新增设计**。基线请先读 [R1.0](hld_r1.md) / [R2.0](hld_r2.md)。

@@ -1,4 +1,4 @@
-# 曦望 Sunrise · AI 推理 GPU 软件栈开发者文档中心（作品集示例）
+# 曦望 Sunrise · AI 推理 GPU 软件栈开发者文档中心
 
 :::{note}
 本站点为 **曦望 Sunrise AI 推理 GPU 软件栈（开发者文档中心）** 的搭建示例：

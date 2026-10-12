@@ -62,7 +62,7 @@ Runtime API
 示例
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: c
-   :caption: 最小可运行调用（脱敏骨架）
+   :caption: 最小可运行调用（骨架）
 
    float *d;
    sunriseMalloc((void**)&d, N * sizeof(float));     // 检查返回值

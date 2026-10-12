@@ -1,4 +1,4 @@
-# HLD Release 1.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 基础软件栈（作品集示例）
+# HLD Release 1.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 基础软件栈
 
 :::{note}
 本文为 **曦望 Sunrise AI 推理 GPU 软件栈（基础软件栈层）HLD 框架样例（Release 1.0）**：
