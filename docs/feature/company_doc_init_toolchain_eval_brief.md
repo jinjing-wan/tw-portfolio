@@ -204,20 +204,20 @@
 ### 3.4 参照对象：三家同业形态，我们照谁来搭
 
 选型结论再对，落到实施时团队还是会问：**业界同行到底怎么做的？我们照谁？**
-三家 GPU 厂商的文档栈已**一手实测**（读原始 HTML / 响应头 / 静态资源，非二手转述），
-结论是——**它们不是"三代技术"，而是三种形态**：共用同一个符号提取后端（Doxygen 系），
-分野全在**前端与组织**。
+三家 GPU 厂商的文档栈已**一手实测**（读原始 HTML / 响应头 / 静态资源，并下载其 reST 源文件与符号清单解压核验，非二手转述），
+结论是——**它们不是"三代技术"，而是三种形态**：前两家建了自动抽取链（Doxygen 系），
+**第三家（沐曦）没有**——其 API 参考为**纯手写**。分野在**技术链路是否自动化**，也在**前端与组织**。
 
 | 维度 | NVIDIA CUDA | 摩尔线程 MUSA | 沐曦 MetaX |
 | --- | --- | --- | --- |
 | 渲染内核 | Sphinx + Breathe | Docusaurus v3.10.1 + 自研 MDX 生成器 | **Sphinx**（源为 reST） |
-| API 符号提取 | Doxygen → Breathe | Doxygen 只取 XML + 自研转换 | Doxygen 系 |
+| API 符号提取 | Doxygen → Breathe | Doxygen 只取 XML + 自研转换 | **无（纯手写 reST）** |
 | 主题 | 自研主题（pydata 基座，专有许可） | Docusaurus 原生 | sphinx_rtd_theme + 自写 CSS |
 | 门户 | 与文档同栈 | Next.js（与文档分栈） | Next.js（文档内核嵌在自研网关内） |
 | 多版本 | 按 release 归档 | 4 版本并存（内置） | 版本路径段 |
 | PDF / 离线交付 | 有 | **无**（实测 0 个 `.pdf` 链接） | 有（下载件） |
 | 权限分级 | 有 | 无（全公开） | 未证实 |
-| 符号清单 `objects.inv` | intersphinx | 无 | **生产在用** |
+| 符号清单 `objects.inv` | intersphinx | 无 | **有产出，但 0 个 API 符号** |
 | 起步时间锚点 | 2007 起，20 年演进 | MUSA 2022 起，约 4 年 | **2021-12 起**（`sphinx-quickstart`） |
 | 组织归属 | 专职 TW 团队 | 前端 / 研发兼任 | 推测有文档团队 |
 
@@ -225,12 +225,15 @@
 
 1. **摩尔线程走的是"最省组织成本"的路**（Docusaurus + 自研管线、前端兼任）——代价是自建一条 API 桥接链，
    且**无 PDF、无分级**。它的场景是纯公开门户，与本场景（需分级 / 需 PDF / 内网交付）不同。
-2. **沐曦走的是"最贴近本场景"的路**：**Sphinx 内核 + 自建门户**——既保住 Sphinx 的符号图与多格式能力
-   （`objects.inv` 在生产环境真实可用），又用一层自研门户解决观感，同时绕开了托管平台在权限与分级上的付费限制。
+2. **沐曦走的是"最贴近本场景"的架构路线**：**Sphinx 内核 + 自建门户**——保住 Sphinx 的多格式与 PDF 能力，
+   用一层自研门户解决观感，同时绕开了托管平台在权限与分级上的付费限制。
+   ⚠️ **但它不能作为"符号图可用"或"内容可省力"的参照**：其 `objects.inv` 里 **0 个 API 符号**（仅章节标签），
+   且整份 API 参考（1.39 MB / 7,062 行）为**人工手写**、无自动抽取链。**参照它的架构，不参照它的内容生产方式。**
 3. **NVIDIA 是天花板，不是起点**——20 年积累 + 专职团队，不适合作为"从 0 起步"的参照。
 
 > **一句话结论**：**本方案参照沐曦形态（Sphinx 内核 + 最小门户），按简化版起步**——
 > 先在 Sphinx 内核上跑通"能构建、能自动产 API、能发布"，门户层后补，不必在起步阶段动前端。
+> ⚠️ **其中"自动产 API"一步参照 NVIDIA / 摩尔线程，不参照沐曦**——沐曦的 API 参考是手写的。
 
 ### 3.5 搭建路径：四步法
 
@@ -246,6 +249,8 @@
 
 > **关键提示**：四步中 **② 是唯一的技术难点**，也是本场景与"普通文档站"的根本区别——
 > **GPU 厂商的 API 参考页不能手写，必须有自动抽取链。**
+> ⚠️ 这不是一句口号：**沐曦正是这条红线的反例**——它 500+ 份公开文档、单份 API 参考 1.39 MB，
+> 全部人工手写（见 §3.4）。**这条红线极易被忽视，必须在项目里明确立项、明确资源分配。**
 
 ### 3.6 第一阶段工期（四档口径）
 
@@ -337,7 +342,7 @@ L2 变成**持续性投入**——研发要排数天注释工时、SME 要审十
 | --- | --- | --- |
 | NVIDIA CUDA | NVIDIA CUDA Runtime API 手册 | Sphinx 特征标题 + `¶ Permalink to this headline`；链接仍为 Doxygen 分组名 `group__CUDART__…`（后端 Doxygen、前端 Sphinx）；官方维护 `nvidia-sphinx-theme`（依赖 `pydata-sphinx-theme`，专有许可） |
 | 摩尔线程 MUSA | `docs.mthreads.com`（MUSA SDK 概览 / 核心 API 参考 / 标签页） | `<meta name="generator" content="Docusaurus v3.10.1">`；Algolia DocSearch；4 版本并存；全站 0 个 `.pdf` 链接；Driver API 单页 2.23 MB / 430 个锚点；零 Doxygen HTML 痕迹（产物为机生 MDX） |
-| 沐曦 MetaX | `developer.metax-tech.com/doc`（正文 `/api/client/document/preview/333/index.html`；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**`objects.inv` 返回 HTTP 200 / 830 B，生产在用** |
+| 沐曦 MetaX | `developer.metax-tech.com/doc`（工具手册 `…/preview/333/index.html`；**API 参考 `…/preview/1313/index.html`**；**reST 源文件 `…/preview/1313/_sources/split_files/…`**；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**API 参考源文件 7,062 行 / 1.39 MB，`doxygen*` / `c:*` / `autodoc*` 指令全为 0 —— 纯手写**；**`objects.inv` 有产出（1313：6,895 B / 471 条），但 0 个 C/C++ 符号** |
 
 **证据边界**：以上可证实"站点由哪些组件构成"与"产物长什么样"；**"为什么这么选"属推断**，非厂商内部决策记录。
 
