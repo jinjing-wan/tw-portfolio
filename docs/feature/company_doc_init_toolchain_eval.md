@@ -26,7 +26,7 @@
 - 分差归因与权重敏感性见 §3.3 / §4.4：把 Docusaurus 优势维度的权重**大幅放大**、同时把 Sphinx 的王牌维度权重**集体压到基准的一半左右**，Docusaurus 仍落后 5.2 分——结论不翻转。
 - **行业对标（§4.5）**：NVIDIA 的 CUDA 文档栈同样是 **Sphinx + Doxygen/Breathe + MyST + pydata 系主题**——与本报告的推荐在**四个关键选择上逐条一致**，构成一条独立于本模型的旁证。
 - **反向对标（§4.6）**：国内同行**摩尔线程 MUSA** 的公开文档中心实测为 **Docusaurus v3.10.1**（Algolia DocSearch、4 版本并存、**无 PDF、无机密分级**）。同为 GPU 厂商、同样输出 C/C++ API 参考，NVIDIA 收敛到 Sphinx、摩尔线程收敛到 Docusaurus——**分野在交付场景，不在工具优劣**。这同时给 §3.4 的 A1 修正补了一个国内生产先例。**它为何没选 Sphinx 的四条归因，见 §4.6.2。**
-- **第三种形态（§4.7）**：另一家国内 GPGPU 厂商**沐曦 MetaX** 的文档站实测为「**自建 Next.js 门户 + Sphinx 内核**」——渲染内核仍是 Sphinx（`sphinx-quickstart` 2021 生成、源文件为 reST），但**门户、服务与托管全部自建**。⚠️ **复核后修正早期误读**：该站 `objects.inv` 确有产出但**内容为空壳**（471 条中 0 个 C/C++ 符号，全是章节标签），且整份 API 参考为**纯手写 reST、无任何自动抽取链**（源文件 7,062 行 / 1.39 MB 可下载实证）。因此它是 §4.3「混用工具链可接受」的**架构形态**现场实例，**但不能作为 A5「符号级引用」的生产背书**——反过来，它给 §14.2「API 参考不能手写」这条红线提供了一个**反面活样本**。
+- **第三种形态（§4.7）**：另一家国内 GPGPU 厂商**沐曦 MetaX** 的文档站实测为「**自建 Next.js 门户 + Sphinx 内核**」——渲染内核仍是 Sphinx（`sphinx-quickstart` 2021 生成、源文件为 reST），但**门户、服务与托管全部自建**。⚠️ **复核后修正早期误读**：该站 `objects.inv` 确有产出但**内容为空壳**（471 条中 0 个 C/C++ 符号，全是章节标签），且整份 API 参考为**纯手写 reST、无任何自动抽取链**（源文件 7,062 行 / 1,419 KB 可下载实证）。因此它是 §4.3「混用工具链可接受」的**架构形态**现场实例，**但不能作为 A5「符号级引用」的生产背书**——反过来，它给 §14.2「API 参考不能手写」这条红线提供了一个**反面活样本**。
 - **成本视角（§8）**：能力分之外，另附**全生命周期成本清单**（搭建 / 运行 / 隐性风险 / 退出迁移）。短期 **Docusaurus 更低**（开箱、无系统级大依赖、前端零门槛），长期 **Sphinx 更低**（构建稳定、PDF / 分级 / API 开箱、依赖审计面小）；**交叉点由「有无专职文档岗 / 是否需要 PDF+分级+内网 / 是否超过数千页」三个变量决定**——目标场景三项全落在 Sphinx 一侧（其中"专职文档岗"已明确配备，见 §1.5）。
 - **AI 时代重估（§9）**：把时间尺度拉到 5–10 年（文档新增一类读者＝**Agent**），同一模型重算为 **Sphinx 89.2 : Docusaurus 66.2**，差距由 16.2 **扩大到 23.0**，**结论强化**。分差重心从 A 域（API/PDF）移到 **B2 机器可验＋A5 符号图（`objects.inv`）＋C3 访问边界＋C1 语义检索**；Docusaurus 的传统领先项（多版本 / 导航 / 写作者门槛）**全部被降权**——它们只服务人类读者。⚠️ **`llms.txt` 是低成本保险、不是护城河**（采用率约 10%、主流 LLM 未承诺读取），且两套栈均有插件；§9.6 另写明两个会让结论反向的情形。
 
@@ -540,7 +540,7 @@ Docusaurus 是**静态站生成器（SSG）**，不是"只有 SPA"。`docusaurus
 - 工具手册页（Sphinx 产物经网关分发）：`…/api/client/document/preview/333/index.html`（《曦云系列通用计算 GPU mxvs 测试工具套件使用手册》）
 - **API 参考页**：`…/api/client/document/preview/1313/index.html`（《沐曦通用 GPU MXMACA 运行时 API 参考》）——**本节内容生产方式取证的主对象**
 - 符号清单：`…/preview/1313/objects.inv`（对比 `…/preview/333/objects.inv`）
-- **reST 源文件（可下载）**：`…/preview/1313/_sources/split_files/mxmaca_运行时api模块.rst.txt`（1.39 MB）、`…/preview/463/_sources/C500_RuntimeAPIProgrammingGuide_CN.rst.txt`（223 KB）
+- **reST 源文件（可下载）**：`…/preview/1313/_sources/split_files/mxmaca_运行时api模块.rst.txt`（1,419 KB）、`…/preview/463/_sources/C500_RuntimeAPIProgrammingGuide_CN.rst.txt`（223 KB）
 
 **分层指纹（逐层可证）**
 
@@ -549,7 +549,7 @@ Docusaurus 是**静态站生成器（SSG）**，不是"只有 SPA"。`docusaurus
 | 前台门户 | **自研 Next.js + Ant Design v5** | 响应头 `X-Powered-By: Next.js`、`X-Nextjs-Cache: HIT`、`X-Nextjs-Prerender: 1`；样式表内含 `@layer antd` 与 antd v5 design token 变量 |
 | 文档服务 | **自研文档网关** | 路径形态 `/api/client/document/preview/<doc_id>/index.html`，同级另有 `split_files/` 分页目录与 `_static/` 资源目录 |
 | 渲染内核 | **Sphinx**（源文件为 reST `.rst`） | `_sources/index.rst.txt` 头注释原文：`mcdnn documentation master file, created by sphinx-quickstart on Thu Dec 23 10:54:51 2021`；`_static/documentation_options.js` 含 `BUILDER: 'html'`、`LANGUAGE: 'zh-CN'`、`HAS_SOURCE: true`、`SOURCELINK_SUFFIX: '.txt'` |
-| **内容生产** | **纯人工手写 reST**（**无任何自动抽取链**） | API 参考主体源文件 7,062 行 / 1.39 MB：`doxygenfunction` / `doxygenstruct` / `c:function` / `c:type` / `autofunction` / `autoclass` **全部为 0**，`code-block` 仅 1；函数签名手写纯文本（`mcError_t mcInit`），参数用网格表手排（494 行），配 457 个手写 `.. _label:` |
+| **内容生产** | **纯人工手写 reST**（**无任何自动抽取链**） | API 参考主体源文件 7,062 行 / 1,419 KB：`doxygenfunction` / `doxygenstruct` / `c:function` / `c:type` / `autofunction` / `autoclass` **全部为 0**，`code-block` 仅 1；函数签名手写纯文本（`mcError_t mcInit`），参数用网格表手排（494 行），配 457 个手写 `.. _label:` |
 | 主题与扩展 | **sphinx_rtd_theme** + copybutton + KaTeX + i18n | `<html class="writer-html5" data-content_root="./">`、`<body class="wy-body-for-nav">`、`_static/css/theme.css` 与 `_static/js/theme.js`（RTD 主题特征）；`copybutton.js`、`katex-math.css` / `katex_autorenderer.js`（KaTeX 的 CSS 走公共 CDN）、`translations.js`（Sphinx i18n）；站内另有自写 `custom.css`（品牌紫 `#660874`、思源黑体 / Courier New） |
 | 托管 | **国内云自建**（非 RTD SaaS） | 响应头 `Server: volcalb`（云厂商 ALB 特征）；全站无 Read the Docs 域名与页脚标识 |
 
@@ -576,7 +576,7 @@ Docusaurus 是**静态站生成器（SSG）**，不是"只有 SPA"。`docusaurus
 
 | 源文件 | 行数 / 体积 | 指令分布 | 自动抽取指令 |
 | --- | --- | --- | --- |
-| `mxmaca_运行时api模块.rst.txt`（**API 参考主体**） | **7,062 行 / 1.39 MB** | `note` 50 / `table` 8 / **`code-block` 仅 1** | **0** |
+| `mxmaca_运行时api模块.rst.txt`（**API 参考主体**） | **7,062 行 / 1,419 KB** | `note` 50 / `table` 8 / **`code-block` 仅 1** | **0** |
 | `C500_RuntimeAPIProgrammingGuide_CN.rst.txt`（编程指南） | 2,793 行 / 223 KB | `code-block` 73 / `figure` 23 / `table` 7 / `note` 3 | **0** |
 
 - `doxygenfunction` / `doxygenstruct` / `doxygenfile` / `c:function` / `c:type` / `c:macro` / `autofunction` / `autoclass` —— **全部为 0**；
@@ -609,7 +609,7 @@ URL 中直接嵌 SDK 版本段（`…/集群部署/云原生参考手册/<芯片
 
 1. **它给"混用工具链"提供了一个真实样本。** §4.3 判定"混用工具链可接受（前提是同一份源）；混用内容源不可接受"。沐曦是这条判定的**现场实例**：内容源仍是 Sphinx 的 reST 单一真源，但**外层用自研 Next.js 承接检索、筛选与下载**——等于把 Sphinx 降格为"渲染内核"、把门户交给前端栈。这既保住 Sphinx 的多格式与 PDF 能力（**但注意：其符号图能力并未启用**，见取证要点一），又拿到产品化的门户体验。**这是 §6.3 与本节之外的一条独立路线。**
 2. **它降低了 §4.2 中"Sphinx 观感朴素"这一代价的权重。** §4.2 给出的缓解路径是"换一套现代主题"；沐曦提供了另一种缓解——**换一层门户**：内页沿用 RTD 主题 + 自写 `custom.css`，品牌与导航交给 Next.js 外壳。对目标场景的启示是：**主题层不是必答题，门户层可以外包给前端团队。**
-3. **它在 A5 上的意义与早先判断相反——不是背书，而是反例。** §9 把 `objects.inv` 列为 Sphinx **唯一的真非对称能力**，这仍是本报告的技术判断；但沐曦的实测**没有为它提供生产背书**：该站 `objects.inv` 里 0 个 API 符号（见取证要点一）。真正值得记的是另一面——**一家千亿级国产 GPU 上市公司、500+ 份公开文档、单份 API 参考 1.39 MB，全部人工手写**。这说明 §14.2 那条红线（"GPU 厂商的 API 参考页不能手写，必须有自动抽取链"）**极易被忽视**：它不是"人人都会自动做到"的基线，而是**需要明确立项、明确资源分配的工程动作**。**沐曦是这条红线的反面活样本。**
+3. **它在 A5 上的意义与早先判断相反——不是背书，而是反例。** §9 把 `objects.inv` 列为 Sphinx **唯一的真非对称能力**，这仍是本报告的技术判断；但沐曦的实测**没有为它提供生产背书**：该站 `objects.inv` 里 0 个 API 符号（见取证要点一）。真正值得记的是另一面——**一家国产 GPU 上市公司、500+ 份公开文档、单份 API 参考 1,419 KB，全部人工手写**。这说明 §14.2 那条红线（"GPU 厂商的 API 参考页不能手写，必须有自动抽取链"）**极易被忽视**：它不是"人人都会自动做到"的基线，而是**需要明确立项、明确资源分配的工程动作**。**沐曦是这条红线的反面活样本。**
 4. **参照它，只能参照"架构形态"，不能参照"内容生产方式"。** §14.1 的收口结论"参照沐曦形态的简化版"仍然成立——**参照的是"Sphinx 内核 + 最小门户 + 自建托管"这个架构选择**；但**绝不能参照它的内容生产方式**（手写）。沐曦的架构证明这套栈在国产 GPU 场景能跑通；它的内容生产恰恰是**要引以为戒的那一面**。
 
 > **取证边界**：以上为**产物形态层 + 内容生产层取证**（响应头、静态资源、源文件头注释、`objects.inv` 解压内容、`_sources/*.rst.txt` 源文件指令分布），未接触其构建配置与内网内容仓库。可证实的是"它的站点由哪些组件构成""它的内容是怎么写出来的"；**"为什么这么搭、为什么这么写"仍属推断**。另需注意：其正文页由自研网关二次分发，`_static/` 路径为网关重写后的相对路径——这解释了为何单页的 CSS / JS 能正常加载。
@@ -1303,7 +1303,7 @@ D1 在本版给 **Sphinx 4 分、Docusaurus 4 分（打平）**，理据即在�
 > **关键提示**：四步中 **② 是唯一的技术难点**，也是本场景与"普通文档站"的根本区别——
 > **GPU 厂商的 API 参考页不能手写，必须有自动抽取链。**
 > ⚠️ 这不是一句口号：**沐曦正是这条红线的反例**（见 §4.7 取证要点二）——它 500+ 份公开文档、
-> 单份 API 参考 1.39 MB，全部人工手写。**这条红线极易被忽视，必须在项目里明确立项、明确资源分配。**
+> 单份 API 参考 1,419 KB，全部人工手写。**这条红线极易被忽视，必须在项目里明确立项、明确资源分配。**
 
 ### 14.3 第一阶段工期：四档口径
 
