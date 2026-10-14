@@ -210,37 +210,38 @@
 
 | 维度 | NVIDIA CUDA | 摩尔线程 MUSA | 沐曦 MetaX |
 | --- | --- | --- | --- |
-| 渲染内核 | Sphinx + Breathe | Docusaurus v3.10.1 + 自研 MDX 生成器 | **Sphinx**（源为 reST） |
-| API 符号提取 | Doxygen → Breathe（→ `c:domain` 符号） | Doxygen 只取 XML + 自研转换（→ MDX） | **Doxygen 系注释 + pandoc（→ 纯文本 reST）** |
+| 渲染内核 | Sphinx + Breathe | Docusaurus v3.10.1 + **自研 MDX 渲染层** | **Sphinx**（源为 reST） |
+| API 符号提取 | Doxygen **XML** → Breathe（→ `c:domain` 符号） | Doxygen **XML** → 自研 MDX 渲染层（→ MDX） | **Doxygen 系注释 → 中文 HTML → `pandoc`（→ 纯文本 reST）** |
 | 主题 | 自研主题（pydata 基座，专有许可） | Docusaurus 原生 | sphinx_rtd_theme + 自写 CSS |
 | 门户 | 与文档同栈 | Next.js（与文档分栈） | Next.js（文档内核嵌在自研网关内） |
 | 多版本 | 按 release 归档 | 4 版本并存（内置） | 版本路径段 |
 | PDF / 离线交付 | 有 | **无**（实测 0 个 `.pdf` 链接） | 有（下载件） |
 | 权限分级 | 有 | 无（全公开） | 未证实 |
-| 符号清单 `objects.inv` | intersphinx | 无 | **有产出，但 0 个 API 符号（未注册域符号）** |
+| 符号清单 `objects.inv` | **4,657 个 `cpp:` 域符号** | **机制不存在**（MDX 生态无符号域） | **有产出，但 0 个 API 符号**（6,895 B / 471 条） |
 | 起步时间锚点 | 2007 起，20 年演进 | MUSA 2022 起，约 4 年 | **2021-12 起**（`sphinx-quickstart`） |
 | 组织归属 | 专职 TW 团队 | 前端 / 研发兼任 | 推测有文档团队 |
 
 **三条判断**：
 
-1. **摩尔线程走的是"最省组织成本"的路**（Docusaurus + 自研管线、前端兼任）——代价是自建一条 API 桥接链，
-   且**无 PDF、无分级**。它的场景是纯公开门户，与本场景（需分级 / 需 PDF / 内网交付）不同。
+1. **摩尔线程走的是"最省组织成本"的路**（Docusaurus + 前端兼任）——但代价是**被迫自建整个渲染层，且仍拿不到符号域**。
+   ⚠️ **因果要摆正**：不是"它先决定自研、于是 Sphinx 的优势不成立"，而是**它因组织成本选了 Docusaurus → MDX 生态没有符号域机制 → 只能自建渲染层**。
+   **这笔工程债应计入 Docusaurus 路线的成本**，而不是记成 GPU 厂商的共性。它的场景是纯公开门户，与本场景（需分级 / 需 PDF / 内网交付）不同。
 2. **沐曦走的是"最贴近本场景"的架构路线**：**Sphinx 内核 + 自建门户**——保住 Sphinx 的多格式与 PDF 能力，
    用一层自研门户解决观感，同时绕开了托管平台在权限与分级上的付费限制。
    ⚠️ **但它不能作为"符号图可用"的参照**：其 `objects.inv` 里 **0 个 API 符号**（仅章节标签）。
-   它**同样建了自动抽取链**（Doxygen 系注释 → `pandoc` → 纯文本 reST，7,062 行产物带成套机器指纹可证），
+   它**同样建了自动抽取链**（Doxygen 系注释 → **中文 HTML** → `pandoc` → 纯文本 reST，7,062 行产物带成套机器指纹可证），
    **却把产物写成了纯文本、没有注册进 Sphinx 符号域**——属"**抽了没接线**"。
-   **参照它的架构与抽取走法，但终点必须落在 `c:domain` 节点上。**
+   **可参照的是它的架构形态，不是它的抽取链路**：链路必须走 **Doxygen XML → Breathe**（NVIDIA 同款），终点落在 `c:domain` 节点上。
 3. **NVIDIA 是天花板，不是起点**——20 年积累 + 专职团队，不适合作为"从 0 起步"的参照。
 
-> **一句话结论**：**本方案参照沐曦形态（Sphinx 内核 + 最小门户），按简化版起步**——
+> **一句话结论**：**架构形态参照沐曦（Sphinx 内核 + 最小门户），按简化版起步**——
 > 先在 Sphinx 内核上跑通"能构建、能自动产 API、能发布"，门户层后补，不必在起步阶段动前端。
-> ⚠️ **其中"自动产 API"要做完整两步**：抽取 + **把产物注册进 `c:domain` 符号域**。
-> 沐曦只做了第一步，所以它的 `objects.inv` 是空壳——**这一步不能省。**
+> ⚠️ **但"自动产 API"这条链必须参照 NVIDIA**（Doxygen XML → Breathe），且要做完整两步：**抽取 + 把产物注册进 `c:domain` 符号域**。
+> 沐曦只做了第一步（且走的是 HTML 中转），所以它的 `objects.inv` 是空壳——**这一步不能省。**
 
 ### 3.5 搭建路径：四步法
 
-参照沐曦的栈，把"从 0 到基础可用"拆成四步。**每步给出"要干什么 / 验收要求 / 交付物"**，
+参照沐曦的架构形态（其中 API 抽取链参照 NVIDIA），把"从 0 到基础可用"拆成四步。**每步给出"要干什么 / 验收要求 / 交付物"**，
 便于项目管理者排期、岗位管理者定职责。
 
 | 步 | 要干什么 | 验收要求 | 交付物 |
@@ -340,13 +341,13 @@ L2 变成**持续性投入**——研发要排数天注释工时、SME 要审十
 ## 附录 A：三家文档栈实测证据（可复核）
 
 > 以下为**一手抓取**（读原始 HTML / 响应头 / 静态资源，非二手转述），读者可自行点开复核。
-> 完整取证过程（逐字证据、黑盒链路推断、反向归因）见完整版 §4.5 / §4.6 / §4.7。
+> 完整取证过程（逐字证据、黑盒链路推断、反向归因、横向对账）见完整版 §4.5 – §4.8。
 
 | 厂商 | 可复核入口 | 关键指纹 |
 | --- | --- | --- |
-| NVIDIA CUDA | NVIDIA CUDA Runtime API 手册 | Sphinx 特征标题 + `¶ Permalink to this headline`；链接仍为 Doxygen 分组名 `group__CUDART__…`（后端 Doxygen、前端 Sphinx）；官方维护 `nvidia-sphinx-theme`（依赖 `pydata-sphinx-theme`，专有许可） |
-| 摩尔线程 MUSA | `docs.mthreads.com`（MUSA SDK 概览 / 核心 API 参考 / 标签页） | `<meta name="generator" content="Docusaurus v3.10.1">`；Algolia DocSearch；4 版本并存；全站 0 个 `.pdf` 链接；Driver API 单页 2.23 MB / 430 个锚点；零 Doxygen HTML 痕迹（产物为机生 MDX） |
-| 沐曦 MetaX | `developer.metax-tech.com/doc`（工具手册 `…/preview/333/index.html`；**API 参考 `…/preview/1313/index.html`**；**reST 源文件 `…/preview/1313/_sources/split_files/…`**；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**API 参考源文件 7,062 行 / 1,419 KB，为自动抽取产物**（Doxygen 注释 → `pandoc` → reST；参数表首列恰为 Doxygen 方向标记 `in` / `out` / `in,out`；176/177 个签名下划线长度精确相等；684/695 个网格表总宽恒为 999 字符；`参数-N` / `返回值-N` 编号 1..N 零缺号）；**但产物写为纯文本 reST、未注册 `c:` 域指令**；**`objects.inv` 有产出（1313：6,895 B / 471 条），但 0 个 C/C++ 符号** |
+| NVIDIA CUDA | NVIDIA CUDA Runtime API 手册 | Sphinx 特征标题 + `¶ Permalink to this headline`；链接仍为 Doxygen 分组名 `group__CUDART__…`（后端 Doxygen、前端 Sphinx）；官方维护 `nvidia-sphinx-theme`（依赖 `pydata-sphinx-theme`，专有许可）；**`objects.inv` 解压实测 99,259 B / 7,128 条 / 4,657 个 `cpp:` 域符号**（含 `cpp:functionParam` 1,529 > `cpp:function` 561——参数级可引用） |
+| 摩尔线程 MUSA | `docs.mthreads.com`（MUSA SDK 概览 / 核心 API 参考 / 标签页） | `<meta name="generator" content="Docusaurus v3.10.1">`；Algolia DocSearch；4 版本并存；全站 0 个 `.pdf` 链接；Driver API 单页 2.23 MB / 430 个锚点；零 Doxygen HTML 痕迹（产物为机生 MDX）；**生态有现成转换件（`moxygen` / `@xpack/doxygen2docusaurus` / `doxybook2`）但默认行为不满足**（单页聚合 vs `moxygen` 默认分页、版本号参数化注入、CUDA 式章骨架），故为自建**渲染层**（非自研解析器） |
+| 沐曦 MetaX | `developer.metax-tech.com/doc`（工具手册 `…/preview/333/index.html`；**API 参考 `…/preview/1313/index.html`**；**reST 源文件 `…/preview/1313/_sources/split_files/…`**；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**API 参考源文件 7,062 行 / 1,419 KB，为自动抽取产物**（Doxygen 注释 → **中文 HTML** → `pandoc` → reST；参数表首列恰为 Doxygen 方向标记 `in` / `out` / `in,out`；176/177 个签名下划线长度精确相等；684/695 个网格表总宽恒为 999 字符；`参数-N` / `返回值-N` 编号 1..N 零缺号）；**但产物写为纯文本 reST、未注册 `c:` 域指令**；**`objects.inv` 有产出（1313：6,895 B / 471 条），但 0 个 C/C++ 符号** |
 
 **证据边界**：以上可证实"站点由哪些组件构成"与"产物长什么样"；**"为什么这么选"属推断**，非厂商内部决策记录。
 
@@ -379,7 +380,7 @@ L2 变成**持续性投入**——研发要排数天注释工时、SME 要审十
 | 目录树（toctree） | 定义文档目录与导航顺序的指令——**信息架构的载体** |
 | Doxygen | 从头文件抽取 C/C++ 符号（函数 / 参数 / 返回值）的工具 |
 | Breathe | 把 Doxygen 的产出桥接进 Sphinx 的插件 |
-| pandoc | 通用文档格式转换器（Markdown / HTML / reST 等互转）；**只转格式，不注册符号** |
+| pandoc | 通用文档格式转换器（Markdown / HTML / reST 等互转）；**只转格式、不注册符号，也读不了 C/C++ 源码或 Doxygen XML** |
 | `objects.inv` | Sphinx 的"跨项目符号清单"，支撑跨文档的符号级引用 |
 | Docs-as-Code | 把文档当代码管理：进版本库、走评审、自动构建、自动发布 |
 | CI / CD | 持续集成 / 持续交付：提交即自动构建、校验、上线 |
