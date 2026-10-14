@@ -12,15 +12,21 @@
 建立集中文档库（Single Source of Truth）、统一模板与规范、Docs-as-Code 评审发布流水线，并完成存量迁移与新人 onboarding。
 
 本页为项目入口（Feature 节点）；完整规格（文档信息、高层级需求、按文档类型拆分的子特性与 WBTS、工时汇总）
-见下方子页面：
+与支撑材料见下方子页面：
 
 .. toctree::
    :maxdepth: 1
 
    company_doc_init_spec
+   company_doc_init_toolchain_eval_brief
+   company_doc_init_toolchain_eval
+   software_engineer_doc_writing_guide
 
 相关
 ----------------------------------------
 - 完整规格（子页面）：:doc:`company_doc_init_spec`
+- 文档平台选型分析 · 管理层摘要（子页面）：:doc:`company_doc_init_toolchain_eval_brief`
+- 文档平台选型分析 · 完整版（子页面）：:doc:`company_doc_init_toolchain_eval`
+- 软件工程师文档书写指南（子页面）：:doc:`software_engineer_doc_writing_guide`
 - 变更追溯：:doc:`/changerequest/change_requests`
 - 文档体系方法：:doc:`../07_about/methodology`

@@ -48,7 +48,8 @@ mermaid_light_theme = "default"
 # （源文件 docs/**/uml/*.puml，渲染脚本 scripts/render_uml.py）。
 
 templates_path = ["_templates"]
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+# _internal：内部完整版文档目录（含公司内部信息，仅内网构建，绝不随公开仓库发布）
+exclude_patterns = ["_build", "_internal", "Thumbs.db", ".DS_Store"]
 
 # -- HTML 输出配置 --------------------------------------------
 html_theme = "alabaster"
