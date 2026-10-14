@@ -18,6 +18,8 @@
    :maxdepth: 1
 
    company_doc_init_spec
+   company_doc_init_toolchain_eval_decision
+   company_doc_init_toolchain_eval_onepager
    company_doc_init_toolchain_eval_brief
    company_doc_init_toolchain_eval
    software_engineer_doc_writing_guide
@@ -25,6 +27,8 @@
 相关
 ----------------------------------------
 - 完整规格（子页面）：:doc:`company_doc_init_spec`
+- 文档平台选型分析 · 精简版决策摘要（子页面）：:doc:`company_doc_init_toolchain_eval_decision`
+- 文档平台选型分析 · 一页纸决策简报（子页面）：:doc:`company_doc_init_toolchain_eval_onepager`
 - 文档平台选型分析 · 管理层摘要（子页面）：:doc:`company_doc_init_toolchain_eval_brief`
 - 文档平台选型分析 · 完整版（子页面）：:doc:`company_doc_init_toolchain_eval`
 - 软件工程师文档书写指南（子页面）：:doc:`software_engineer_doc_writing_guide`
