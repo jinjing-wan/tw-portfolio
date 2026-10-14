@@ -211,7 +211,7 @@
 | 维度 | NVIDIA CUDA | 摩尔线程 MUSA | 沐曦 MetaX |
 | --- | --- | --- | --- |
 | 渲染内核 | Sphinx + Breathe | Docusaurus v3.10.1 + 自研 MDX 生成器 | **Sphinx**（源为 reST） |
-| API 符号提取 | Doxygen → Breathe（→ `c:domain` 符号） | Doxygen 只取 XML + 自研转换（→ MDX） | **Doxygen 系注释 + 自研脚本（→ 纯文本 reST）** |
+| API 符号提取 | Doxygen → Breathe（→ `c:domain` 符号） | Doxygen 只取 XML + 自研转换（→ MDX） | **Doxygen 系注释 + pandoc（→ 纯文本 reST）** |
 | 主题 | 自研主题（pydata 基座，专有许可） | Docusaurus 原生 | sphinx_rtd_theme + 自写 CSS |
 | 门户 | 与文档同栈 | Next.js（与文档分栈） | Next.js（文档内核嵌在自研网关内） |
 | 多版本 | 按 release 归档 | 4 版本并存（内置） | 版本路径段 |
@@ -228,7 +228,7 @@
 2. **沐曦走的是"最贴近本场景"的架构路线**：**Sphinx 内核 + 自建门户**——保住 Sphinx 的多格式与 PDF 能力，
    用一层自研门户解决观感，同时绕开了托管平台在权限与分级上的付费限制。
    ⚠️ **但它不能作为"符号图可用"的参照**：其 `objects.inv` 里 **0 个 API 符号**（仅章节标签）。
-   它**同样建了自动抽取链**（Doxygen 系注释 → 自研脚本 → 纯文本 reST，7,062 行产物带成套机器指纹可证），
+   它**同样建了自动抽取链**（Doxygen 系注释 → `pandoc` → 纯文本 reST，7,062 行产物带成套机器指纹可证），
    **却把产物写成了纯文本、没有注册进 Sphinx 符号域**——属"**抽了没接线**"。
    **参照它的架构与抽取走法，但终点必须落在 `c:domain` 节点上。**
 3. **NVIDIA 是天花板，不是起点**——20 年积累 + 专职团队，不适合作为"从 0 起步"的参照。
@@ -346,7 +346,7 @@ L2 变成**持续性投入**——研发要排数天注释工时、SME 要审十
 | --- | --- | --- |
 | NVIDIA CUDA | NVIDIA CUDA Runtime API 手册 | Sphinx 特征标题 + `¶ Permalink to this headline`；链接仍为 Doxygen 分组名 `group__CUDART__…`（后端 Doxygen、前端 Sphinx）；官方维护 `nvidia-sphinx-theme`（依赖 `pydata-sphinx-theme`，专有许可） |
 | 摩尔线程 MUSA | `docs.mthreads.com`（MUSA SDK 概览 / 核心 API 参考 / 标签页） | `<meta name="generator" content="Docusaurus v3.10.1">`；Algolia DocSearch；4 版本并存；全站 0 个 `.pdf` 链接；Driver API 单页 2.23 MB / 430 个锚点；零 Doxygen HTML 痕迹（产物为机生 MDX） |
-| 沐曦 MetaX | `developer.metax-tech.com/doc`（工具手册 `…/preview/333/index.html`；**API 参考 `…/preview/1313/index.html`**；**reST 源文件 `…/preview/1313/_sources/split_files/…`**；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**API 参考源文件 7,062 行 / 1,419 KB，为自动抽取产物**（参数表首列恰为 Doxygen 方向标记 `in` / `out` / `in,out`；176/177 个签名下划线长度精确相等；684/695 个网格表总宽恒为 999 字符；`参数-N` / `返回值-N` 编号 1..N 零缺号）；**但产物写为纯文本 reST、未注册 `c:` 域指令**；**`objects.inv` 有产出（1313：6,895 B / 471 条），但 0 个 C/C++ 符号** |
+| 沐曦 MetaX | `developer.metax-tech.com/doc`（工具手册 `…/preview/333/index.html`；**API 参考 `…/preview/1313/index.html`**；**reST 源文件 `…/preview/1313/_sources/split_files/…`**；符号清单 `…/objects.inv`） | 响应头 `X-Powered-By: Next.js` + `Server: volcalb`（自建门户 + 云托管）；源文件头注释 `created by sphinx-quickstart on Thu Dec 23 … 2021`（渲染内核 = Sphinx）；`sphinx_rtd_theme` + copybutton + KaTeX + i18n；**API 参考源文件 7,062 行 / 1,419 KB，为自动抽取产物**（Doxygen 注释 → `pandoc` → reST；参数表首列恰为 Doxygen 方向标记 `in` / `out` / `in,out`；176/177 个签名下划线长度精确相等；684/695 个网格表总宽恒为 999 字符；`参数-N` / `返回值-N` 编号 1..N 零缺号）；**但产物写为纯文本 reST、未注册 `c:` 域指令**；**`objects.inv` 有产出（1313：6,895 B / 471 条），但 0 个 C/C++ 符号** |
 
 **证据边界**：以上可证实"站点由哪些组件构成"与"产物长什么样"；**"为什么这么选"属推断**，非厂商内部决策记录。
 
@@ -379,6 +379,7 @@ L2 变成**持续性投入**——研发要排数天注释工时、SME 要审十
 | 目录树（toctree） | 定义文档目录与导航顺序的指令——**信息架构的载体** |
 | Doxygen | 从头文件抽取 C/C++ 符号（函数 / 参数 / 返回值）的工具 |
 | Breathe | 把 Doxygen 的产出桥接进 Sphinx 的插件 |
+| pandoc | 通用文档格式转换器（Markdown / HTML / reST 等互转）；**只转格式，不注册符号** |
 | `objects.inv` | Sphinx 的"跨项目符号清单"，支撑跨文档的符号级引用 |
 | Docs-as-Code | 把文档当代码管理：进版本库、走评审、自动构建、自动发布 |
 | CI / CD | 持续集成 / 持续交付：提交即自动构建、校验、上线 |
