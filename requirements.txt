@@ -2,6 +2,9 @@
 sphinx>=7.0
 sphinxcontrib-mermaid>=1.0
 myst-parser>=4.0
+# Breathe：桥接 Doxygen XML 渲染 C/C++ API 参考（仅在本地/预构建存在 doxyxml 时真正使用；
+# CI 默认不构建 API，加载扩展不产生告警）。
+breathe>=4.35
 
 # -- 可选：本地渲染 PlantUML（HLD 图示）----------------------
 # jdk4py 从 PyPI 提供内置 JRE，免去系统安装 Java 的门槛；

@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__mtx__memory" kind="group">
+    <compoundname>mtx_memory</compoundname>
+    <title>Memory Management</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxMalloc</definition>
+        <argsstring>(void **devPtr, size_t size)</argsstring>
+        <name>mtxMalloc</name>
+        <param>
+          <type>void **</type>
+          <declname>devPtr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Allocate linear device memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">devPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the device pointer; null returns MTX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bytes to allocate; must be positive. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> Out-of-memory returns MTX_ERROR_OUT_OF_MEMORY. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="167" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="167" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxFree</definition>
+        <argsstring>(void *devPtr)</argsstring>
+        <name>mtxFree</name>
+        <param>
+          <type>void *</type>
+          <declname>devPtr</declname>
+        </param>
+        <briefdescription>
+<para>Free linear device memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>devPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer from mtxMalloc; null returns MTX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> MTX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="172" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="172" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxMemcpy</definition>
+        <argsstring>(void *dst, const void *src, size_t count, mtxMemcpyKind kind)</argsstring>
+        <name>mtxMemcpy</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <briefdescription>
+<para>Synchronous copy between host and device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bytes to copy. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Copy direction (see <ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> Either address null returns MTX_ERROR_INVALID_ARG. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="180" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="180" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxMallocHost</definition>
+        <argsstring>(void **ptr, size_t size)</argsstring>
+        <name>mtxMallocHost</name>
+        <param>
+          <type>void **</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Allocate page-locked (pinned) host memory for faster transfers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the host pointer; null returns MTX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bytes to allocate; must be positive. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> MTX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="186" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="186" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxFreeHost</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>mtxFreeHost</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Free page-locked host memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer from mtxMallocHost; null returns MTX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> MTX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="191" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="191" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxMallocPitch</definition>
+        <argsstring>(void **devPtr, size_t *pitch, size_t width, size_t height)</argsstring>
+        <name>mtxMallocPitch</name>
+        <param>
+          <type>void **</type>
+          <declname>devPtr</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>pitch</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+<para>Allocate a 2D pitched allocation (row-aligned for fast access). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">devPtr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the device pointer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the row pitch in bytes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bytes per row. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of rows. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> MTX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="199" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="199" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref></type>
+        <definition>mtxError_t mtxMemcpyAsync</definition>
+        <argsstring>(void *dst, const void *src, size_t count, mtxMemcpyKind kind, mtxStream_t stream)</argsstring>
+        <name>mtxMemcpyAsync</name>
+        <param>
+          <type>void *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref></type>
+          <declname>kind</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Asynchronous copy, optionally bound to a stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source address. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bytes to copy. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>kind</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Copy direction. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to enqueue the copy on; null means the default stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref> MTX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="208" column="12" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" declline="208" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Allocate, free, and copy device memory. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

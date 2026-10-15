@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="structmtx_device_prop" kind="struct" language="C++" prot="public">
+    <compoundname>mtxDeviceProp</compoundname>
+    <includes refid="device_8h" local="no">device.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmtx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char mtxDeviceProp::name[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>name</name>
+        <qualifiedname>mtxDeviceProp::name</qualifiedname>
+        <briefdescription>
+<para>Device name string. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="74" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtxDeviceProp::clockRate</definition>
+        <argsstring></argsstring>
+        <name>clockRate</name>
+        <qualifiedname>mtxDeviceProp::clockRate</qualifiedname>
+        <briefdescription>
+<para>Core clock rate (kHz). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="75" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1aaf3496874b9024857f2853259b1835ac" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtxDeviceProp::memoryClockRate</definition>
+        <argsstring></argsstring>
+        <name>memoryClockRate</name>
+        <qualifiedname>mtxDeviceProp::memoryClockRate</qualifiedname>
+        <briefdescription>
+<para>Memory clock rate (kHz). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="76" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1a25dd636077c475eb5c98b05532247980" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t mtxDeviceProp::totalGlobalMem</definition>
+        <argsstring></argsstring>
+        <name>totalGlobalMem</name>
+        <qualifiedname>mtxDeviceProp::totalGlobalMem</qualifiedname>
+        <briefdescription>
+<para>Global memory size (bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="77" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtxDeviceProp::multiProcessorCount</definition>
+        <argsstring></argsstring>
+        <name>multiProcessorCount</name>
+        <qualifiedname>mtxDeviceProp::multiProcessorCount</qualifiedname>
+        <briefdescription>
+<para>Streaming multiprocessor count. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="78" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtxDeviceProp::l2CacheSize</definition>
+        <argsstring></argsstring>
+        <name>l2CacheSize</name>
+        <qualifiedname>mtxDeviceProp::l2CacheSize</qualifiedname>
+        <briefdescription>
+<para>L2 cache size (bytes). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="79" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmtx_device_prop_1ab30c3789813112f18d695c617b46d233" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int mtxDeviceProp::maxThreadsPerBlock</definition>
+        <argsstring></argsstring>
+        <name>maxThreadsPerBlock</name>
+        <qualifiedname>mtxDeviceProp::maxThreadsPerBlock</qualifiedname>
+        <briefdescription>
+<para>Max threads per block. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="80" column="14" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Static description of a device, filled by mtxGetDeviceProperties. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="73" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="73" bodyend="81"/>
+    <listofallmembers>
+      <member refid="structmtx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>clockRate</name></member>
+      <member refid="structmtx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>l2CacheSize</name></member>
+      <member refid="structmtx_device_prop_1ab30c3789813112f18d695c617b46d233" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>maxThreadsPerBlock</name></member>
+      <member refid="structmtx_device_prop_1aaf3496874b9024857f2853259b1835ac" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>memoryClockRate</name></member>
+      <member refid="structmtx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>multiProcessorCount</name></member>
+      <member refid="structmtx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>name</name></member>
+      <member refid="structmtx_device_prop_1a25dd636077c475eb5c98b05532247980" prot="public" virt="non-virtual"><scope>mtxDeviceProp</scope><name>totalGlobalMem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

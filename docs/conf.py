@@ -6,9 +6,21 @@ author = "Wan Jinjing"
 copyright = "2026, Wan Jinjing"
 
 # -- 构建配置 -------------------------------------------------
-# myst_parser    : 让 Sphinx 直接吃 Markdown（.md）源文件
-# sphinxcontrib.mermaid : Markdown 里的 ```mermaid 围栏渲染为 UML 图
-extensions = ["myst_parser", "sphinxcontrib.mermaid"]
+# myst_parser          : 让 Sphinx 直接吃 Markdown（.md）源文件
+# sphinxcontrib.mermaid: Markdown 里的 ```mermaid 围栏渲染为 UML 图
+# breathe              : 桥接 Doxygen XML，将 C/C++ 接口契约渲染进主站
+#                        （Doxygen XML 仅含接口签名+注释、不含 .cpp 实现；
+#                          作为接口产物随仓库提交，CI 与本地一致渲染）
+extensions = ["myst_parser", "sphinxcontrib.mermaid", "breathe"]
+
+# --- Breathe（API 文档）：Doxygen XML 由本地 build_site.sh 生成并提交 ---
+# 仅含接口契约（函数签名 + 文档注释），不暴露任何 .cpp 实现源码。
+import os as _os
+_api_doxyxml = _os.path.join(_os.path.dirname(__file__), "..", "api-docs", "doxyxml")
+breathe_projects = {
+    "sunrise_api": _os.path.relpath(_api_doxyxml, _os.path.dirname(__file__))
+}
+breathe_default_project = "sunrise_api"
 
 # 源文件后缀：新文档一律用 .md（可在 GitHub 上直接阅读并渲染 Mermaid）；
 # 保留 .rst 以兼容历史页面，两者可混写、互相引用。

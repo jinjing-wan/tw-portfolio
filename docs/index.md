@@ -11,6 +11,18 @@
 技术内容由曦望领域专家贡献。
 :::
 
+## API 文档（Doxygen + Breathe 自动生成）
+
+本站点演示 **Docs-as-Code 在 API 文档场景的实战落地**：Doxygen 从 C/C++ 头文件抽取 XML，
+经 Breathe 桥接进 Sphinx 自动渲染接口契约，零手写重复。点击左侧「参考 → API 参考」即可查看完整接口。
+
+- [API 参考（接口契约，自动生成）](03_reference/api.md)
+
+:::{note}
+接口内容仅含**函数签名 + 文档注释**（来自头文件），不含任何 `.cpp` 实现源码；
+接口产物 `api-docs/doxyxml` 随仓库提交，公开站与本地渲染完全一致。
+:::
+
 ## 入门
 
 ```{toctree}
@@ -39,6 +51,7 @@
 :maxdepth: 1
 
 03_reference/api_reference
+03_reference/api
 03_reference/libraries
 03_reference/tools
 ```

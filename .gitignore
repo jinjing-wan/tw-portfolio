@@ -18,3 +18,10 @@ tools/plantuml/*.jar
 # 临时截图
 _shot*.png
 
+# ---- 私有 API 源码与生成物（绝不进入公开仓库）----
+# 示例/真实 C++ 库源码：本地构建文档用，源码与实现 .cpp 全部排除
+api/
+# Doxygen 中间产物（XML）与 Sphinx 构建产物
+api-docs/doxyxml/
+api-docs/_build/
+

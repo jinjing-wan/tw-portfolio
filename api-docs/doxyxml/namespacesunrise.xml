@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="namespacesunrise" kind="namespace" language="C++">
+    <compoundname>sunrise</compoundname>
+    <innerclass refid="structsunrise_1_1_device_info" prot="public">sunrise::DeviceInfo</innerclass>
+    <innerclass refid="classsunrise_1_1_device" prot="public">sunrise::Device</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Status</name>
+        <qualifiedname>sunrise::Status</qualifiedname>
+        <enumvalue id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a505a83f220c02df2f85c3810cd9ceb38" prot="public">
+          <name>Success</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Operation succeeded. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83aa85cb2e691f2edb9dc680946001a07af" prot="public">
+          <name>ErrorInvalidArg</name>
+          <briefdescription>
+<para>Invalid argument (null pointer / out of range). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a52c7ed92706a4c890c8326f69d4646fc" prot="public">
+          <name>ErrorOutOfMemory</name>
+          <briefdescription>
+<para><ref refid="classsunrise_1_1_device" kindref="compound">Device</ref> memory exhausted. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a56ffb650d5f6c69139a4dac036e7fad2" prot="public">
+          <name>ErrorNotReady</name>
+          <briefdescription>
+<para><ref refid="classsunrise_1_1_device" kindref="compound">Device</ref> not yet ready. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a3cabc605300c5d86602e943fcf77672b" prot="public">
+          <name>ErrorUnknown</name>
+          <briefdescription>
+<para>Unknown error. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Unified status code: every Runtime API returns one and the caller must check it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h" line="21" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h" bodystart="21" bodyend="27"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <member refid="group__memory_1gad3390bee9da3ba6de0e2afee49c56874" kind="typedef"><name>DevicePtr</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group__memory_1ga14c8e4c12fc0074151e8651f9d6b98ea" kind="function"><name>Malloc</name></member>
+      <member refid="group__memory_1ga7401e88b790fb90637d59f8ddd19b209" kind="function"><name>Free</name></member>
+      <member refid="group__memory_1gadd5962affd5135bb1bb004a0edac612f" kind="function"><name>Memcpy</name></member>
+      <memberdef kind="function" id="classsunrise_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref></type>
+        <definition>Status GetDeviceCount</definition>
+        <argsstring>(int *count)</argsstring>
+        <name>GetDeviceCount</name>
+        <qualifiedname>sunrise::Device::GetDeviceCount</qualifiedname>
+        <param>
+          <type>int *</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Query the number of available devices (free-function form, equivalent to <ref refid="classsunrise_1_1_device_1aa2a4f613772e973c0d9c3837a36b53da" kindref="member">Device::GetDeviceCount</ref>). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the device count. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Success on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h" line="66" column="8" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h" declline="66" declcolumn="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" line="14" column="1"/>
+  </compounddef>
+</doxygen>

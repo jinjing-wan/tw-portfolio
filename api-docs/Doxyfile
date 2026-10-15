@@ -1,0 +1,27 @@
+# Doxyfile —— Sunrise API 示例
+# 作用：只解析 api/include 下的头文件，生成 XML 供 Breathe 读取。
+# 不生成 HTML/LaTeX（文档渲染交给 Sphinx + Breathe）。
+
+PROJECT_NAME           = "Sunrise API (示例)"
+PROJECT_NUMBER         = 0.1.0
+OUTPUT_DIRECTORY       = .
+
+# 入口：仅头文件。实现 .cpp 不纳入 API 参考（避免符号重复，且源码私有）。
+INPUT                  = ../api/include
+RECURSIVE              = YES
+INCLUDE_PATH           = ../api/include
+
+# 只出 XML（Breathe 吃 XML）；关闭 HTML/LaTeX 减少噪音
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_OUTPUT             = doxyxml
+
+# 拉取全部实体（即使个别未写 @brief 也能进文档）
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+OPTIMIZE_OUTPUT_FOR_C  = NO
+
+# 安静模式；未文档化不告警（示例库允许少量占位）
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = NO

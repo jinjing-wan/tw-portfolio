@@ -41,6 +41,21 @@ jobs:
         #   sphinx-build -b html -W --keep-going docs docs/_build/html
         run: sphinx-build -b html docs docs/_build/html
 
+      - name: 并入 API 文档子目录（可选，冗余备份）
+        # 主站左侧导航的「API 参考」节点已由主站 Sphinx + Breathe 从提交的
+        # api-docs/doxyxml 直接渲染（接口契约，不含 .cpp 实现），公开站已可见真实内容。
+        # 本步骤为可选冗余：若额外 git add -f api-docs/_build/html（预构建 HTML），
+        # 则再并入 /api 子目录；否则保持主站不变。
+        run: |
+          if [ -d api-docs/_build/html ]; then
+            rm -rf docs/_build/html/api
+            cp -r api-docs/_build/html docs/_build/html/api
+            test -f docs/_build/html/.nojekyll || cp api-docs/_build/html/.nojekyll docs/_build/html/.nojekyll
+            echo "已并入 API 文档 -> /api"
+          else
+            echo "未检测到预构建的 API 文档，跳过（主站 in-tree API 节点已含真实内容）"
+          fi
+
       - name: 校验产物
         run: |
           test -f docs/_build/html/index.html

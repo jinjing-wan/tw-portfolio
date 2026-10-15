@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="runtime_8h" kind="file" language="C++">
+    <compoundname>runtime.h</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">string</includes>
+    <includedby refid="memory_8h" local="yes">E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h</label>
+        <link refid="runtime_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h</label>
+        <link refid="memory_8h"/>
+      </node>
+      <node id="1">
+        <label>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h</label>
+        <link refid="runtime_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structsunrise_1_1_device_info" prot="public">sunrise::DeviceInfo</innerclass>
+    <innerclass refid="classsunrise_1_1_device" prot="public">sunrise::Device</innerclass>
+    <innernamespace refid="namespacesunrise">sunrise</innernamespace>
+    <briefdescription>
+<para>Sunrise Runtime API (public example stub — contains no real implementation). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file is a portfolio sample demonstrating how Doxygen + Breathe can publish the <emphasis>interface contract</emphasis> (signatures / parameters / return values) of a private C++ library to a Sphinx site <bold>without exposing the implementation source</bold>. The <computeroutput><ref refid="namespacesunrise" kindref="compound">sunrise</ref></computeroutput> namespace is a placeholder and unrelated to any real product.</para>
+<para>In real use: replace this directory with your internal library headers; the rest of the pipeline stays unchanged. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacesunrise" kindref="compound">sunrise</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a505a83f220c02df2f85c3810cd9ceb38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a505a83f220c02df2f85c3810cd9ceb38" kindref="member">Success</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83aa85cb2e691f2edb9dc680946001a07af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83aa85cb2e691f2edb9dc680946001a07af" kindref="member">ErrorInvalidArg</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a52c7ed92706a4c890c8326f69d4646fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a52c7ed92706a4c890c8326f69d4646fc" kindref="member">ErrorOutOfMemory</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a56ffb650d5f6c69139a4dac036e7fad2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a56ffb650d5f6c69139a4dac036e7fad2" kindref="member">ErrorNotReady</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a3cabc605300c5d86602e943fcf77672b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a3cabc605300c5d86602e943fcf77672b" kindref="member">ErrorUnknown</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="structsunrise_1_1_device_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structsunrise_1_1_device_info" kindref="compound">DeviceInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="31" refid="structsunrise_1_1_device_info_1a5946b882d0ff37fdf94866e22aabd5ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>-1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="structsunrise_1_1_device_info_1af935298bd9e25a12268c6e75bd64d6ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structsunrise_1_1_device_info_1af935298bd9e25a12268c6e75bd64d6ab" kindref="member">name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="structsunrise_1_1_device_info_1a30cd84aa5e56f14316b4a505ae81a3ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uint64_t<sp/><ref refid="structsunrise_1_1_device_info_1a30cd84aa5e56f14316b4a505ae81a3ff" kindref="member">memoryBytes</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="classsunrise_1_1_device" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsunrise_1_1_device" kindref="compound">Device</ref><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48" refid="classsunrise_1_1_device_1aa2a4f613772e973c0d9c3837a36b53da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref><sp/><ref refid="classsunrise_1_1_device_1aa2a4f613772e973c0d9c3837a36b53da" kindref="member">GetDeviceCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>count);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classsunrise_1_1_device_1a664041aded6a202171a2088f605caad7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref><sp/><ref refid="classsunrise_1_1_device_1a664041aded6a202171a2088f605caad7" kindref="member">SetDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>deviceId);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classsunrise_1_1_device_1a5c8908b935a639728f73423ab1bd5b6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref><sp/><ref refid="classsunrise_1_1_device_1a5c8908b935a639728f73423ab1bd5b6c" kindref="member">GetDeviceInfo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>deviceId,<sp/><ref refid="structsunrise_1_1_device_info" kindref="compound">DeviceInfo</ref>*<sp/>info);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classsunrise_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" refkind="member"><highlight class="normal"><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref><sp/><ref refid="classsunrise_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" kindref="member">GetDeviceCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>count);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>sunrise</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/runtime.h"/>
+  </compounddef>
+</doxygen>
