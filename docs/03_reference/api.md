@@ -5,7 +5,9 @@ into XML, then bridged into Sphinx by **Breathe** and rendered automatically —
 hand-written duplication. This is a production-grade Docs-as-Code practice for API
 documentation.
 
-:::{note}
+:::{admonition} Note
+:class: note
+
 Only the **interface contract (function signatures + doc comments)** is shown here —
 no `.cpp` implementation source is included. The Doxygen XML product
 (`api-docs/doxyxml`) is committed with the repository, so the public site renders

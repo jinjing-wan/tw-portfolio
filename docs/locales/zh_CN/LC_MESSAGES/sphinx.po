@@ -1,0 +1,37 @@
+# Locale override: keep API documentation field labels in English.
+#
+# The site language is zh_CN (for project-level HLD pages), but the API
+# reference pages (docs/03_reference/api.md, rendered by Breathe from
+# Doxygen XML) are English content. Sphinx would otherwise translate the
+# docutils field labels (e.g. "Parameters" -> "参数"). The entries below
+# pin those labels back to English without touching any other part of
+# the site translation.
+#
+# Compiled product: sphinx.mo (keep both files committed so CI renders
+# identically without needing gettext tools).
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+
+msgid "Parameters"
+msgstr "Parameters"
+
+msgid "Returns"
+msgstr "Returns"
+
+msgid "Return values"
+msgstr "Return values"
+
+msgid "Variables"
+msgstr "Variables"
+
+msgid "Raises"
+msgstr "Raises"
+
+msgid "Yields"
+msgstr "Yields"
+
+msgid "Keyword Arguments"
+msgstr "Keyword Arguments"

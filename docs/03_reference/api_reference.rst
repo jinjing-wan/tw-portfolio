@@ -1,7 +1,9 @@
 API Reference (Runtime / Driver / Math — Sunrise software stack sample)
 ================================================================================
 
-.. note::
+.. admonition:: Note
+   :class: note
+
    This page is a **framework sample** of the *Sunrise AI Inference GPU software
    stack Runtime API reference*. It covers the unified error model, the
    handle/context model, the stream async model, and function signatures with
