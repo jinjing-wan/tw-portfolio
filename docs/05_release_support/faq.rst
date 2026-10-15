@@ -26,7 +26,7 @@ A：按 :doc:`../04_development/porting_guide` 检查清单逐项核对语义差
 运行时类
 ----------------------------
 **Q：内核启动后无结果 / 报错？**
-A：检查返回值（见 :doc:`../03_reference/api_reference` 错误模型）；
+A：检查返回值（见 :doc:`../03_reference/api` 错误模型）；
 确认内存拷贝方向与同步（``sunriseStreamSynchronize``）。
 
 **Q：性能远低于预期？**
@@ -35,7 +35,7 @@ A：按 :doc:`../04_development/performance_tuning` 排查 occupancy / 合并访
 API 类
 --------------------------
 **Q：统一错误码如何排查？**
-A：每个 API 返回状态码必须检查，错误码含义见 :doc:`../03_reference/api_reference` 词汇表。
+A：每个 API 返回状态码必须检查，错误码含义见 :doc:`../03_reference/api` 词汇表。
 
 **Q：异步 API 什么时候生效？**
 A：绑定 stream，需 ``sunriseStreamSynchronize`` 或事件等待确认完成。

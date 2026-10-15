@@ -40,5 +40,5 @@
 下一步
 --------------------------
 - 阅读 :doc:`/04_development/programming_guide` 了解编程模型（线程层次、内存层次、同步）；
-- 查阅 :doc:`/03_reference/api_reference` 了解 Runtime / Driver / Math API 契约；
+- 查阅 :doc:`/03_reference/api` 了解 Runtime / Driver / Math API 契约；
 - 遇到问题先看 :doc:`/05_release_support/faq`。

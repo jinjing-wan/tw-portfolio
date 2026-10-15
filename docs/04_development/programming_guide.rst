@@ -23,7 +23,7 @@
    - 默认同步行为
 
 4. 错误处理
-   - 统一错误码模型（见 :doc:`/03_reference/api_reference`）
+   - 统一错误码模型（见 :doc:`/03_reference/api`）
    - 异步错误的捕获与上报
 
 5. 示例
@@ -34,10 +34,10 @@
 --------------------------------------------
 - 每个 API 调用必须配「参数 / 返回值 / 错误码」三栏说明；
 - 示例必须可编译可运行，配套 ``build.sh`` 与 ``README``；
-- 术语统一引用 :doc:`/03_reference/api_reference` 的词汇表。
+- 术语统一引用 :doc:`/03_reference/api` 的词汇表。
 
 相关
 ------------------------
-- API 契约：:doc:`/03_reference/api_reference`
+- API 契约：:doc:`/03_reference/api`
 - 性能写法：:doc:`/04_development/performance_tuning`
 - 从 CUDA 迁移：:doc:`/04_development/porting_guide`

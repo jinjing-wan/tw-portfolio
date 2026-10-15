@@ -267,5 +267,5 @@ Requirements:
 - 完整规格（HL / LL / 工时）：[规格页](company_doc_init_spec.rst)
 - 平台选型：[文档平台选型分析](company_doc_init_toolchain_eval.md)
 - 需求书写规范：[需求文档书写规范与提示词](requirements_writing_guide.md)
-- API 参考样例：[API 参考](../03_reference/api_reference.rst)
+- API 参考样例：[API 参考](../03_reference/api.md)
 - 文档体系方法：[技术文档体系方法论](../07_about/methodology.rst)

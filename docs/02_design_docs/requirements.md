@@ -60,4 +60,4 @@
 ## 相关
 
 - 设计落地：[R1.0](hld_r1.md)
-- 接口契约：[API 参考](../03_reference/api_reference.rst)
+- 接口契约：[API 参考](../03_reference/api.md)

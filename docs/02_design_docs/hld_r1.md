@@ -64,7 +64,7 @@ AI 推理 GPU 软件栈为上层框架（PyTorch / TensorFlow 等）与底层硬
 - **Stream**：异步任务队列，决定执行与重叠顺序；
 - **线程安全**：同一 handle 跨流调用由调用方保证同步。
 
-详细函数签名见 [API 参考](../03_reference/api_reference.rst)；层间契约变更走 Phase Gate 评审（见 [文档体系方法论](../07_about/methodology.rst)）。
+详细函数签名见 [API 参考](../03_reference/api.md)；层间契约变更走 Phase Gate 评审（见 [文档体系方法论](../07_about/methodology.rst)）。
 
 ## 5. 资源管理模型（框架示意）
 
@@ -102,7 +102,7 @@ void consumer_loop() {
 
 ## 6. 北向接口契约
 
-HLD 层面约定：设备/上下文管理、内存管理、执行与同步三类接口（详见 [API 参考](../03_reference/api_reference.rst)）；
+HLD 层面约定：设备/上下文管理、内存管理、执行与同步三类接口（详见 [API 参考](../03_reference/api.md)）；
 配置与告警模型在 [需求文档](requirements.md) 中定义；版本兼容走 Phase Gate 评审。
 
 ## 7. 错误处理与告警

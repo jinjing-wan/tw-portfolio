@@ -54,4 +54,4 @@ API 映射表（骨架，占位）
 相关
 ------------------------
 - 工具链：:doc:`/03_reference/tools`
-- API 参考：:doc:`/03_reference/api_reference`
+- API 参考：:doc:`/03_reference/api`

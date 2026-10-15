@@ -50,7 +50,6 @@
 ```{toctree}
 :maxdepth: 1
 
-03_reference/api_reference
 03_reference/api
 03_reference/libraries
 03_reference/tools
