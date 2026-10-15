@@ -1,0 +1,88 @@
+@startuml company_doc_init_overview
+skinparam dpi 160
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam componentStyle rectangle
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+
+title 公司文档初始化项目 · 总体架构（角色 / 高层级需求 / 工具链）
+
+left to right direction
+
+' ===== 角色层 =====
+actor "技术写作组\n(Owner)" as TW
+actor "研发部" as RD
+actor "产品部" as PD
+actor "测试质量部" as QA
+actor "运维 SRE" as SRE
+actor "客户支持" as CS
+actor "市场售前" as MK
+actor "管理层 PMO" as PMO
+actor "HR 新人培训" as HR
+
+' ===== 高层级需求组件层 =====
+package "HL-01 统一文档库" {
+  component "Git 仓库\n(单一真源)" as C_GIT
+  component "目录/命名\n规范" as C_DIR
+  component "权限模型\n(三级)" as C_AUTH
+}
+
+package "HL-02 模板规范" {
+  component "六类文档\n模板" as C_TPL
+  component "元数据\n规范" as C_META
+}
+
+package "HL-03 Docs-as-Code" {
+  component "PR 三方\n评审" as C_PR
+  component "CI 门禁" as C_CI
+  component "静态站\n发布" as C_PUB
+}
+
+package "HL-04 迁移 onboarding" {
+  component "存量盘点\n迁移" as C_MIG
+  component "onboarding\n路径" as C_ONB
+}
+
+' ===== 工具链层 =====
+package "工具链支撑" {
+  [Sphinx + MyST] as T_SPH
+  [Doxygen + Breathe] as T_DOX
+  [CI (Jenkins/Actions)] as T_JK
+  [nginx + SSO] as T_NGX
+  [pandoc] as T_PD
+}
+
+' ===== 角色 → 组件（职责） =====
+TW --> C_GIT : 搭建 Owner
+TW --> C_DIR : 制定
+TW --> C_AUTH : 定义
+TW --> C_TPL : 编排
+TW --> C_META : 制定
+TW --> C_PR : 搭建
+TW --> C_CI : 搭建
+TW --> C_PUB : 搭建
+TW --> C_MIG : 牵头
+TW --> C_ONB : 供素材
+
+RD --> C_GIT : 迁入 HLD/API
+RD --> C_TPL : 主责
+RD --> C_PR : 提交评审
+PD --> C_TPL : 主责需求
+QA --> C_PR : 三方评审
+SRE --> C_AUTH : 落地 SSO
+SRE --> C_PUB : 托管
+CS --> C_TPL : 主责 FAQ
+HR --> C_ONB : 定义路径
+PMO --> C_GIT : 审批预算
+MK --> C_TPL : 对外清单
+
+' ===== 组件 → 工具链（依赖） =====
+C_GIT --> T_NGX : 呈现
+C_TPL --> T_SPH : 构建
+C_TPL --> T_DOX : API 生成
+C_CI --> T_JK : 运行
+C_PUB --> T_NGX : 托管
+C_MIG --> T_PD : 格式搬运
+
+@enduml

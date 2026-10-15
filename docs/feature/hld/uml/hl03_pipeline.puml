@@ -1,0 +1,43 @@
+@startuml hl03_pipeline
+skinparam dpi 160
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam maxMessageSize 240
+skinparam NoteBackgroundColor #FFF6D5
+skinparam NoteBorderColor #B58900
+autonumber "<b>[0]"
+
+title HL-03 Docs-as-Code 评审发布流水线 · 一次文档变更的全链路
+
+participant "研发部\n(作者)" as RD
+participant "Git 仓库" as GIT
+participant "CI 门禁" as CI
+participant "三方评审\n(技术主管/测试主管/Owner)" as REV
+participant "静态站" as SITE
+
+RD -> GIT : 提交 PR（文档变更）
+GIT -> CI : 触发构建
+activate CI
+CI -> CI : sphinx-build -W + 死链 + 元数据必填
+alt 门禁通过
+  CI --> REV : 通知评审
+else 门禁失败（告警/死链/缺元数据）
+  CI --> RD : 构建失败，退回修改
+  RD -> GIT : 修订后重新提交 PR
+end
+deactivate CI
+
+REV -> REV : 领域技术主管 + 集成测试主管\n+ 关联模块 Owner 三方评审
+alt 评审通过
+  REV --> GIT : 批准合并到 main
+  GIT -> CI : 触发发布
+  CI -> SITE : 自动发布静态站
+  note over SITE : 发布留快照、可回滚
+else 评审不通过
+  REV --> RD : 驳回并附意见
+  RD -> GIT : 修订后重新提交 PR
+end
+
+note over GIT : 验收硬指标：objects.inv 中\nc:/cpp: 域符号数 > 0
+
+@enduml

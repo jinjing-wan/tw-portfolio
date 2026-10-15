@@ -1,19 +1,23 @@
-# API 参考（Doxygen + Breathe 自动生成）
+# API Reference (Doxygen + Breathe, auto-generated)
 
-本页的接口内容由 **Doxygen** 从 C/C++ 头文件抽取 XML，经 **Breathe** 桥接进 Sphinx 自动渲染，
-零手写重复——这是 Docs-as-Code 在 API 文档场景的实战落地。
+The interface content on this page is extracted from C/C++ header files by **Doxygen**
+into XML, then bridged into Sphinx by **Breathe** and rendered automatically — zero
+hand-written duplication. This is a production-grade Docs-as-Code practice for API
+documentation.
 
 :::{note}
-以下仅展示**接口契约（函数签名 + 文档注释）**，不含任何 `.cpp` 实现源码。
-接口产物 `api-docs/doxyxml` 随仓库提交，公开站与本地渲染完全一致。
+Only the **interface contract (function signatures + doc comments)** is shown here —
+no `.cpp` implementation source is included. The Doxygen XML product
+(`api-docs/doxyxml`) is committed with the repository, so the public site renders
+exactly the same content as the local build.
 :::
 
-## MTX 运行库（C 风格，仿摩尔线程 MUSA）
+## MTX Runtime Library (C-style, modeled after Moore Threads MUSA)
 
-`mtx` 是一套 **C 风格、非类式** 的运行时 API：不透明句柄（`mtxDevice_t` /
-`mtxStream_t` / `mtxEvent_t`）、枚举（`mtxError_t` / `mtxMemcpyKind` /
-`mtxDeviceAttr` / `mtxLimit`），以及全部返回状态码的自由函数——这正是厂商 GPU
-运行时在 C 语言中的典型暴露方式。
+`mtx` is a **C-style, non-class** runtime API: opaque handles (`mtxDevice_t` /
+`mtxStream_t` / `mtxEvent_t`), enumerations (`mtxError_t` / `mtxMemcpyKind` /
+`mtxDeviceAttr` / `mtxLimit`), and free functions that all return a status code —
+exactly how a vendor GPU runtime is typically exposed in C.
 
 ### Device Management
 
@@ -45,9 +49,10 @@
 
 ---
 
-## Sunrise 运行库（类式，对照示例）
+## Sunrise Runtime Library (class-style, comparison example)
 
-`sunrise` 是**类式 C++ API**，用于对照展示同一份管线如何同时承载两种风格。
+`sunrise` is a **class-based C++ API**, included to demonstrate how the same
+pipeline simultaneously carries both API styles.
 
 :::{doxygenclass} sunrise::Device
 :project: sunrise_api

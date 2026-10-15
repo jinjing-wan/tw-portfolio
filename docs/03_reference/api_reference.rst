@@ -1,101 +1,118 @@
-API 参考（Runtime / Driver / Math，曦望 Sunrise 软件栈示例）
-====================================================================
+API Reference (Runtime / Driver / Math — Sunrise software stack sample)
+================================================================================
 
 .. note::
-   本文为 **曦望 Sunrise AI 推理 GPU 软件栈 Runtime API 参考** 的框架样例，
-   覆盖统一错误码、handle/context 模型、stream 异步模型、函数签名与参数说明；
-   函数名采用 ``sunrise*`` 前缀作为软件栈代称（语义对齐公开 Runtime API 形状），不含任何真实源码。
+   This page is a **framework sample** of the *Sunrise AI Inference GPU software
+   stack Runtime API reference*. It covers the unified error model, the
+   handle/context model, the stream async model, and function signatures with
+   parameter descriptions. Function names use the ``sunrise*`` prefix as a
+   stand-in for the software stack (shaped like a public Runtime API); no real
+   source code is included.
 
-通用约定
+General Conventions
 ----------------------------
-- **错误模型** ：所有 API 返回统一状态码（如 ``sunriseSuccess`` / ``sunriseError*``），调用方必须检查；
-- **Context / Handle** ：有状态资源通过 handle 管理，创建后复用、用完销毁；
-- **Stream** ：异步 API 绑定 stream，传输与计算可重叠；
-- **线程安全** ：同一 handle 跨流调用需调用方保证同步。
+
+- **Error model**: every API returns a unified status code
+  (e.g. ``sunriseSuccess`` / ``sunriseError*``); the caller must check it.
+- **Context / Handle**: stateful resources are managed through handles —
+  create, reuse, then destroy.
+- **Stream**: async APIs bind to a stream so transfer and compute can overlap.
+- **Thread safety**: cross-stream calls on the same handle must be synchronized
+  by the caller.
 
 Runtime API
 -------------------------------
-设备与上下文
+
+Device and Context
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. list-table::
    :header-rows: 1
 
    * - API
-     - 说明
+     - Description
    * - ``sunriseGetDeviceCount``
-     - 查询可用设备数量
+     - Query the number of available devices.
    * - ``sunriseDeviceGetAttribute``
-     - 查询设备属性（算力、内存等）
+     - Query device attributes (compute capability, memory, etc.).
    * - ``sunriseSetDevice``
-     - 设置当前设备
+     - Set the current device.
 
-内存管理
+Memory Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. list-table::
    :header-rows: 1
 
    * - API
-     - 说明
+     - Description
    * - ``sunriseMalloc``
-     - 设备内存分配
+     - Allocate device memory.
    * - ``sunriseFree``
-     - 设备内存释放
+     - Free device memory.
    * - ``sunriseMemcpy``
-     - 主机/设备间同步拷贝
+     - Synchronous host/device copy.
    * - ``sunriseMemcpyAsync``
-     - 基于 stream 的异步拷贝
+     - Stream-based asynchronous copy.
 
-执行与同步
+Execution and Synchronization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. list-table::
    :header-rows: 1
 
    * - API
-     - 说明
+     - Description
    * - ``sunriseLaunchKernel``
-     - 启动内核
+     - Launch a kernel.
    * - ``sunriseStreamSynchronize``
-     - 等待 stream 上任务完成
+     - Wait for tasks on a stream to finish.
    * - ``sunriseEventRecord`` / ``sunriseEventSynchronize``
-     - 事件记录与同步
+     - Event recording and synchronization.
 
-示例
+Example
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: c
-   :caption: 最小可运行调用（骨架）
+   :caption: Minimal runnable call (skeleton)
 
    float *d;
-   sunriseMalloc((void**)&d, N * sizeof(float));     // 检查返回值
-   myKernel<<<grid, block>>>(d);                     // 占位启动语法
+   sunriseMalloc((void**)&d, N * sizeof(float));     // check return value
+   myKernel<<<grid, block>>>(d);                     // placeholder launch syntax
    sunriseStreamSynchronize(0);
    sunriseFree(d);
 
-Driver API（节选）
+Driver API (excerpt)
 --------------------------------------
+
 .. list-table::
    :header-rows: 1
 
    * - API
-     - 说明
+     - Description
    * - ``sunriseDriverGetVersion``
-     - 查询驱动版本
+     - Query the driver version.
    * - ``sunriseModuleLoad``
-     - 加载编译产物模块
+     - Load a compiled module.
    * - ``sunriseModuleGetFunction``
-     - 获取内核函数句柄
+     - Get a kernel function handle.
 
 Math API
 ----------------------------
-- 数学函数族（占位）：向量运算、矩阵运算、随机数；
-- 具体条目由领域专家补全，遵循本页「通用约定」。
 
-词汇表
+- Math function families (placeholders): vector, matrix, random number.
+- Concrete entries are completed by domain experts, following the
+  *General Conventions* on this page.
+
+Glossary
 --------------------------
--**Handle**：有状态资源的引用，需创建/销毁；
--**Stream**：异步任务队列，决定执行与重叠顺序；
--**Context** ：设备上的执行上下文，隔离资源。
 
-相关
+- **Handle**: a reference to a stateful resource; must be created/destroyed.
+- **Stream**: an async task queue that orders execution and overlap.
+- **Context**: an execution context on the device that isolates resources.
+
+Related
 ------------------------
-- 编程模型：:doc:`/04_development/programming_guide`
-- 工具链：:doc:`/03_reference/tools`
+
+- Programming model: :doc:`/04_development/programming_guide`
+- Toolchain: :doc:`/03_reference/tools`

@@ -1,0 +1,42 @@
+@startuml hl02_templates
+skinparam dpi 160
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam maxMessageSize 240
+skinparam NoteBackgroundColor #FFF6D5
+skinparam NoteBorderColor #B58900
+autonumber "<b>[0]"
+
+title HL-02 统一文档规范与模板 · 六类模板从内容到发布的时序
+
+participant "技术写作组\n(Owner)" as TW
+participant "主责部门\n(研发/产品/运维/支持)" as OWN
+participant "测试质量部" as QA
+participant "管理层 PMO" as PMO
+
+TW -> OWN : 发起模板工作坊，分配六类模板主责
+note right of TW : 研发部：HLD/API/安装\n产品部：需求\n客户支持：FAQ\n运维：部署
+
+OWN --> TW : 提交模板内容草案
+TW -> TW : 编排格式 + 统一元数据\n(owner/version/status/评审记录)
+
+TW -> QA : 送评审（可测性 / 步骤可复现 / 接口对照）
+activate QA
+alt 评审通过
+  QA --> TW : 反馈通过
+else 评审不通过
+  QA --> TW : 反馈修改意见
+  TW -> OWN : 转达修改意见
+  OWN --> TW : 修订后重新提交
+end
+deactivate QA
+
+TW -> PMO : 提交模板审批
+activate PMO
+PMO --> TW : 批准发布
+deactivate PMO
+
+TW -> TW : 模板入库 + 元数据接入 CI 门禁
+note over TW : 验收：六类模板齐备、\n元数据必填且缺项即构建失败
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml hl01_unified_repo
+skinparam dpi 160
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam maxMessageSize 240
+skinparam NoteBackgroundColor #FFF6D5
+skinparam NoteBorderColor #B58900
+autonumber "<b>[0]"
+
+title HL-01 建立统一文档库 · 一次从选型到迁入的时序
+
+participant "技术写作组\n(Owner)" as TW
+participant "管理层 PMO" as PMO
+participant "运维 SRE" as SRE
+participant "研发部" as RD
+participant "产品部 / 测试部" as PDQA
+
+TW -> PMO : 提交平台选型与预算方案
+activate PMO
+PMO --> TW : 批准选型与预算
+deactivate PMO
+
+TW -> TW : 搭 Git 仓库 + Sphinx 骨架\n制定目录/命名规范 + 权限模型
+note right of TW : 交付：目录规范 v1.0、\n站点骨架、权限模型
+
+TW -> SRE : 提交托管需求（域名 / CI 环境 / SSO 分组）
+activate SRE
+SRE --> TW : 静态站可访问、SSO 鉴权生效
+deactivate SRE
+
+TW -> RD : 发布目录规范 + 接入指南
+TW -> PDQA : 发布目录规范 + 接入指南
+
+RD -> TW : 按规范迁入 HLD / API 文档源
+PDQA -> TW : 按规范组织各自领域文档目录
+
+note over TW : 验收：统一存储上线、\n旧文档可迁移接入、目录 lint 通过
+
+@enduml

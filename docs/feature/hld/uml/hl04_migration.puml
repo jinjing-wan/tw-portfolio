@@ -1,0 +1,40 @@
+@startuml hl04_migration
+skinparam dpi 160
+skinparam shadowing false
+skinparam defaultFontName "Microsoft YaHei"
+skinparam maxMessageSize 240
+skinparam NoteBackgroundColor #FFF6D5
+skinparam NoteBorderColor #B58900
+autonumber "<b>[0]"
+
+title HL-04 存量迁移与新人 onboarding · 从盘点到上手的时序
+
+participant "技术写作组\n(Owner)" as TW
+participant "各业务部门\n(研发/产品/测试/运维/售前/支持)" as DEPT
+participant "管理层 PMO" as PMO
+participant "HR 新人培训" as HR
+participant "新人" as NEW
+
+TW -> TW : 跑盘点脚本扫存量，产出清单
+TW -> DEPT : 征集本领域存量文档清单
+DEPT --> TW : 提交清单
+
+TW -> TW : 三级判定（留 / 改 / 弃）
+TW -> PMO : 提交迁移优先级与资源申请
+activate PMO
+PMO --> TW : 批准优先级
+deactivate PMO
+
+TW -> TW : pandoc 搬运 + 按模板重整 + 入库
+note right of TW : pandoc 只做格式搬运，\n语义由抽取链提供
+
+TW -> HR : 提供手册 / FAQ 作为 onboarding 素材
+activate HR
+HR -> HR : 定义 3-5 天 onboarding 路径与检查点
+HR --> NEW : 发布路径
+deactivate HR
+
+NEW -> TW : 按路径查阅文档上手
+note over NEW : 验收：新人 3-5 天可上手，\n减少口口相传依赖
+
+@enduml

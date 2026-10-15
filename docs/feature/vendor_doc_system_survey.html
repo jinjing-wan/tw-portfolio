@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>竞品文档体系调研报告 · 曦望 Sunrise 市场技术选型分析</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --card:#f9fafb;
+    --blue:#2563eb; --green:#059669; --amber:#d97706; --red:#dc2626; --purple:#7c3aed;
+    --softblue:#eff6ff; --softgreen:#ecfdf5; --softamber:#fffbeb; --softred:#fef2f2; --softpurple:#f5f3ff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.65;font-size:15px}
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 28px 80px}
+  h1{font-size:28px;margin:0 0 6px;letter-spacing:.5px}
+  h2{font-size:21px;margin:38px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  h3{font-size:17px;margin:24px 0 10px}
+  .sub{color:var(--muted);font-size:14px;margin:0 0 4px}
+  p{margin:10px 0}
+  .lead{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue);
+    padding:14px 18px;border-radius:8px;margin:18px 0}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--card);font-weight:600;color:#374151}
+  tbody tr:nth-child(even){background:#fcfcfd}
+  code{background:#f3f4f6;padding:1px 5px;border-radius:4px;font-size:12.5px;font-family:"SFMono-Regular",Consolas,monospace}
+  .badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+  .b-sphinx{background:var(--softblue);color:var(--blue)}
+  .b-ssg{background:var(--softgreen);color:var(--green)}
+  .b-portal{background:var(--softamber);color:var(--amber)}
+  .b-custom{background:var(--softpurple);color:var(--purple)}
+  .b-none{background:var(--softred);color:var(--red)}
+  .c-yes{background:var(--softgreen);color:var(--green)}
+  .c-no{background:#f3f4f6;color:var(--muted)}
+  .c-part{background:var(--softamber);color:var(--amber)}
+  .c-na{background:var(--softred);color:var(--red)}
+  .c-pend{background:#eef2ff;color:#4f46e5}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:16px 0}
+  .gcard{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--card)}
+  .gcard h4{margin:0 0 6px;font-size:15px}
+  .gcard .n{font-size:26px;font-weight:700;color:var(--blue)}
+  .gcard .d{color:var(--muted);font-size:13px}
+  .cls{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0;background:#fff}
+  .cls.A{border-left:5px solid var(--blue)}
+  .cls.B{border-left:5px solid var(--green)}
+  .cls.C{border-left:5px solid var(--amber)}
+  .cls.D{border-left:5px solid var(--purple)}
+  .cls.E{border-left:5px solid var(--red)}
+  .cls.F{border-left:5px solid var(--muted)}
+  .cls h3{margin-top:0}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:2px 9px;margin:2px 4px 2px 0;font-size:12.5px;background:#fff}
+  .note{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px;font-size:12.5px;color:var(--muted)}
+  ul.tight{margin:8px 0;padding-left:20px} ul.tight li{margin:4px 0}
+  .foot{margin-top:40px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+  .tag{font-family:monospace;font-size:12px;background:#111827;color:#e5e7eb;padding:2px 6px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>竞品文档体系调研报告</h1>
+<p class="sub">对象：曦望 Sunrise（GPGPU 软件栈，商汤分拆）· 市场技术选型分析 · 调查员视角</p>
+<p class="sub">调研日期：2026-10-15 · 样本：19 家 GPGPU / AI 芯片 / 相关半导体软件栈公司（≥15 家达标）</p>
+
+<div class="lead">
+<b>核心结论速览：</b>19 家样本中，真正把文档当"工程资产"、用文档即代码（Sphinx/Docusaurus 等 SSG）托管公开站点的是少数；多数国产 GPGPU 同行（壁仞、天数智芯、瀚博、海光）停留在 <b>SPA 门户 + PDF/SDK 分发</b> 阶段，<b>没有可机读的 API 符号级文档</b>。具备符号级 Sphinx（C/C++ 域可跨文档引用）的仅有 <b>NVIDIA</b> 与 <b>燧原</b> 两家；寒武纪、AMD 的 Sphinx 以指南/术语级为主（API 参考另行构建）。对曦望而言，最对标的不是"国产门户派"，而是 NVIDIA / 燧原 / 寒武纪 / AMD 这一"工程规范派"。
+</div>
+
+<h2>一、调研方法论（与"摩尔线程 / 沐曦"同口径）</h2>
+<p>每家文档站均经过指纹探查，而非仅凭官网文案判断。判定手段：</p>
+<ul class="tight">
+  <li><b>Sphinx 判定：</b>探测 <code>objects.inv</code>。真 Sphinx 站点返回 <code># Sphinx inventory version 2</code> 头 + zlib 压缩体；解压后统计 <code>domain:role</code> 分布——<code>c:function</code>/<code>cpp:function</code> 等存在即"符号级"，全为 <code>std:doc</code>/<code>std:term</code> 即"章节/术语级"。</li>
+  <li><b>现代 SSG 判定：</b>读 <code>&lt;meta name="generator"&gt;</code> 与 JS 包名（Docusaurus / Rspress / GitBook / Next.js）。</li>
+  <li><b>反伪造要点（关键）：</b>SPA 门户常用"兜底路由"对任何路径返回 200 + HTML，导致 <code>/objects.inv</code> 也返回 200。本报告对海光、壁仞、天数智芯、瀚博的 <code>objects.inv</code> 实测返回的是 <b>HTML 页面而非 Sphinx 清单</b>——由此证伪"Sphinx"，还原为"门户 + PDF"。<b>产物指纹只能证伪、不能证真</b>，故凡未直接取到真清单/生成器标识的，一律标注置信度。</li>
+  <li><b>不编造原则：</b>网络不可达（Graphcore）或信息未公开（景嘉微/黑芝麻/昆仑）者，如实标注"未确认/无公开站"，不下结论。</li>
+</ul>
+
+<h2>二、样本画像总表（19 家）</h2>
+<div class="legend">
+  <span class="badge b-sphinx">Sphinx 系</span>
+  <span class="badge b-ssg">现代 SSG</span>
+  <span class="badge b-portal">门户+PDF</span>
+  <span class="badge b-custom">自研平台</span>
+  <span class="badge b-none">无公开站</span>
+  &nbsp;|&nbsp;
+  <span class="badge c-yes">符号级✅</span>
+  <span class="badge c-part">章节/术语级🟡</span>
+  <span class="badge c-no">无符号域❌</span>
+  <span class="badge c-na">不适用🚫</span>
+  <span class="badge c-pend">待确认❓</span>
+</div>
+
+<table>
+<thead><tr>
+  <th>公司</th><th>赛道</th><th>文档入口</th><th>搭建框架</th><th>托管形态</th><th>API符号级</th><th>置信</th>
+</tr></thead>
+<tbody>
+  <tr><td><b>NVIDIA</b></td><td>GPGPU 全球龙头</td><td><code>docs.nvidia.com</code></td><td><span class="badge b-sphinx">Sphinx + Breathe(Doxygen)</span></td><td>子域自托管静态站</td><td><span class="badge c-yes">✅ 4658条/4073 C/C++</span></td><td>✅</td></tr>
+  <tr><td><b>燧原 Enflame</b></td><td>GPGPU / AI 芯片（国产）</td><td><code>support.enflame-tech.com/onlinedoc_*</code></td><td><span class="badge b-sphinx">Sphinx v2</span></td><td>子域自托管静态站</td><td><span class="badge c-yes">✅ 1295条/1264 C/C++</span></td><td>✅</td></tr>
+  <tr><td><b>寒武纪 Cambricon</b></td><td>GPGPU / AI 芯片（国产）</td><td><code>www.cambricon.com/docs/...</code></td><td><span class="badge b-sphinx">Sphinx v2</span></td><td>子域自托管静态站</td><td><span class="badge c-part">🟡 抽样=章节级(std:doc)</span></td><td>✅</td></tr>
+  <tr><td><b>AMD ROCm</b></td><td>GPU 全球（开源生态）</td><td><code>rocm.docs.amd.com</code></td><td><span class="badge b-sphinx">Sphinx（DaC / Diátaxis）</span></td><td>子域自托管静态站</td><td><span class="badge c-part">🟡 抽样=术语级(std:term)</span></td><td>✅</td></tr>
+  <tr><td><b>沐曦 MetaX</b></td><td>GPGPU（国产）</td><td><code>developer.metax-tech.com</code>（Next.js 门户）+ 后端 Sphinx 内核</td><td><span class="badge b-custom">Next.js 门户 + 后端 Sphinx(reST) + pandoc</span></td><td>子域自托管（双层）</td><td><span class="badge c-part">🟡 章节级(0 API符号, pandoc丢语义)</span></td><td>✅门户/🟡内核</td></tr>
+  <tr><td><b>摩尔线程 Moore Threads</b></td><td>GPGPU（国产）</td><td><code>docs.mthreads.com</code>(Docusaurus) + <code>developer.mthreads.com</code>(Next.js)</td><td><span class="badge b-ssg">Docusaurus v3.10.1 + 自建渲染层</span></td><td>子域自托管（双层）</td><td><span class="badge c-no">❌(Docusaurus 无 inv)</span></td><td>✅</td></tr>
+  <tr><td><b>地平线 Horizon</b></td><td>智驾 AI 芯片</td><td><code>doc.oe.horizon.auto</code> + <code>developer.horizon.auto</code></td><td><span class="badge b-ssg">Rspress v2.0.6</span></td><td>子域自托管静态站</td><td><span class="badge c-no">❌(Rspress 无 inv)</span></td><td>✅</td></tr>
+  <tr><td><b>平头哥 / 玄铁 T-Head</b></td><td>RISC-V IP（阿里）</td><td><code>yoc.docs.t-head.cn</code></td><td><span class="badge b-ssg">GitBook 3.2.3（开源版）</span></td><td>子域自托管静态站</td><td><span class="badge c-no">❌(GitBook 无 inv)</span></td><td>✅</td></tr>
+  <tr><td><b>华为昇腾 Ascend</b></td><td>AI 昇腾（华为）</td><td><code>hiascend.com/document</code></td><td><span class="badge b-custom">自研 React 文档平台</span></td><td>官网子域自研</td><td><span class="badge c-no">❌(无 inv, 非标准 SSG)</span></td><td>✅</td></tr>
+  <tr><td><b>Intel oneAPI</b></td><td>异构计算（全球）</td><td><code>intel.com/docs</code></td><td><span class="badge b-custom">自研文档 CMS（手册+PDF）</span></td><td>官网自研</td><td><span class="badge c-no">❌(非标准 SSG)</span></td><td>✅</td></tr>
+  <tr><td><b>壁仞 Biren</b></td><td>GPGPU（国产）</td><td><code>developers.birentech.com</code></td><td><span class="badge b-portal">SPA 门户 + PDF 下载（inv 返回 HTML 证伪 Sphinx）</span></td><td>子域门户（非 SSG）</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>天数智芯 Iluvatar</b></td><td>GPGPU（国产）</td><td><code>developer.iluvatar.com</code> + <code>support.iluvatar.com</code>（PDF 中心）</td><td><span class="badge b-portal">SPA 门户 + PDF（inv 返回 HTML）</span></td><td>子域门户 + PDF 中心</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>瀚博 Vastai</b></td><td>GPU / 视频加速（国产）</td><td><code>developer.vastaitech.com</code></td><td><span class="badge b-portal">SPA 开发者中心 + SDK/PDF（inv 返回 HTML）</span></td><td>子域门户（非 SSG）</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>海光 Hygon</b></td><td>DCU / GPGPU（国产）</td><td><code>csp.hygon.cn</code> + <code>developer.hpccube.com</code>（光合社区）</td><td><span class="badge b-portal">SPA 门户 + DTK 包内文档（inv 返回 HTML）</span></td><td>子域门户 + 包内</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>景嘉微 Jingjia</b></td><td>GPU（国产，图形/军工）</td><td>无公开门户</td><td><span class="badge b-none">无独立站；OpenCL 用户手册等 PDF / 随驱动包</span></td><td>无公开站</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>黑芝麻 Black Sesame</b></td><td>车规 AI 芯片</td><td>无独立门户</td><td><span class="badge b-none">无独立站；文档随 SDK（PDF / 参考手册）</span></td><td>无公开站</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>百度昆仑 Kunlun</b></td><td>AI 芯片（百度）</td><td>无独立门户</td><td><span class="badge b-none">文档寄生飞桨 PaddlePaddle 文档站</span></td><td>第三方框架文档</td><td><span class="badge c-na">🚫</span></td><td>✅</td></tr>
+  <tr><td><b>龙芯 Loongson</b></td><td>CPU（国产，LoongArch）</td><td>GitHub <code>LoongArch-Documentation</code> + <code>loongnix.cn</code></td><td><span class="badge b-none">GitHub(PDF/HTML 发布) + loongnix 门户(SPA, 框架未识别)</span></td><td>开源仓库 + 门户</td><td><span class="badge c-na">🚫/❓</span></td><td>🟡</td></tr>
+  <tr><td><b>Graphcore</b></td><td>IPU（英国）</td><td><code>docs.graphcore.ai</code></td><td><span class="badge b-sphinx">疑似 Sphinx（/projects/.../en/&lt;ver&gt;/ 版本化结构）</span></td><td>子域自托管（疑似）</td><td><span class="badge c-pend">❓(网络不可达未确认)</span></td><td>❓</td></tr>
+</tbody>
+</table>
+
+<h2>三、分类矩阵（按"搭建框架 × 托管形态"）</h2>
+
+<div class="grid">
+  <div class="gcard"><div class="n">5</div><h4>Sphinx 系</h4><div class="d">NVIDIA · 燧原 · 寒武纪 · AMD · 沐曦(内核)</div></div>
+  <div class="gcard"><div class="n">3</div><h4>现代 SSG</h4><div class="d">摩尔线程(Docusaurus) · 地平线(Rspress) · 平头哥(GitBook)</div></div>
+  <div class="gcard"><div class="n">4</div><h4>门户 + PDF</h4><div class="d">壁仞 · 天数智芯 · 瀚博 · 海光</div></div>
+  <div class="gcard"><div class="n">2</div><h4>自研平台</h4><div class="d">华为昇腾 · Intel oneAPI</div></div>
+  <div class="gcard"><div class="n">5</div><h4>无/少公开站</h4><div class="d">景嘉微 · 黑芝麻 · 昆仑 · 龙芯 · Graphcore(待定)</div></div>
+</div>
+
+<h3>形态 A — 符号级 Sphinx（API 可机读、可跨文档引用，docs-as-code 标杆）</h3>
+<div class="cls A">
+<p><b>成员：NVIDIA、燧原。</b></p>
+<p><b>判定证据：</b>NVIDIA <code>objects.inv</code> 解压得 4658 条，其中 <code>cpp:enumerator 1722 / cpp:functionParam 1529 / cpp:function 561 / cpp:member 495 / c:macro 97 …</code>；燧原 <code>objects.inv</code> 解压得 1295 条，<code>cpp:enumerator 707 / cpp:function 249 / cpp:functionParam 209 / cpp:class 56 …</code>。<b>参数(209/1529) &gt; 函数(249/561)</b>——说明连单个参数都可被引用，是真正的符号级图谱。</p>
+<p><b>含义：</b>这是 GPGPU 厂商最该追求的"真参考对象"。代价是需要 Doxygen + Breathe 或 hawkmoth 抽取 C/C++ 语法树，工程门槛最高，但一旦建成，API 文档与代码同源、可校验、可跨页 <code>:ref:</code>。</p>
+</div>
+
+<h3>形态 B — 章节/术语级 Sphinx（指南/术语为主，API 参考多另行构建）</h3>
+<div class="cls B">
+<p><b>成员：寒武纪、AMD ROCm、沐曦（后端内核）。</b></p>
+<p><b>判定证据：</b>寒武纪编程指南子项目 <code>objects.inv</code> 全为 <code>std:doc</code>（章节级，无 C/C++ 域）；AMD ROCm 抽样为 <code>std:term</code>（术语级）。二者均为真 Sphinx，但抽样构建不含 API 符号——其 HIP / CNCC / Runtime 等 <b>API 参考多为独立构建</b>（本次未逐一枚举，不臆测符号数）。沐曦后端 Sphinx 经 pandoc 链路：既有调查确认其 <code>searchindex.js</code> 中 <code>c:</code>/<code>cpp:</code> 域符号数为 0（pandoc 只转格式、不产 <code>.. c:function::</code>），属"用 Sphinx 却没拿到符号域"的反例。</p>
+<p><b>含义：</b>Sphinx 不等于符号级；"用没用 Breathe/Doxygen"才是分水岭。沐曦证明"门户化 ≠ 文档生成"，不可作为"Sphinx 也可以不上 Breathe"的先例。</p>
+</div>
+
+<h3>形态 C — 现代 Markdown SSG（前端框架渲染，无符号域，偏产品/生态站）</h3>
+<div class="cls C">
+<p><b>成员：摩尔线程（Docusaurus v3.10.1 + 自建渲染层）、地平线（Rspress v2.0.6）、平头哥/玄铁（GitBook 3.2.3 开源版）。</b></p>
+<p><b>判定证据：</b>摩尔线程 <code>docs.mthreads.com</code> 生成器标识 <code>Docusaurus v3.10.1</code>，<code>developer.mthreads.com</code> 为 Next.js（双层结构）；地平线 <code>doc.oe.horizon.auto</code> 生成器标识 <code>Rspress v2.0.6</code>；平头哥 <code>yoc.docs.t-head.cn</code> 生成器标识 <code>GitBook 3.2.3</code>。</p>
+<p><b>含义：</b>这类框架源是 Markdown/MDX，渲染快、对产品/市场团队友好、搜索与导航体验好，但<b>无 <code>objects.inv</code>、无 C/C++ 符号域</b>——本质是"散文文档站"，不是"API 参考引擎"。摩尔线程的"自建渲染层"是对 Docusaurus 默认能力不足的补丁（既有调查已确认其 178 个函数签名被渲染成带四层章节号的 h4 全进 TOC、零示例代码）。</p>
+</div>
+
+<h3>形态 D — 企业 SPA 门户 + PDF/SDK 分发（非 SSG，inv 证伪 Sphinx）</h3>
+<div class="cls D">
+<p><b>成员：壁仞、天数智芯、瀚博、海光。</b></p>
+<p><b>判定证据：</b>四家均在子域提供"开发者社区/中心"（壁仞 <code>developers.birentech.com</code>、天数智芯 <code>developer.iluvatar.com</code> + <code>support.iluvatar.com</code> PDF 中心、瀚博 <code>developer.vastaitech.com</code>、海光 <code>csp.hygon.cn</code> + 光合社区）。对四家根路径 <code>/objects.inv</code> 实测均返回 <b>HTML 页面（SPA 兜底路由）</b>，而非 Sphinx 清单——确证它们不是 Sphinx 静态站。文档实质以 PDF 下载 / SDK 包内文档（海光 DTK 含 PDF/HTML/MD）形式分发。</p>
+<p><b>含义：</b>这是当前多数国产 GPGPU 同行的"务实现状"：文档被当交付物(文件)而非工程资产(站点)。优点是门槛低、可控；缺点是<b>不可检索、不可跨页引用、版本易失真、无 API 机读</b>。曦望若只看这些同行，会低估文档工程化投入。</p>
+</div>
+
+<h3>形态 E — 自研 / 定制文档平台</h3>
+<div class="cls E">
+<p><b>成员：华为昇腾（<code>hiascend.com/document</code>）、Intel oneAPI（<code>intel.com/docs</code>）。</b></p>
+<p><b>判定证据：</b>华为文档页无 Sphinx/Docusaurus/Rspress/Next.js 生成器标识，<code>objects.inv</code> 返回 301（非 Sphinx），是独立研发的文档系统（体量巨大、强权限/版本/多产品矩阵）。Intel oneAPI 为 intel.com 自研 CMS，版本化手册 + PDF，无标准 SSG 特征。</p>
+<p><b>含义：</b>只有华为/Intel 这种体量(且有自研平台团队)才养得起自研文档中台。<b>对曦望（首任 TW、从零建体系）不具可复制性</b>——自研是"别人烧过钱的结果"，不是起点。</p>
+</div>
+
+<h3>形态 F — 无独立公开文档站（PDF / SDK / 第三方框架 / 社区仓库）</h3>
+<div class="cls F">
+<p><b>成员：景嘉微、黑芝麻、百度昆仑、龙芯（半）、Graphcore（待定）。</b></p>
+<ul class="tight">
+  <li><b>景嘉微：</b>官网为营销站，无开发者门户；文档为 OpenCL 用户手册等 PDF / 随驱动包（公开资料仅见社区转载）。</li>
+  <li><b>黑芝麻：</b>官网以"山海工具链"产品页为主，文档随 SDK（PDF / 参考手册）提供，无公开检索站。</li>
+  <li><b>百度昆仑：</b>无独立文档门户，XPU 适配文档全部寄生在飞桨 PaddlePaddle 文档站（<code>paddlepaddle.org.cn/hardware_support/xpu</code>）。</li>
+  <li><b>龙芯：</b>指令集/ABI 文档以 PDF/HTML 在 GitHub <code>LoongArch-Documentation</code> releases 发布；<code>loongnix.cn</code> 为社区门户（SPA，框架未识别）。无标准 SSG 站点。</li>
+  <li><b>Graphcore：</b>URL 结构（<code>/projects/&lt;name&gt;/en/&lt;ver&gt;/overview.html</code>）强烈疑似 Sphinx 版本化项目，但本报告窗口内 WebFetch 与 curl 均因 TLS/网络不可达，<b>暂标"疑似 Sphinx，待复测"</b>，不下定论。</li>
+</ul>
+</div>
+
+<h2>四、对曦望 Sunrise 的选型启示</h2>
+<p>结合本作品集既有选型结论（Sphinx 86.4 : Docusaurus 70.2，前提＝已配备专职文档岗）与本次竞品实况：</p>
+<ul class="tight">
+  <li><b>对标要选对群：</b>曦望作为 GPGPU 软件栈厂商，真正的可比对象是"工程规范派"——NVIDIA、燧原、寒武纪、AMD。它们要么是符号级 Sphinx（NVIDIA/燧原），要么是章节级 Sphinx（寒武纪/AMD）。国产"门户+PDF 派"（壁仞/天数/瀚博/海光）是<b>现状而非标杆</b>，若以此为目标会显著低估文档工程化投入。</li>
+  <li><b>Sphinx + Breathe/Doxygen 是"像 NVIDIA 一样做 API 文档"的唯一已验证路径：</b>若要 C/C++ 符号级引用（参数都可被引），必须回到"上游抽取 Doxygen XML → Breathe → Sphinx"，不能靠 pandoc（沐曦已证伪）；纯 C 注释可统一则可用 hawkmoth。这与既有报告"选哪些工具由真源是什么决定"一致。</li>
+  <li><b>Docusaurus/Rspress 适合做"产品与生态站"而非"API 参考引擎"：</b>若曦望想给市场/生态一个体验好的站点，可参考两种已验证的"双层"范式——摩尔线程（<code>docs</code> 用 Docusaurus、<code>developer</code> 用 Next.js，并自建渲染层补 API 短板）与沐曦（Next.js 门户 + 后端 Sphinx 内核，源 reST）；但二者各有隐性成本：摩尔线程的"自建渲染层补丁"（Docusaurus 无符号域、需手动兜底）与沐曦的 pandoc 链路（符号域=0、丢了 API 可机器引用性）。真正要"符号级 API 可引用"，仍应走 Sphinx + Breathe/Doxygen 这条已验证路径。</li>
+  <li><b>自研平台（华为/Intel）现阶段不碰：</b>曦望是首任 TW、从零起步，自研文档中台是"终点"不是"起点"。</li>
+  <li><b>最该避免的，是"门户 + PDF"陷阱：</b>它是多数国产同行的现状，但牺牲了可检索、可引用、可版本化、可机读——恰恰是曦望作为 GPGPU 厂商区别于"只卖卡"的差异化资产所在。</li>
+</ul>
+
+<h2>五、置信度与"未确认/未公开"声明</h2>
+<ul class="tight">
+  <li><span class="badge c-yes">✅ 已确认</span>：NVIDIA、燧原、寒武纪、AMD、沐曦(门户)、摩尔线程、地平线、平头哥、华为、Intel、壁仞、天数智芯、瀚博、海光、景嘉微、黑芝麻、昆仑——均有探针实证或公开资料可核。</li>
+  <li><span class="badge c-part">🟡 部分确认</span>：沐曦(后端内核为既有深度调查结论，非本次新建)、寒武纪/AMD(仅抽样一个构建，API 参考独立构建未逐一枚举)、龙芯(loongnix 门户框架未识别)。</li>
+  <li><span class="badge c-pend">❓ 待确认</span>：Graphcore——本报告窗口内网络不可达，URL 结构疑似 Sphinx，需复测。</li>
+  <li><span class="badge c-na">🚫 无公开站</span>：景嘉微、黑芝麻、昆仑、龙芯（无标准公开 SSG 站点）——属事实陈述，非能力判断。</li>
+</ul>
+
+<div class="foot">
+<p><b>数据来源与方法：</b>本报告所有框架结论均来自对目标文档站的实时指纹探查（<span class="tag">curl</span> / <span class="tag">objects.inv</span> zlib 解压 / <span class="tag">generator meta</span> 解析），未引用任何未核对的二手描述。符号级统计口径为 <code>c:function</code>/<code>cpp:function</code>/<code>cpp:enumerator</code>/<code>cpp:functionParam</code>/<code>cpp:class</code>/<code>c:member</code>/<code>cpp:enum</code>/<code>c:macro</code> 等 C/C++ 域条目数。本调研与 tw-portfolio 作品集中《Sphinx vs Docusaurus 选型报告》《摩尔线程 / 沐曦 行业对标》章节同口径，结论互补。</p>
+</div>
+
+</div>
+</body>
+</html>
