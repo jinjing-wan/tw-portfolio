@@ -68,6 +68,24 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 html_extra_path = ["../.nojekyll"]  # 部署 GitHub Pages 时自动带 .nojekyll
 
+# 左侧导航栏组成：
+#   about.html      站点简介（项目/版权）
+#   searchfield.html 搜索框
+#   localtoc.html   本页目录（当前页各级标题，长页如 API 参考可页内跳转）
+#   navigation.html 全站文档树（默认已含；保证「点进任意页左侧都有导航」）
+#   relations.html  上一页/下一页
+# 说明：alabaster 默认侧栏只有 navigation.html（全站树），不含 localtoc.html，
+# 导致 API 参考这类长页面左侧缺少页内目录；此处显式补齐。
+html_sidebars = {
+    "**": [
+        "about.html",
+        "searchfield.html",
+        "localtoc.html",
+        "navigation.html",
+        "relations.html",
+    ]
+}
+
 # 部署到 GitHub Pages 时填实际站点地址，例如：
 # html_baseurl = "https://yourname.github.io/tw-portfolio/"
 html_baseurl = ""
