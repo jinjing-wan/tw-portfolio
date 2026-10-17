@@ -1,71 +1,53 @@
-# API Reference (Doxygen + Breathe, auto-generated)
+# API Reference
 
-The interface content on this page is extracted from C/C++ header files by **Doxygen**
-into XML, then bridged into Sphinx by **Breathe** and rendered automatically — zero
-hand-written duplication. This is a production-grade Docs-as-Code practice for API
-documentation.
+The Sunrise AI inference GPU software stack is exposed through **three
+layered APIs**. The full API reference is maintained as a **separate Sphinx
+project** (`api-docs/`) and published under `/api`. This site cross-references
+its symbols by name through **Intersphinx**: write a function name such as
+{cpp:func}`mtxMalloc` and Sphinx resolves it to the API reference page
+automatically — no hand-written URLs, and the link follows renames.
 
-:::{admonition} Note
+```{mermaid}
+flowchart TD
+    APP[User Application]
+    OP[Operator Library<br/>mtxGemm / mtxConv2dForward / ...]
+    RT[Runtime Layer<br/>mtx* C API]
+    DR[Driver Layer<br/>mtxDrv* low-level]
+    HW[Sunrise AI GPU]
+    APP --> OP --> RT --> DR --> HW
+```
+
+## Driver Layer — `mtxDrv*`
+
+The lowest layer: driver initialization, device enumeration, context /
+module management, device-memory allocation. Rarely called directly by
+applications; the Runtime layer wraps it. Example entry point:
+{cpp:func}`mtxDrvInit`. Full list → <a href="../api/driver.html">Driver API</a>.
+
+## Runtime Layer — `mtx*`
+
+The primary surface most applications use: a C-style, handle-based API for
+device management, memory, streams, and events. Example symbols:
+{cpp:func}`mtxGetDeviceCount`, {cpp:func}`mtxMalloc`, {cpp:func}`mtxMemcpy`,
+{cpp:func}`mtxStreamCreate`, {cpp:func}`mtxEventRecord`. These are rendered
+from Doxygen XML by Breathe in the API reference project — zero hand-written
+duplication. Full list → <a href="../api/runtime.html">Runtime API</a>.
+
+## Operator Library — `mtxGemm` / `mtxConv2dForward` / …
+
+The highest layer: performance-critical NN primitives (matrix multiply,
+convolution, normalization, activation, pooling) built on the Runtime layer.
+Example: {cpp:func}`mtxGemm`, {cpp:func}`mtxConv2dForward`,
+{cpp:func}`mtxBatchNormForward`, {cpp:func}`mtxSoftmaxForward`. Each is a
+first-class, cross-referenceable symbol. Full list →
+<a href="../api/operator.html">Operator Library</a>.
+
+:::{admonition} Why a separate API-reference project?
 :class: note
 
-Only the **interface contract (function signatures + doc comments)** is shown here —
-no `.cpp` implementation source is included. The Doxygen XML product
-(`api-docs/doxyxml`) is committed with the repository, so the public site renders
-exactly the same content as the local build.
-:::
-
-## MTX Runtime Library (C-style, modeled after Moore Threads MUSA)
-
-`mtx` is a **C-style, non-class** runtime API: opaque handles (`mtxDevice_t` /
-`mtxStream_t` / `mtxEvent_t`), enumerations (`mtxError_t` / `mtxMemcpyKind` /
-`mtxDeviceAttr` / `mtxLimit`), and free functions that all return a status code —
-exactly how a vendor GPU runtime is typically exposed in C.
-
-### Device Management
-
-:::{doxygengroup} mtx_device
-:project: sunrise_api
-:members:
-:::
-
-### Memory Management
-
-:::{doxygengroup} mtx_memory
-:project: sunrise_api
-:members:
-:::
-
-### Stream Management
-
-:::{doxygengroup} mtx_stream
-:project: sunrise_api
-:members:
-:::
-
-### Event & Timing
-
-:::{doxygengroup} mtx_event
-:project: sunrise_api
-:members:
-:::
-
----
-
-## Sunrise Runtime Library (class-style, comparison example)
-
-`sunrise` is a **class-based C++ API**, included to demonstrate how the same
-pipeline simultaneously carries both API styles.
-
-:::{doxygenclass} sunrise::Device
-:project: sunrise_api
-:members: SetDevice, GetDeviceInfo
-:::
-
-:::{doxygenfunction} sunrise::GetDeviceCount
-:project: sunrise_api
-:::
-
-:::{doxygengroup} memory
-:project: sunrise_api
-:members:
+Splitting the API reference into its own Sphinx project lets the two sites
+share a **single source of truth** for symbols. A rename in the API project
+ripples to every cross-reference here automatically via `objects.inv` —
+exactly the symbol-level, cross-project linking that template-based static
+site generators (e.g. Docusaurus) lack out of the box.
 :::

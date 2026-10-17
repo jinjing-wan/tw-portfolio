@@ -8,19 +8,21 @@ copyright = "2026, 在 AI 协助下独立设计并搭建"
 # -- 构建配置 -------------------------------------------------
 # myst_parser          : 让 Sphinx 直接吃 Markdown（.md）源文件
 # sphinxcontrib.mermaid: Markdown 里的 ```mermaid 围栏渲染为 UML 图
-# breathe              : 桥接 Doxygen XML，将 C/C++ 接口契约渲染进主站
-#                        （Doxygen XML 仅含接口签名+注释、不含 .cpp 实现；
-#                          作为接口产物随仓库提交，CI 与本地一致渲染）
-extensions = ["myst_parser", "sphinxcontrib.mermaid", "breathe"]
+# sphinx.ext.intersphinx: 跨项目符号引用 —— 主站按名字引用「API 参考工程」
+#                        (api-docs/) 里定义的 C/C++ 符号，链接由 objects.inv
+#                        自动解析（Docusaurus 无此内置机制）。
+# 说明：API 参考已独立为 api-docs/ 子工程（Doxygen + Breathe 渲染），
+# 主站不再内置 Breathe，改由 intersphinx 跨项目引用其符号。
+extensions = ["myst_parser", "sphinxcontrib.mermaid", "sphinx.ext.intersphinx"]
 
-# --- Breathe（API 文档）：Doxygen XML 由本地 build_site.sh 生成并提交 ---
-# 仅含接口契约（函数签名 + 文档注释），不暴露任何 .cpp 实现源码。
-import os as _os
-_api_doxyxml = _os.path.join(_os.path.dirname(__file__), "..", "api-docs", "doxyxml")
-breathe_projects = {
-    "sunrise_api": _os.path.relpath(_api_doxyxml, _os.path.dirname(__file__))
+# --- Intersphinx：跨项目符号引用 ---
+# 主站文档里写 `:cpp:func:`mtxMalloc`` 这类领域引用时，Sphinx 去 api-docs/
+# 工程构建出的 objects.inv 查符号位置，自动生成可点击链接（跨项目、改名跟随）。
+# 元组第二项填「本地 inventory 路径」（构建时解析用），第一项填「线上 URL
+# 前缀」（生成的链接前缀，api-docs 部署在主站 /api 子路径）。
+intersphinx_mapping = {
+    "sunrise_api": ("api/", "../api-docs/_build/html/objects.inv"),
 }
-breathe_default_project = "sunrise_api"
 
 # 源文件后缀：新文档一律用 .md（可在 GitHub 上直接阅读并渲染 Mermaid）；
 # 保留 .rst 以兼容历史页面，两者可混写、互相引用。

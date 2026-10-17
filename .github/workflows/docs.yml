@@ -35,32 +35,39 @@ jobs:
       - name: 安装构建依赖
         run: pip install -r requirements.txt
 
-      - name: 构建站点
+      - name: 构建 API 参考子工程（api-docs）
+        # 独立 Sphinx 工程：Doxygen XML + Breathe 渲染 C/C++ 接口契约，
+        # 产出 objects.inv（供主站 intersphinx 跨项目引用）与静态 HTML。
+        run: sphinx-build -b html api-docs api-docs/_build/html
+
+      - name: 构建主站（docs）
+        # 主站通过 intersphinx 引用 api-docs 的符号：构建时读取
+        # ../api-docs/_build/html/objects.inv（相对 docs/conf.py），
+        # 生成的链接前缀为 api/（api-docs 部署在主站 /api 子路径）。
         # 说明：此处不加 -W，避免个别告警阻断发布。
         # 若要把「0 warning」设为硬门槛，改为：
         #   sphinx-build -b html -W --keep-going docs docs/_build/html
         run: sphinx-build -b html docs docs/_build/html
 
-      - name: 并入 API 文档子目录（可选，冗余备份）
-        # 主站左侧导航的「API 参考」节点已由主站 Sphinx + Breathe 从提交的
-        # api-docs/doxyxml 直接渲染（接口契约，不含 .cpp 实现），公开站已可见真实内容。
-        # 本步骤为可选冗余：若额外 git add -f api-docs/_build/html（预构建 HTML），
-        # 则再并入 /api 子目录；否则保持主站不变。
+      - name: 并入 API 文档到 /api 子路径
+        # 把 api-docs 的静态 HTML 复制到主站 /api，使主站里的跨项目符号
+        # 链接（api/xxx.html）在线上可跳转。objects.inv 也随之就位。
         run: |
-          if [ -d api-docs/_build/html ]; then
-            rm -rf docs/_build/html/api
-            cp -r api-docs/_build/html docs/_build/html/api
-            test -f docs/_build/html/.nojekyll || cp api-docs/_build/html/.nojekyll docs/_build/html/.nojekyll
-            echo "已并入 API 文档 -> /api"
-          else
-            echo "未检测到预构建的 API 文档，跳过（主站 in-tree API 节点已含真实内容）"
-          fi
+          rm -rf docs/_build/html/api
+          cp -r api-docs/_build/html docs/_build/html/api
+          test -f docs/_build/html/.nojekyll || cp api-docs/_build/html/.nojekyll docs/_build/html/.nojekyll
+          echo "已并入 API 文档 -> /api"
 
       - name: 校验产物
         run: |
           test -f docs/_build/html/index.html
           test -f docs/_build/html/.nojekyll
           echo "产物文件数：$(find docs/_build/html -type f | wc -l)"
+
+      - name: 内部泄露校验
+        # 防御性：解压公开站 objects.inv，确认没有内部版对象名混入
+        # （误构建内部工程 / 内部内容串入公开页 会在此被拦下，避免随 Pages 泄露）。
+        run: python scripts/check_internal_leak.py
 
       - name: 配置 Pages
         uses: actions/configure-pages@v6

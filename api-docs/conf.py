@@ -27,5 +27,17 @@ myst_enable_extensions = ["colon_fence", "deflist", "fieldlist", "substitution"]
 html_theme = "alabaster"
 exclude_patterns = ["_build", "doxyxml"]
 
+# 左侧导航栏：alabaster 默认只有 navigation.html（全站树），补 localtoc.html
+# 让长页面（如 Runtime 层）左侧也有「本页目录」，可页内跳转。
+html_sidebars = {
+    "**": [
+        "about.html",
+        "searchfield.html",
+        "localtoc.html",
+        "navigation.html",
+        "relations.html",
+    ]
+}
+
 # 部署到 GitHub Pages 时带上 .nojekyll，避免下划线前缀路径被当作私有文件
 html_extra_path = [".nojekyll"]

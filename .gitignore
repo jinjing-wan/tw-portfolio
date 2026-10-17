@@ -28,3 +28,7 @@ api-docs/_build/
 
 # 项目内部记忆/配置，不进公开仓
 .workbuddy/
+
+# Python 缓存（构建/脚本运行产生，不入版本库）
+__pycache__/
+*.pyc
