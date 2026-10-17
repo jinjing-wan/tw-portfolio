@@ -2,8 +2,8 @@
 # Doxygen(XML) -> Breathe -> Sphinx 的独立子工程，不依赖主站 docs/。
 
 project = "Sunrise API Reference (示例)"
-copyright = "2026, Wan Jinjing"
-author = "Wan Jinjing"
+copyright = "2026, 在 AI 协助下独立设计并搭建"
+author = "在 AI 协助下独立设计并搭建"
 
 extensions = [
     "myst_parser",   # 用 Markdown 写说明页

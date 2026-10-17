@@ -1,7 +1,7 @@
 # 曦望 Sunrise · AI 推理 GPU 软件栈开发者文档中心（作品集示例）
 
 > 定位：Docs-as-Code 技术文档体系设计示例（从 0 搭建的 AI 推理 GPU 软件栈开发者文档中心）。
-> 作者：万金晶（Wan Jinjing）
+> 作者：在 AI 协助下独立设计并搭建
 > 构建方式：Sphinx + Markdown（MyST）+ reStructuredText（Docs-as-Code 全流程，详见 `methodology.rst`）
 
 ---

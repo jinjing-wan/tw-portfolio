@@ -2,8 +2,8 @@
 # 曦望 Sunrise AI 推理 GPU 软件栈文档中心 —— Docs-as-Code 全流程
 
 project = "曦望 Sunrise AI 推理 GPU 软件栈文档中心"
-author = "Wan Jinjing"
-copyright = "2026, Wan Jinjing"
+author = "在 AI 协助下独立设计并搭建"
+copyright = "2026, 在 AI 协助下独立设计并搭建"
 
 # -- 构建配置 -------------------------------------------------
 # myst_parser          : 让 Sphinx 直接吃 Markdown（.md）源文件
