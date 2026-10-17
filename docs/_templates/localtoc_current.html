@@ -1,0 +1,7 @@
+{# 当前页目录（本页标题大纲）不在侧栏顶部单独展示，
+ # 而是由 sidebar_collapse.js 移动到「当前所在导航行」下方，
+ # 形成「点击的页面 → 其下展示本页目录」的上下文式布局。
+ # 此处先以隐藏容器渲染 {{ toc }}，供 JS 搬运。 #}
+{%- if display_toc %}
+<div id="localtoc-current" style="display:none">{{ toc }}</div>
+{%- endif %}

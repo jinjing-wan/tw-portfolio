@@ -27,6 +27,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 入门
 
 01_getting_started/getting_started
 01_getting_started/installation
@@ -36,6 +37,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 设计文档
 
 02_design_docs/hld_r1
 02_design_docs/hld_r2
@@ -49,6 +51,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 参考
 
 03_reference/api
 03_reference/libraries
@@ -59,6 +62,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 开发实践
 
 04_development/programming_guide
 04_development/performance_tuning
@@ -69,6 +73,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 发布与支持
 
 05_release_support/release_notes
 05_release_support/faq
@@ -78,6 +83,7 @@
 
 ```{toctree}
 :maxdepth: 1
+:caption: 文档发布流程
 
 06_release_pipeline/release_pipeline
 ```
@@ -86,6 +92,7 @@
 
 ```{toctree}
 :maxdepth: 3
+:caption: 功能（Feature）
 
 feature/company_doc_init
 feature/requirements_writing_guide
@@ -95,6 +102,7 @@ feature/requirements_writing_guide
 
 ```{toctree}
 :maxdepth: 1
+:caption: 变更请求（Change Request）
 
 changerequest/change_requests
 ```
@@ -103,6 +111,7 @@ changerequest/change_requests
 
 ```{toctree}
 :maxdepth: 1
+:caption: 关于本文档体系
 
 07_about/methodology
 ```

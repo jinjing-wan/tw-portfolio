@@ -1,0 +1,49 @@
+/* 左侧导航折叠：分组标题默认折叠，点击后才展开子页面列表
+ * 适配 alabaster 主题：每个 toctree 的 :caption: 渲染为 <p class="caption">，
+ * 紧邻的 <ul> 即该分组的子页面。默认隐藏 <ul>，点击 <p> 切换显隐。
+ */
+.sphinxsidebar p.caption {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-left: 1.1em;
+  margin-top: 0.9em;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #555;
+}
+.sphinxsidebar p.caption::before {
+  content: "\25B8"; /* ▸ */
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  color: #888;
+  transition: transform 0.15s ease;
+}
+.sphinxsidebar p.caption.open::before {
+  content: "\25BE"; /* ▾ */
+}
+.sphinxsidebar p.caption:hover {
+  color: #000;
+}
+/* 默认折叠：隐藏分组下的整个页面列表（含嵌套子页） */
+.sphinxsidebar p.caption + ul {
+  display: none;
+}
+.sphinxsidebar p.caption.open + ul {
+  display: block;
+}
+
+/* 搬到当前导航行下方的本页目录：视觉上略缩进、淡色，区分于子页面列表 */
+.sphinxsidebar ul.localtoc-moved {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+  margin-left: 0.4em;
+  padding-left: 0.8em;
+  border-left: 2px solid #e1e4e8;
+  font-size: 0.92em;
+}
+.sphinxsidebar ul.localtoc-moved > li > a {
+  color: #555;
+}
+

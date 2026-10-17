@@ -70,6 +70,11 @@ html_theme = "alabaster"
 html_static_path = ["_static"]
 html_extra_path = ["../.nojekyll"]  # 部署 GitHub Pages 时自动带 .nojekyll
 
+# 左侧导航折叠：分组标题（toctree :caption:）默认折叠，点击展开子页面。
+# 详见 docs/_static/sidebar_collapse.{css,js}。
+html_css_files = ["sidebar_collapse.css"]
+html_js_files = ["sidebar_collapse.js"]
+
 # 左侧导航栏组成：
 #   about.html      站点简介（项目/版权）
 #   searchfield.html 搜索框
@@ -82,7 +87,7 @@ html_sidebars = {
     "**": [
         "about.html",
         "searchfield.html",
-        "localtoc.html",
+        "localtoc_current.html",
         "navigation.html",
         "relations.html",
     ]
