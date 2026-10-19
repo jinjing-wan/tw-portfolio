@@ -1,4 +1,4 @@
-工具链（Tools，曦望 Sunrise 软件栈示例）
+工具链（Tools，示例 软件栈示例）
 ==============================================
 
 .. warning::
@@ -7,9 +7,9 @@
 
 工具清单（占位）
 ------------------------------------
-- **编译器** ：将源文件编译为设备可执行代码（对标 MUSA mcc / CUDA nvcc）；
+- **编译器** ：将源文件编译为设备可执行代码（对标 GXPU gxcc / CUDA nvcc）；
 - **运行时编译** ：运行时编译内核（对标 NVRTC）；
-- **迁移工具** ：将 CUDA 代码迁移到自有架构（对标 MUSA Musify），详见 :doc:`/04_development/porting_guide`；
+- **迁移工具** ：将 CUDA 代码迁移到自有架构（对标 GXPU GXify），详见 :doc:`/04_development/porting_guide`；
 - **性能分析** ：内核级耗时、带宽、 occupancy 分析（对标 Nsight / Moore Perf）；
 - **调试** ：设备端内核调试（对标 CUDA-GDB）。
 
@@ -28,8 +28,8 @@
 ------------------------------------------
 .. code-block:: bash
 
-   <命令占位：如 mcc kernel.musa -o kernel>   # 编译
-   <命令占位：如 mcc --version>               # 版本
+   <命令占位：如 gxcc kernel.gx -o kernel>   # 编译
+   <命令占位：如 gxcc --version>               # 版本
 
 相关
 ------------------------

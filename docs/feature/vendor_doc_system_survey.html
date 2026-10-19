@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>竞品文档体系调研报告 · 曦望 Sunrise 市场技术选型分析</title>
+<title>竞品文档体系调研报告 · 示例 市场技术选型分析</title>
 <style>
   :root{
     --bg:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --card:#f9fafb;
@@ -62,11 +62,11 @@
 <div class="wrap">
 
 <h1>竞品文档体系调研报告</h1>
-<p class="sub">对象：曦望 Sunrise（GPGPU 软件栈，商汤分拆）· 市场技术选型分析 · 调查员视角</p>
+<p class="sub">对象：示例（GPGPU 软件栈，商汤分拆）· 市场技术选型分析 · 调查员视角</p>
 <p class="sub">调研日期：2026-10-15 · 样本：19 家 GPGPU / AI 芯片 / 相关半导体软件栈公司（≥15 家达标）</p>
 
 <div class="lead">
-<b>核心结论速览：</b>19 家样本中，真正把文档当"工程资产"、用文档即代码（Sphinx/Docusaurus 等 SSG）托管公开站点的是少数；多数国产 GPGPU 同行（壁仞、天数智芯、瀚博、海光）停留在 <b>SPA 门户 + PDF/SDK 分发</b> 阶段，<b>没有可机读的 API 符号级文档</b>。具备符号级 Sphinx（C/C++ 域可跨文档引用）的仅有 <b>NVIDIA</b> 与 <b>燧原</b> 两家；寒武纪、AMD 的 Sphinx 以指南/术语级为主（API 参考另行构建）。对曦望而言，最对标的不是"国产门户派"，而是 NVIDIA / 燧原 / 寒武纪 / AMD 这一"工程规范派"。
+<b>核心结论速览：</b>19 家样本中，真正把文档当"工程资产"、用文档即代码（Sphinx/Docusaurus 等 SSG）托管公开站点的是少数；多数国产 GPGPU 同行（壁仞、天数智芯、瀚博、海光）停留在 <b>SPA 门户 + PDF/SDK 分发</b> 阶段，<b>没有可机读的 API 符号级文档</b>。具备符号级 Sphinx（C/C++ 域可跨文档引用）的仅有 <b>NVIDIA</b> 与 <b>燧原</b> 两家；寒武纪、AMD 的 Sphinx 以指南/术语级为主（API 参考另行构建）。对示例而言，最对标的不是"国产门户派"，而是 NVIDIA / 燧原 / 寒武纪 / AMD 这一"工程规范派"。
 </div>
 
 <h2>一、调研方法论（与"摩尔线程 / 沐曦"同口径）</h2>
@@ -155,14 +155,14 @@
 <div class="cls D">
 <p><b>成员：壁仞、天数智芯、瀚博、海光。</b></p>
 <p><b>判定证据：</b>四家均在子域提供"开发者社区/中心"（壁仞 <code>developers.birentech.com</code>、天数智芯 <code>developer.iluvatar.com</code> + <code>support.iluvatar.com</code> PDF 中心、瀚博 <code>developer.vastaitech.com</code>、海光 <code>csp.hygon.cn</code> + 光合社区）。对四家根路径 <code>/objects.inv</code> 实测均返回 <b>HTML 页面（SPA 兜底路由）</b>，而非 Sphinx 清单——确证它们不是 Sphinx 静态站。文档实质以 PDF 下载 / SDK 包内文档（海光 DTK 含 PDF/HTML/MD）形式分发。</p>
-<p><b>含义：</b>这是当前多数国产 GPGPU 同行的"务实现状"：文档被当交付物(文件)而非工程资产(站点)。优点是门槛低、可控；缺点是<b>不可检索、不可跨页引用、版本易失真、无 API 机读</b>。曦望若只看这些同行，会低估文档工程化投入。</p>
+<p><b>含义：</b>这是当前多数国产 GPGPU 同行的"务实现状"：文档被当交付物(文件)而非工程资产(站点)。优点是门槛低、可控；缺点是<b>不可检索、不可跨页引用、版本易失真、无 API 机读</b>。示例若只看这些同行，会低估文档工程化投入。</p>
 </div>
 
 <h3>形态 E — 自研 / 定制文档平台</h3>
 <div class="cls E">
 <p><b>成员：华为昇腾（<code>hiascend.com/document</code>）、Intel oneAPI（<code>intel.com/docs</code>）。</b></p>
 <p><b>判定证据：</b>华为文档页无 Sphinx/Docusaurus/Rspress/Next.js 生成器标识，<code>objects.inv</code> 返回 301（非 Sphinx），是独立研发的文档系统（体量巨大、强权限/版本/多产品矩阵）。Intel oneAPI 为 intel.com 自研 CMS，版本化手册 + PDF，无标准 SSG 特征。</p>
-<p><b>含义：</b>只有华为/Intel 这种体量(且有自研平台团队)才养得起自研文档中台。<b>对曦望（首任 TW、从零建体系）不具可复制性</b>——自研是"别人烧过钱的结果"，不是起点。</p>
+<p><b>含义：</b>只有华为/Intel 这种体量(且有自研平台团队)才养得起自研文档中台。<b>对示例（首任 TW、从零建体系）不具可复制性</b>——自研是"别人烧过钱的结果"，不是起点。</p>
 </div>
 
 <h3>形态 F — 无独立公开文档站（PDF / SDK / 第三方框架 / 社区仓库）</h3>
@@ -177,14 +177,14 @@
 </ul>
 </div>
 
-<h2>四、对曦望 Sunrise 的选型启示</h2>
+<h2>四、对示例 的选型启示</h2>
 <p>结合本作品集既有选型结论（Sphinx 86.4 : Docusaurus 70.2，前提＝已配备专职文档岗）与本次竞品实况：</p>
 <ul class="tight">
-  <li><b>对标要选对群：</b>曦望作为 GPGPU 软件栈厂商，真正的可比对象是"工程规范派"——NVIDIA、燧原、寒武纪、AMD。它们要么是符号级 Sphinx（NVIDIA/燧原），要么是章节级 Sphinx（寒武纪/AMD）。国产"门户+PDF 派"（壁仞/天数/瀚博/海光）是<b>现状而非标杆</b>，若以此为目标会显著低估文档工程化投入。</li>
+  <li><b>对标要选对群：</b>示例作为 GPGPU 软件栈厂商，真正的可比对象是"工程规范派"——NVIDIA、燧原、寒武纪、AMD。它们要么是符号级 Sphinx（NVIDIA/燧原），要么是章节级 Sphinx（寒武纪/AMD）。国产"门户+PDF 派"（壁仞/天数/瀚博/海光）是<b>现状而非标杆</b>，若以此为目标会显著低估文档工程化投入。</li>
   <li><b>Sphinx + Breathe/Doxygen 是"像 NVIDIA 一样做 API 文档"的唯一已验证路径：</b>若要 C/C++ 符号级引用（参数都可被引），必须回到"上游抽取 Doxygen XML → Breathe → Sphinx"，不能靠 pandoc（沐曦已证伪）；纯 C 注释可统一则可用 hawkmoth。这与既有报告"选哪些工具由真源是什么决定"一致。</li>
-  <li><b>Docusaurus/Rspress 适合做"产品与生态站"而非"API 参考引擎"：</b>若曦望想给市场/生态一个体验好的站点，可参考两种已验证的"双层"范式——摩尔线程（<code>docs</code> 用 Docusaurus、<code>developer</code> 用 Next.js，并自建渲染层补 API 短板）与沐曦（Next.js 门户 + 后端 Sphinx 内核，源 reST）；但二者各有隐性成本：摩尔线程的"自建渲染层补丁"（Docusaurus 无符号域、需手动兜底）与沐曦的 pandoc 链路（符号域=0、丢了 API 可机器引用性）。真正要"符号级 API 可引用"，仍应走 Sphinx + Breathe/Doxygen 这条已验证路径。</li>
-  <li><b>自研平台（华为/Intel）现阶段不碰：</b>曦望是首任 TW、从零起步，自研文档中台是"终点"不是"起点"。</li>
-  <li><b>最该避免的，是"门户 + PDF"陷阱：</b>它是多数国产同行的现状，但牺牲了可检索、可引用、可版本化、可机读——恰恰是曦望作为 GPGPU 厂商区别于"只卖卡"的差异化资产所在。</li>
+  <li><b>Docusaurus/Rspress 适合做"产品与生态站"而非"API 参考引擎"：</b>若示例想给市场/生态一个体验好的站点，可参考两种已验证的"双层"范式——摩尔线程（<code>docs</code> 用 Docusaurus、<code>developer</code> 用 Next.js，并自建渲染层补 API 短板）与沐曦（Next.js 门户 + 后端 Sphinx 内核，源 reST）；但二者各有隐性成本：摩尔线程的"自建渲染层补丁"（Docusaurus 无符号域、需手动兜底）与沐曦的 pandoc 链路（符号域=0、丢了 API 可机器引用性）。真正要"符号级 API 可引用"，仍应走 Sphinx + Breathe/Doxygen 这条已验证路径。</li>
+  <li><b>自研平台（华为/Intel）现阶段不碰：</b>示例是首任 TW、从零起步，自研文档中台是"终点"不是"起点"。</li>
+  <li><b>最该避免的，是"门户 + PDF"陷阱：</b>它是多数国产同行的现状，但牺牲了可检索、可引用、可版本化、可机读——恰恰是示例作为 GPGPU 厂商区别于"只卖卡"的差异化资产所在。</li>
 </ul>
 
 <h2>五、置信度与"未确认/未公开"声明</h2>

@@ -1,8 +1,8 @@
-移植指南（Porting Guide，曦望 Sunrise 软件栈示例）
+移植指南（Porting Guide，示例 软件栈示例）
 ========================================================
 
 .. note::
-   本页为 **文档体系骨架** ，迁移方案借鉴摩尔线程 **Musify** 的「CUDA → 自有架构」思路：
+   本页为 **文档体系骨架** ，迁移方案借鉴示例 GPU 厂商 **GXify** 的「CUDA → 自有架构」思路：
    结构、检查清单与评审流程由本文档体系负责，迁移映射表与技术差异由领域专家补充。
 
 目标读者
@@ -27,13 +27,13 @@ API 映射表（骨架，占位）
      - 本架构 API（目标）
      - 备注
    * - ``cudaMalloc``
-     - ``musaMalloc``
+     - ``gxMalloc``
      - 语义一致
    * - ``cudaMemcpy``
-     - ``musaMemcpy``
+     - ``gxMemcpy``
      - 注意方向参数
    * - ``cudaLaunchKernel``
-     - ``musaLaunchKernel``
+     - ``gxLaunchKernel``
      - 启动语法可能不同
    * - ``<<<>>>`` 启动语法
      - 本架构启动语法

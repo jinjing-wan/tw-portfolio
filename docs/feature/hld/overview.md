@@ -18,7 +18,7 @@
 | **项目** | 公司文档初始化项目（Company Documentation Initialization） |
 | **文档类型** | High Level Design (HLD) — 项目级 / Epic 级 |
 | **版本** | v1.0（草稿，待评审） |
-| **Owner** | 技术写作组（示例邮箱 `doc-team@sunrise.example`） |
+| **Owner** | 技术写作组（示例邮箱 `doc-team@gx.example`） |
 | **上游需求** | 立项报告 [company_doc_init.rst](../company_doc_init.rst) · 规格 [company_doc_init_spec.rst](../company_doc_init_spec.rst) |
 
 ## 2. 概述

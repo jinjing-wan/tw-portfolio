@@ -17,7 +17,7 @@
 | Testable | 可测试 — 六类模板齐备；owner/version/status/评审记录元数据必填且进 CI 门禁 |
 | 对应底层级需求 | LL-004（需求） / LL-005（设计 HLD） / LL-006（API） / LL-007（手册） / LL-008（安装部署） / LL-009（发布 FAQ 与元数据） |
 
-**Owner**: 技术写作组（示例邮箱 `doc-team@sunrise.example`）
+**Owner**: 技术写作组（示例邮箱 `doc-team@gx.example`）
 
 ## 2. Purpose
 
@@ -147,10 +147,10 @@ if __name__ == "__main__":
 
 ```yaml
 ---
-owner: doc-team@sunrise.example
+owner: doc-team@gx.example
 version: v1.0
 status: draft
-review: tech-lead@sunrise.example, test-lead@sunrise.example
+review: tech-lead@gx.example, test-lead@gx.example
 ---
 ```
 

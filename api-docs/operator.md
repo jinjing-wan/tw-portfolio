@@ -3,12 +3,12 @@
 The Operator Library sits on top of the [Runtime layer](runtime.md) and provides
 performance-critical neural-network primitives. Each operator is documented
 with the Sphinx **C++ domain**, which registers it as a first-class,
-cross-referenceable symbol (try referencing `mtxGemm` from another page —
+cross-referenceable symbol (try referencing `gxGemm` from another page —
 Sphinx resolves it by name via `objects.inv`).
 
 ## Matrix Multiplication
 
-:::{cpp:function} mtxStatus_t mtxGemm(mtxHandle_t handle, mtxOperation_t transa, mtxOperation_t transb, int m, int n, int k, const void *alpha, const void *A, int lda, const void *B, int ldb, const void *beta, void *C, int ldc)
+:::{cpp:function} gxStatus_t gxGemm(gxHandle_t handle, gxOperation_t transa, gxOperation_t transb, int m, int n, int k, const void *alpha, const void *A, int lda, const void *B, int ldb, const void *beta, void *C, int ldc)
 Perform matrix-matrix multiplication `C = alpha * op(A) * op(B) + beta * C`.
 
 * `handle` — operator library handle (created with the Runtime layer).
@@ -21,7 +21,7 @@ Perform matrix-matrix multiplication `C = alpha * op(A) * op(B) + beta * C`.
 
 ## Convolution (forward)
 
-:::{cpp:function} mtxStatus_t mtxConv2dForward(mtxHandle_t handle, const mtxConvDesc_t desc, const void *alpha, const void *x, const void *w, const void *beta, void *y)
+:::{cpp:function} gxStatus_t gxConv2dForward(gxHandle_t handle, const gxConvDesc_t desc, const void *alpha, const void *x, const void *w, const void *beta, void *y)
 Compute the forward 2-D convolution `y = alpha * conv(x, w) + beta * y`.
 
 * `desc` — convolution descriptor (padding, stride, dilation, groups).
@@ -30,18 +30,18 @@ Compute the forward 2-D convolution `y = alpha * conv(x, w) + beta * y`.
 
 ## Batch Normalization (forward)
 
-:::{cpp:function} mtxStatus_t mtxBatchNormForward(mtxHandle_t handle, mtxBatchNormMode_t mode, const void *alpha, const void *beta, const void *x, const void *scale, const void *bias, const void *mean, const void *variance, double epsilon, void *y)
+:::{cpp:function} gxStatus_t gxBatchNormForward(gxHandle_t handle, gxBatchNormMode_t mode, const void *alpha, const void *beta, const void *x, const void *scale, const void *bias, const void *mean, const void *variance, double epsilon, void *y)
 Apply batch normalization in the forward direction.
 :::
 
 ## Softmax (forward)
 
-:::{cpp:function} mtxStatus_t mtxSoftmaxForward(mtxHandle_t handle, mtxSoftmaxAlgorithm_t algorithm, mtxSoftmaxMode_t mode, const void *alpha, const void *x, const void *beta, void *y)
+:::{cpp:function} gxStatus_t gxSoftmaxForward(gxHandle_t handle, gxSoftmaxAlgorithm_t algorithm, gxSoftmaxMode_t mode, const void *alpha, const void *x, const void *beta, void *y)
 Apply the softmax function along the given dimension.
 :::
 
 ## Pooling (forward)
 
-:::{cpp:function} mtxStatus_t mtxPoolingForward(mtxHandle_t handle, const mtxPoolingDesc_t desc, const void *alpha, const void *x, const void *beta, void *y)
+:::{cpp:function} gxStatus_t gxPoolingForward(gxHandle_t handle, const gxPoolingDesc_t desc, const void *alpha, const void *x, const void *beta, void *y)
 Apply pooling (max / average) in the forward direction.
 :::

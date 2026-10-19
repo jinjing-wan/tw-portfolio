@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="dir_97a23fb29dc0861945686da251aaaffe" kind="dir">
-    <compoundname>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx</compoundname>
+    <compoundname>E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx</compoundname>
     <innerfile refid="device_8h">device.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/"/>
+    <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/"/>
   </compounddef>
 </doxygen>

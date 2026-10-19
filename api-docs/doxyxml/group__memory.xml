@@ -6,27 +6,27 @@
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="group__memory_1gad3390bee9da3ba6de0e2afee49c56874" prot="public" static="no">
         <type>void *</type>
-        <definition>using sunrise::DevicePtr = void*</definition>
+        <definition>using gx::DevicePtr = void*</definition>
         <argsstring></argsstring>
         <name>DevicePtr</name>
-        <qualifiedname>sunrise::DevicePtr</qualifiedname>
+        <qualifiedname>gx::DevicePtr</qualifiedname>
         <briefdescription>
-<para><ref refid="classsunrise_1_1_device" kindref="compound">Device</ref> memory handle (opaque pointer). </para>
+<para><ref refid="classgx_1_1_device" kindref="compound">Device</ref> memory handle (opaque pointer). </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" line="26" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" bodystart="26" bodyend="-1"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" line="26" column="1" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" bodystart="26" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
       <memberdef kind="function" id="group__memory_1ga14c8e4c12fc0074151e8651f9d6b98ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Status</type>
-        <definition>Status sunrise::Malloc</definition>
+        <definition>Status gx::Malloc</definition>
         <argsstring>(DevicePtr *ptr, std::size_t size)</argsstring>
         <name>Malloc</name>
-        <qualifiedname>sunrise::Malloc</qualifiedname>
+        <qualifiedname>gx::Malloc</qualifiedname>
         <param>
           <type>DevicePtr *</type>
           <declname>ptr</declname>
@@ -56,20 +56,20 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Out-of-memory returns ErrorOutOfMemory. </para>
+<simplesect kind="return"><para><ref refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Out-of-memory returns ErrorOutOfMemory. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" line="32" column="8" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" declline="32" declcolumn="8"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" line="32" column="8" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" declline="32" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="group__memory_1ga7401e88b790fb90637d59f8ddd19b209" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Status</type>
-        <definition>Status sunrise::Free</definition>
+        <definition>Status gx::Free</definition>
         <argsstring>(DevicePtr ptr)</argsstring>
         <name>Free</name>
-        <qualifiedname>sunrise::Free</qualifiedname>
+        <qualifiedname>gx::Free</qualifiedname>
         <param>
           <type>DevicePtr</type>
           <declname>ptr</declname>
@@ -87,20 +87,20 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Success on success. </para>
+<simplesect kind="return"><para><ref refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Success on success. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" line="37" column="8" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" declline="37" declcolumn="8"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" line="37" column="8" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" declline="37" declcolumn="8"/>
       </memberdef>
       <memberdef kind="function" id="group__memory_1gadd5962affd5135bb1bb004a0edac612f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Status</type>
-        <definition>Status sunrise::Memcpy</definition>
+        <definition>Status gx::Memcpy</definition>
         <argsstring>(DevicePtr dst, const void *src, std::size_t size)</argsstring>
         <name>Memcpy</name>
-        <qualifiedname>sunrise::Memcpy</qualifiedname>
+        <qualifiedname>gx::Memcpy</qualifiedname>
         <param>
           <type>DevicePtr</type>
           <declname>dst</declname>
@@ -142,20 +142,20 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Either address null returns ErrorInvalidArg. </para>
+<simplesect kind="return"><para><ref refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> Either address null returns ErrorInvalidArg. </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" line="44" column="8" declfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/memory.h" declline="44" declcolumn="8"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" line="44" column="8" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/memory.h" declline="44" declcolumn="8"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Allocate, free, and copy device memory. </para>
     </briefdescription>
     <detaileddescription>
-<para>Every memory API returns a <ref refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> and the caller must check it. A device pointer is an opaque handle that may only be created / released by this group. </para>
+<para>Every memory API returns a <ref refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83" kindref="member">Status</ref> and the caller must check it. A device pointer is an opaque handle that may only be created / released by this group. </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

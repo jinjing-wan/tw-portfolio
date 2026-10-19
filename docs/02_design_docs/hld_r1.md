@@ -1,7 +1,7 @@
-# HLD Release 1.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 基础软件栈
+# HLD Release 1.0 — 示例 AI 推理 GPU 软件栈 · 基础软件栈
 
 :::{note}
-本文为 **曦望 Sunrise AI 推理 GPU 软件栈（基础软件栈层）HLD 框架样例（Release 1.0）**：
+本文为 **示例 AI 推理 GPU 软件栈（基础软件栈层）HLD 框架样例（Release 1.0）**：
 给出分层边界、层间接口契约与设计基线。
 分层职责与接口契约由本文档体系定义；**各层内部具体技术机制由领域专家贡献，本文不展开 GPU 底层实现**。
 后续版本见 [R2.0](hld_r2.md) / [R3.0](hld_r3.md)。
@@ -13,7 +13,7 @@
 
 | 项 | 内容 |
 | --- | --- |
-| **项目** | 曦望 Sunrise AI 推理 GPU 软件栈 |
+| **项目** | 示例 AI 推理 GPU 软件栈 |
 | **文档类型** | High Level Design (HLD) |
 | **版本** | v1.0（草稿，待三方评审） |
 | **评审人** | 领域技术主管 / 集成测试主管 / 关联模块 Owner |
@@ -75,10 +75,10 @@ Runtime 层对「管理操作」采用 **生产者-消费者任务模型** 解�
 
 ```cpp
 std::queue<Task> task_queue;
-std::mutex        queue_mtx;
+std::mutex        queue_gx;
 
 void producer_push(const Task& t) {
-    std::lock_guard<std::mutex> lk(queue_mtx);  // 多生产者 push 加锁
+    std::lock_guard<std::mutex> lk(queue_gx);  // 多生产者 push 加锁
     task_queue.push(t);
 }
 
@@ -86,7 +86,7 @@ void consumer_loop() {
     while (running) {
         Task t;
         {
-            std::lock_guard<std::mutex> lk(queue_mtx);
+            std::lock_guard<std::mutex> lk(queue_gx);
             if (task_queue.empty()) { /* 等待/超时 */ continue; }
             t = task_queue.front(); task_queue.pop();
         }

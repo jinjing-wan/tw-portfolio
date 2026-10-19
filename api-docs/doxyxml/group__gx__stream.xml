@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__gx__stream" kind="group">
+    <compoundname>gx_stream</compoundname>
+    <title>Stream Management</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxStreamCreate</definition>
+        <argsstring>(gxStream_t *stream)</argsstring>
+        <name>gxStreamCreate</name>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref> *</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Create an asynchronous stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the new stream handle; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="226" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="226" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxStreamDestroy</definition>
+        <argsstring>(gxStream_t stream)</argsstring>
+        <name>gxStreamDestroy</name>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Destroy a stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream handle; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="231" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="231" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxStreamSynchronize</definition>
+        <argsstring>(gxStream_t stream)</argsstring>
+        <name>gxStreamSynchronize</name>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Block the host until every operation in the stream completes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="236" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="236" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxStreamQuery</definition>
+        <argsstring>(gxStream_t stream)</argsstring>
+        <name>gxStreamQuery</name>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Test whether a stream has completed (non-blocking). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_ERROR_NOT_READY if still running, else GX_SUCCESS. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="241" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="241" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxStreamWaitEvent</definition>
+        <argsstring>(gxStream_t stream, gxEvent_t event, unsigned int flags)</argsstring>
+        <name>gxStreamWaitEvent</name>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Make a stream wait on an event before proceeding. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream that should wait. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event to wait for. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reserved; pass 0. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="248" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="248" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Create and drive asynchronous execution streams. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

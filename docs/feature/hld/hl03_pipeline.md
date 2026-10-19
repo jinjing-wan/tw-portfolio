@@ -17,7 +17,7 @@
 | Testable | 可测试 — CI 门禁能拦下死链与元数据缺失；回滚演练成功一次 |
 | 对应底层级需求 | LL-010（子特性 HL-03-A 入版本库 / B PR 三方评审 / C CI 构建 / D 静态站发布 / E 双版本对比 / F 追溯回滚） |
 
-**Owner**: 技术写作组（示例邮箱 `doc-team@sunrise.example`）
+**Owner**: 技术写作组（示例邮箱 `doc-team@gx.example`）
 
 ## 2. Purpose
 

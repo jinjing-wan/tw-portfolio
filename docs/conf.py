@@ -1,7 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
-# 曦望 Sunrise AI 推理 GPU 软件栈文档中心 —— Docs-as-Code 全流程
+# 示例 AI 推理 GPU 软件栈文档中心 —— Docs-as-Code 全流程
 
-project = "曦望 Sunrise AI 推理 GPU 软件栈文档中心"
+project = "示例 AI 推理 GPU 软件栈文档中心"
 author = "在 AI 协助下独立设计并搭建"
 copyright = "2026, 在 AI 协助下独立设计并搭建"
 
@@ -16,12 +16,12 @@ copyright = "2026, 在 AI 协助下独立设计并搭建"
 extensions = ["myst_parser", "sphinxcontrib.mermaid", "sphinx.ext.intersphinx"]
 
 # --- Intersphinx：跨项目符号引用 ---
-# 主站文档里写 `:cpp:func:`mtxMalloc`` 这类领域引用时，Sphinx 去 api-docs/
+# 主站文档里写 `:cpp:func:`gxMalloc`` 这类领域引用时，Sphinx 去 api-docs/
 # 工程构建出的 objects.inv 查符号位置，自动生成可点击链接（跨项目、改名跟随）。
 # 元组第二项填「本地 inventory 路径」（构建时解析用），第一项填「线上 URL
 # 前缀」（生成的链接前缀，api-docs 部署在主站 /api 子路径）。
 intersphinx_mapping = {
-    "sunrise_api": ("api/", "../api-docs/_build/html/objects.inv"),
+    "gx_api": ("api/", "../api-docs/_build/html/objects.inv"),
 }
 
 # 源文件后缀：新文档一律用 .md（可在 GitHub 上直接阅读并渲染 Mermaid）；

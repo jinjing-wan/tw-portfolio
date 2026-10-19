@@ -17,7 +17,7 @@
 | Testable | 部分可测试 — 盘点完整性与入库校验可验证；新人 ramp-up 周期靠问卷定性反馈 |
 | 对应底层级需求 | LL-011（存量盘点迁移） / LL-012（新人 onboarding 3-5 天） |
 
-**Owner**: 技术写作组（示例邮箱 `doc-team@sunrise.example`）
+**Owner**: 技术写作组（示例邮箱 `doc-team@gx.example`）
 
 ## 2. Purpose
 

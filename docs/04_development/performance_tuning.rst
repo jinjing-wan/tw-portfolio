@@ -1,4 +1,4 @@
-性能优化（Performance Tuning，曦望 Sunrise 软件栈示例）
+性能优化（Performance Tuning，示例 软件栈示例）
 ============================================================
 
 .. warning::
@@ -29,7 +29,7 @@
 
 5. 优化案例（模板）
    - 每个案例： **优化前指标 → 方法 → 优化后指标** （指标占位，由专家填）；
-   - 推荐案例：Reduce / GEMV / GEMM / Flash Attention（对标 MUSA 性能优化总览）。
+   - 推荐案例：Reduce / GEMV / GEMM / Flash Attention（对标 GXPU 性能优化总览）。
 
 写作规范（文档体系）
 ----------------------------------------

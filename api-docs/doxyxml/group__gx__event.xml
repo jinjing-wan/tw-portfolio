@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__gx__event" kind="group">
+    <compoundname>gx_event</compoundname>
+    <title>Event &amp; Timing</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventCreate</definition>
+        <argsstring>(gxEvent_t *event)</argsstring>
+        <name>gxEventCreate</name>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref> *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Create an event object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the new event handle; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="265" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="265" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventDestroy</definition>
+        <argsstring>(gxEvent_t event)</argsstring>
+        <name>gxEventDestroy</name>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Destroy an event object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event handle; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="270" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="270" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventRecord</definition>
+        <argsstring>(gxEvent_t event, gxStream_t stream)</argsstring>
+        <name>gxEventRecord</name>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Record an event into a stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stream to record into (null = default stream). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="276" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="276" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventSynchronize</definition>
+        <argsstring>(gxEvent_t event)</argsstring>
+        <name>gxEventSynchronize</name>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Block the host until the event completes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="281" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="281" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventQuery</definition>
+        <argsstring>(gxEvent_t event)</argsstring>
+        <name>gxEventQuery</name>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Test whether an event has completed (non-blocking). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_ERROR_NOT_READY if not done, else GX_SUCCESS. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="286" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="286" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxEventElapsedTime</definition>
+        <argsstring>(float *ms, gxEvent_t start, gxEvent_t end)</argsstring>
+        <name>gxEventElapsedTime</name>
+        <param>
+          <type>float *</type>
+          <declname>ms</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref></type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+<para>Compute elapsed time (milliseconds) between two recorded events. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the elapsed time; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>start</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Start event (recorded first). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>end</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End event (recorded after start). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="293" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="293" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Events for cross-stream synchronization and elapsed-time measurement. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

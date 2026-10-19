@@ -9,7 +9,7 @@
 - **第一章 · 写 API 时应嵌入的信息** —— 一份属性清单，分 **必填（Required）** 与 **非必填（Optional）** 两类，规定每个 API 要留下什么；
 - **第二章 · AI 补全提示词** —— **可直接复制粘贴**的提示词，让 AI 基于现有文档与资料，把这些信息补全成规范条目。
 
-属性与示例均为 **示例口径**，采用 `sunrise*` 前缀示意，不对应任何真实源码；实际字段以公司 API 规范评审结论为准。
+属性与示例均为 **示例口径**，采用 `gx*` 前缀示意，不对应任何真实源码；实际字段以公司 API 规范评审结论为准。
 :::
 
 :::{important}
@@ -53,17 +53,17 @@ flowchart LR
 
 | 属性（English） | 说明（中文，给工程师） | 示例（English，最终用户所见） |
 | --- | --- | --- |
-| API name | 唯一标识符，与代码符号逐字一致 | `sunriseMalloc` |
+| API name | 唯一标识符，与代码符号逐字一致 | `gxMalloc` |
 | Summary | 一行概述，动词开头，只说"做什么" | Allocates a buffer on the device. |
 | Module / Library | 所属模块与库，用于归类检索 | Runtime · Memory |
 | Since | 该 API 自哪个版本可用 | R1.0 |
-| Signature | 完整原型，含返回类型与参数类型 | `sunriseError_t sunriseMalloc(void** devPtr, size_t size)` |
-| Return value | 成功/失败各返回什么、语义是什么 | Returns `sunriseSuccess` on success. |
-| Error codes | 可能返回的错误码及各自触发条件 | `sunriseErrorOutOfMemory` — device memory exhausted |
+| Signature | 完整原型，含返回类型与参数类型 | `gxError_t gxMalloc(void** devPtr, size_t size)` |
+| Return value | 成功/失败各返回什么、语义是什么 | Returns `gxSuccess` on success. |
+| Error codes | 可能返回的错误码及各自触发条件 | `gxErrorOutOfMemory` — device memory exhausted |
 | Parameters | 逐个参数填写，子字段见 §1.4 | — |
-| Preconditions | 调用前必须成立的状态 | A device has been selected with `sunriseSetDevice()`. |
+| Preconditions | 调用前必须成立的状态 | A device has been selected with `gxSetDevice()`. |
 | Postconditions | 调用成功后系统所处状态 | `*devPtr` points to valid device memory. |
-| Resource ownership & lifetime | 谁分配、谁释放、句柄有效期 | The caller must release the buffer with `sunriseFree()`. |
+| Resource ownership & lifetime | 谁分配、谁释放、句柄有效期 | The caller must release the buffer with `gxFree()`. |
 | Thread safety | 是否可并发调用、是否需外部同步 | Thread-safe across different handles. |
 | Minimal example | 可直接编译或粘贴的调用片段 | See the Example blocks in the API reference. |
 | Owner / Last updated | 谁负责、何时改过，便于评审找人 | @owner, 2026-10-14 |
@@ -106,16 +106,16 @@ flowchart LR
  * @param  devPtr  [out] Returns the device pointer to the allocated buffer.
  *                       Unchanged if allocation fails.
  * @param  size    [in]  Number of bytes to allocate; must be greater than 0.
- * @return sunriseSuccess on success; sunriseErrorOutOfMemory,
- *         sunriseErrorInvalidValue, or another status code on failure.
- * @pre    A device has been selected with sunriseSetDevice().
+ * @return gxSuccess on success; gxErrorOutOfMemory,
+ *         gxErrorInvalidValue, or another status code on failure.
+ * @pre    A device has been selected with gxSetDevice().
  * @post   On success, *devPtr points to valid device memory that must be
- *         released with sunriseFree().
+ *         released with gxFree().
  * @note   Thread-safe across different handles. Calls on the same handle
  *         require external synchronization.
- * @see    sunriseFree, sunriseMemcpy
+ * @see    gxFree, gxMemcpy
  */
-sunriseError_t sunriseMalloc(void** devPtr, size_t size);
+gxError_t gxMalloc(void** devPtr, size_t size);
 ```
 
 注释标签与文档站属性的对应关系：

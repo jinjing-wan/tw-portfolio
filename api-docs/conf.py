@@ -1,7 +1,7 @@
-# Configuration file for the Sunrise API Reference (示例).
+# Configuration file for the 示例 API Reference (示例).
 # Doxygen(XML) -> Breathe -> Sphinx 的独立子工程，不依赖主站 docs/。
 
-project = "Sunrise API Reference (示例)"
+project = "示例 API Reference (示例)"
 copyright = "2026, 在 AI 协助下独立设计并搭建"
 author = "在 AI 协助下独立设计并搭建"
 
@@ -18,8 +18,8 @@ source_suffix = {
 master_doc = "index"
 
 # --- Breathe：读取 Doxygen 生成的 XML（路径相对本 conf.py 所在目录）---
-breathe_projects = {"sunrise_api": "doxyxml"}
-breathe_default_project = "sunrise_api"
+breathe_projects = {"gx_api": "doxyxml"}
+breathe_default_project = "gx_api"
 
 # --- MyST 基础扩展 ---
 myst_enable_extensions = ["colon_fence", "deflist", "fieldlist", "substitution"]

@@ -1,8 +1,8 @@
-# Runtime Layer (`mtx*`)
+# Runtime Layer (`gx*`)
 
 The Runtime layer is a **C-style, non-class API**: opaque handles
-(`mtxDevice_t` / `mtxStream_t` / `mtxEvent_t`), enumerations
-(`mtxError_t` / `mtxMemcpyKind` / `mtxDeviceAttr` / `mtxLimit`), and free
+(`gxDevice_t` / `gxStream_t` / `gxEvent_t`), enumerations
+(`gxError_t` / `gxMemcpyKind` / `gxDeviceAttr` / `gxLimit`), and free
 functions that all return a status code — exactly how a vendor GPU runtime
 is typically exposed in C.
 
@@ -12,49 +12,49 @@ XML — only the interface contract (signatures + doc comments) is shown, no
 
 ## Device Management
 
-:::{doxygengroup} mtx_device
-:project: sunrise_api
+:::{doxygengroup} gx_device
+:project: gx_api
 :members:
 :::
 
 ## Memory Management
 
-:::{doxygengroup} mtx_memory
-:project: sunrise_api
+:::{doxygengroup} gx_memory
+:project: gx_api
 :members:
 :::
 
 ## Stream Management
 
-:::{doxygengroup} mtx_stream
-:project: sunrise_api
+:::{doxygengroup} gx_stream
+:project: gx_api
 :members:
 :::
 
 ## Event & Timing
 
-:::{doxygengroup} mtx_event
-:project: sunrise_api
+:::{doxygengroup} gx_event
+:project: gx_api
 :members:
 :::
 
 ---
 
-## Sunrise Runtime (class-style, comparison example)
+## 示例 Runtime (class-style, comparison example)
 
-`sunrise` is a **class-based C++ API**, included to demonstrate how the same
+`gx` is a **class-based C++ API**, included to demonstrate how the same
 pipeline simultaneously carries both API styles.
 
-:::{doxygenclass} sunrise::Device
-:project: sunrise_api
+:::{doxygenclass} gx::Device
+:project: gx_api
 :members: SetDevice, GetDeviceInfo
 :::
 
-:::{doxygenfunction} sunrise::GetDeviceCount
-:project: sunrise_api
+:::{doxygenfunction} gx::GetDeviceCount
+:project: gx_api
 :::
 
 :::{doxygengroup} memory
-:project: sunrise_api
+:project: gx_api
 :members:
 :::

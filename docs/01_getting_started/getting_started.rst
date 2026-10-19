@@ -1,4 +1,4 @@
-快速开始（Quick Start，曦望 Sunrise 软件栈示例）
+快速开始（Quick Start，示例 软件栈示例）
 =====================================================
 
 .. note::
@@ -21,21 +21,21 @@
 
    .. code-block:: bash
 
-      <命令占位：如 musa-device-query>
+      <命令占位：如 gx-device-query>
       # 期望输出：检测到 1 台设备，型号 <占位>
 
 2. 编译示例：
 
    .. code-block:: bash
 
-      <命令占位：如 mcc hello.musa -o hello>
+      <命令占位：如 gxcc hello.gx -o hello>
 
 3. 运行：
 
    .. code-block:: bash
 
       ./hello
-      # 期望输出：Hello, MUSA / GPGPU
+      # 期望输出：Hello, GXPU / GPGPU
 
 下一步
 --------------------------

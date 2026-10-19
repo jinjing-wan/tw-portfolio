@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
+  <compounddef id="group__gx__device" kind="group">
+    <compoundname>gx_device</compoundname>
+    <title>Device Management</title>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxGetDriverVersion</definition>
+        <argsstring>(int *version)</argsstring>
+        <name>gxGetDriverVersion</name>
+        <param>
+          <type>int *</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+<para>Get the GX driver version (e.g. 5200 means 5.2.0). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the encoded version; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="96" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="96" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxGetRuntimeVersion</definition>
+        <argsstring>(int *version)</argsstring>
+        <name>gxGetRuntimeVersion</name>
+        <param>
+          <type>int *</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+<para>Get the GX runtime version (e.g. 5200 means 5.2.0). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the encoded version; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="101" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="101" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxGetDeviceCount</definition>
+        <argsstring>(int *count)</argsstring>
+        <name>gxGetDeviceCount</name>
+        <param>
+          <type>int *</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Query the number of available devices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the device count; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="106" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="106" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxGetDevice</definition>
+        <argsstring>(int *device)</argsstring>
+        <name>gxGetDevice</name>
+        <param>
+          <type>int *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>Get the id of the currently active device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the active device id; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="111" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="111" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxSetDevice</definition>
+        <argsstring>(int device)</argsstring>
+        <name>gxSetDevice</name>
+        <param>
+          <type>int</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>Set the active device for the calling host thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Target device id (0-based). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> Invalid id returns GX_ERROR_INVALID_ARG. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="116" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="116" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1ga1ec2d25054f547c973116d8530254246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxGetDeviceProperties</definition>
+        <argsstring>(int device, gxDeviceProp *prop)</argsstring>
+        <name>gxGetDeviceProperties</name>
+        <param>
+          <type>int</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type><ref refid="structgx_device_prop" kindref="compound">gxDeviceProp</ref> *</type>
+          <declname>prop</declname>
+        </param>
+        <briefdescription>
+<para>Fill a property struct for the given device. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device id. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">prop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the properties; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="122" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="122" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxDeviceGetAttribute</definition>
+        <argsstring>(int *value, gxDeviceAttr attr, int device)</argsstring>
+        <name>gxDeviceGetAttribute</name>
+        <param>
+          <type>int *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kindref="member">gxDeviceAttr</ref></type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>Read a single device attribute. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the attribute value; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>attr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which attribute to read. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>device</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Device id. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="129" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="129" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxDeviceSynchronize</definition>
+        <argsstring>(void)</argsstring>
+        <name>gxDeviceSynchronize</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Block the host until all work on the current device completes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="133" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="133" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1ga80a459829a39c7053f456b37305e3473" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxDeviceReset</definition>
+        <argsstring>(void)</argsstring>
+        <name>gxDeviceReset</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Destroy the primary context of the current device (forces re-init on next call). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="137" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="137" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxDeviceSetLimit</definition>
+        <argsstring>(gxLimit limit, size_t value)</argsstring>
+        <name>gxDeviceSetLimit</name>
+        <param>
+          <type><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">gxLimit</ref></type>
+          <declname>limit</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set a device-wide limit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which limit to set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New limit value in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="143" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="143" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref></type>
+        <definition>gxError_t gxDeviceGetLimit</definition>
+        <argsstring>(size_t *value, gxLimit limit)</argsstring>
+        <name>gxDeviceGetLimit</name>
+        <param>
+          <type>size_t *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">gxLimit</ref></type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+<para>Get the current value of a device-wide limit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives the limit value; null returns GX_ERROR_INVALID_ARG. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>limit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Which limit to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref> GX_SUCCESS on success. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="149" column="12" declfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" declline="149" declcolumn="12"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Discover, select, and synchronize devices. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

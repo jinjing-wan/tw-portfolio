@@ -1,4 +1,4 @@
-编程指南（Programming Guide，曦望 Sunrise 软件栈示例）
+编程指南（Programming Guide，示例 软件栈示例）
 ===========================================================
 
 .. warning::

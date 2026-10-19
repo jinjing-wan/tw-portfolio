@@ -1,4 +1,4 @@
-# HLD Release 2.0 — 曦望 Sunrise AI 推理 GPU 软件栈 · 算子编译层
+# HLD Release 2.0 — 示例 AI 推理 GPU 软件栈 · 算子编译层
 
 :::{note}
 相对 [R1.0](hld_r1.md) 的 **变更摘要与新增设计**。完整基线请先读 R1.0。

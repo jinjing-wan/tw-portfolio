@@ -6,7 +6,7 @@
     <includes local="no">cstdint</includes>
     <incdepgraph>
       <node id="1">
-        <label>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h</label>
+        <label>E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h</label>
         <link refid="device_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -20,13 +20,13 @@
         <label>cstdint</label>
       </node>
     </incdepgraph>
-    <innerclass refid="structmtx_device_prop" prot="public">mtxDeviceProp</innerclass>
+    <innerclass refid="structgx_device_prop" prot="public">gxDeviceProp</innerclass>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="device_8h_1a025c75c05892f575d65152340095b8d4" prot="public" static="no" strong="no">
         <type></type>
-        <name>mtxError_t</name>
+        <name>gxError_t</name>
         <enumvalue id="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" prot="public">
-          <name>MTX_SUCCESS</name>
+          <name>GX_SUCCESS</name>
           <initializer>= 0</initializer>
           <briefdescription>
 <para>Operation succeeded. </para>
@@ -35,7 +35,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" prot="public">
-          <name>MTX_ERROR_INVALID_ARG</name>
+          <name>GX_ERROR_INVALID_ARG</name>
           <briefdescription>
 <para>Invalid argument (null pointer / out of range). </para>
           </briefdescription>
@@ -43,7 +43,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" prot="public">
-          <name>MTX_ERROR_OUT_OF_MEMORY</name>
+          <name>GX_ERROR_OUT_OF_MEMORY</name>
           <briefdescription>
 <para>Device memory exhausted. </para>
           </briefdescription>
@@ -51,7 +51,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" prot="public">
-          <name>MTX_ERROR_NOT_READY</name>
+          <name>GX_ERROR_NOT_READY</name>
           <briefdescription>
 <para>Operation has not completed yet. </para>
           </briefdescription>
@@ -59,7 +59,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" prot="public">
-          <name>MTX_ERROR_UNKNOWN</name>
+          <name>GX_ERROR_UNKNOWN</name>
           <briefdescription>
 <para>Unknown error. </para>
           </briefdescription>
@@ -67,19 +67,19 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Return code for every MTX runtime call. </para>
+<para>Return code for every GX runtime call. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="39" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="39" bodyend="45"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="39" column="1" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="39" bodyend="45"/>
       </memberdef>
       <memberdef kind="enum" id="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" prot="public" static="no" strong="no">
         <type></type>
-        <name>mtxMemcpyKind</name>
+        <name>gxMemcpyKind</name>
         <enumvalue id="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" prot="public">
-          <name>MTX_MEMCPY_HOST_TO_DEVICE</name>
+          <name>GX_MEMCPY_HOST_TO_DEVICE</name>
           <initializer>= 0</initializer>
           <briefdescription>
 <para>Host -&gt; Device. </para>
@@ -88,7 +88,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" prot="public">
-          <name>MTX_MEMCPY_DEVICE_TO_HOST</name>
+          <name>GX_MEMCPY_DEVICE_TO_HOST</name>
           <briefdescription>
 <para>Device -&gt; Host. </para>
           </briefdescription>
@@ -96,7 +96,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" prot="public">
-          <name>MTX_MEMCPY_DEVICE_TO_DEVICE</name>
+          <name>GX_MEMCPY_DEVICE_TO_DEVICE</name>
           <briefdescription>
 <para>Device -&gt; Device (multi-GPU). </para>
           </briefdescription>
@@ -104,7 +104,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" prot="public">
-          <name>MTX_MEMCPY_HOST_TO_HOST</name>
+          <name>GX_MEMCPY_HOST_TO_HOST</name>
           <briefdescription>
 <para>Host -&gt; Host. </para>
           </briefdescription>
@@ -118,13 +118,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="48" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="48" bodyend="53"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="48" column="1" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="48" bodyend="53"/>
       </memberdef>
       <memberdef kind="enum" id="device_8h_1a27335c716b107535bc0a978de4bf0772" prot="public" static="no" strong="no">
         <type></type>
-        <name>mtxDeviceAttr</name>
+        <name>gxDeviceAttr</name>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" prot="public">
-          <name>MTX_DEVICE_ATTR_CLOCK_RATE</name>
+          <name>GX_DEVICE_ATTR_CLOCK_RATE</name>
           <briefdescription>
 <para>Core clock rate (kHz). </para>
           </briefdescription>
@@ -132,7 +132,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" prot="public">
-          <name>MTX_DEVICE_ATTR_MEMORY_CLOCK_RATE</name>
+          <name>GX_DEVICE_ATTR_MEMORY_CLOCK_RATE</name>
           <briefdescription>
 <para>Memory clock rate (kHz). </para>
           </briefdescription>
@@ -140,7 +140,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" prot="public">
-          <name>MTX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</name>
+          <name>GX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</name>
           <briefdescription>
 <para>Global memory size (bytes). </para>
           </briefdescription>
@@ -148,7 +148,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" prot="public">
-          <name>MTX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</name>
+          <name>GX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</name>
           <briefdescription>
 <para>Streaming multiprocessor count. </para>
           </briefdescription>
@@ -156,7 +156,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" prot="public">
-          <name>MTX_DEVICE_ATTR_L2_CACHE_SIZE</name>
+          <name>GX_DEVICE_ATTR_L2_CACHE_SIZE</name>
           <briefdescription>
 <para>L2 cache size (bytes). </para>
           </briefdescription>
@@ -164,7 +164,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" prot="public">
-          <name>MTX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</name>
+          <name>GX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</name>
           <briefdescription>
 <para>Max threads per block. </para>
           </briefdescription>
@@ -172,19 +172,19 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Device attributes queryable via mtxDeviceGetAttribute. </para>
+<para>Device attributes queryable via gxDeviceGetAttribute. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="56" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="56" bodyend="63"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="56" column="1" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="56" bodyend="63"/>
       </memberdef>
       <memberdef kind="enum" id="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" prot="public" static="no" strong="no">
         <type></type>
-        <name>mtxLimit</name>
+        <name>gxLimit</name>
         <enumvalue id="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" prot="public">
-          <name>MTX_LIMIT_PERSISTING_L2_CACHE_SIZE</name>
+          <name>GX_LIMIT_PERSISTING_L2_CACHE_SIZE</name>
           <initializer>= 0</initializer>
           <briefdescription>
 <para>Bytes set aside for persisting L2. </para>
@@ -193,7 +193,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" prot="public">
-          <name>MTX_LIMIT_STACK_SIZE</name>
+          <name>GX_LIMIT_STACK_SIZE</name>
           <briefdescription>
 <para>Per-thread stack size (bytes). </para>
           </briefdescription>
@@ -201,7 +201,7 @@
           </detaileddescription>
         </enumvalue>
         <enumvalue id="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" prot="public">
-          <name>MTX_LIMIT_MALLOC_HEAP_SIZE</name>
+          <name>GX_LIMIT_MALLOC_HEAP_SIZE</name>
           <briefdescription>
 <para>Device malloc heap size (bytes). </para>
           </briefdescription>
@@ -209,21 +209,21 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>Tunable device limits via mtxDeviceSetLimit / mtxDeviceGetLimit. </para>
+<para>Tunable device limits via gxDeviceSetLimit / gxDeviceGetLimit. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="66" column="1" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="66" bodyend="70"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="66" column="1" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="66" bodyend="70"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" prot="public" static="no">
-        <type>struct mtxDevice *</type>
-        <definition>typedef struct mtxDevice* mtxDevice_t</definition>
+        <type>struct gxDevice *</type>
+        <definition>typedef struct gxDevice* gxDevice_t</definition>
         <argsstring></argsstring>
-        <name>mtxDevice_t</name>
+        <name>gxDevice_t</name>
         <briefdescription>
 <para>Opaque device handle. </para>
         </briefdescription>
@@ -231,13 +231,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="30" column="25" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="30" bodyend="-1"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="30" column="25" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" prot="public" static="no">
-        <type>struct mtxStream *</type>
-        <definition>typedef struct mtxStream* mtxStream_t</definition>
+        <type>struct gxStream *</type>
+        <definition>typedef struct gxStream* gxStream_t</definition>
         <argsstring></argsstring>
-        <name>mtxStream_t</name>
+        <name>gxStream_t</name>
         <briefdescription>
 <para>Opaque asynchronous stream handle. </para>
         </briefdescription>
@@ -245,13 +245,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="31" column="25" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="31" bodyend="-1"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="31" column="25" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="device_8h_1a11790b48add6a71d27b92edd5fa644e4" prot="public" static="no">
-        <type>struct mtxEvent *</type>
-        <definition>typedef struct mtxEvent* mtxEvent_t</definition>
+        <type>struct gxEvent *</type>
+        <definition>typedef struct gxEvent* gxEvent_t</definition>
         <argsstring></argsstring>
-        <name>mtxEvent_t</name>
+        <name>gxEvent_t</name>
         <briefdescription>
 <para>Opaque event handle (sync / timing). </para>
         </briefdescription>
@@ -259,51 +259,51 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" line="32" column="25" bodyfile="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h" bodystart="32" bodyend="-1"/>
+        <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" line="32" column="25" bodyfile="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <member refid="group__mtx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>mtxGetDriverVersion</name></member>
-      <member refid="group__mtx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>mtxGetRuntimeVersion</name></member>
-      <member refid="group__mtx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>mtxGetDeviceCount</name></member>
-      <member refid="group__mtx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>mtxGetDevice</name></member>
-      <member refid="group__mtx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>mtxSetDevice</name></member>
-      <member refid="group__mtx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>mtxGetDeviceProperties</name></member>
-      <member refid="group__mtx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>mtxDeviceGetAttribute</name></member>
-      <member refid="group__mtx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>mtxDeviceSynchronize</name></member>
-      <member refid="group__mtx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>mtxDeviceReset</name></member>
-      <member refid="group__mtx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>mtxDeviceSetLimit</name></member>
-      <member refid="group__mtx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>mtxDeviceGetLimit</name></member>
-      <member refid="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>mtxMalloc</name></member>
-      <member refid="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>mtxFree</name></member>
-      <member refid="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>mtxMemcpy</name></member>
-      <member refid="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>mtxMallocHost</name></member>
-      <member refid="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>mtxFreeHost</name></member>
-      <member refid="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>mtxMallocPitch</name></member>
-      <member refid="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>mtxMemcpyAsync</name></member>
-      <member refid="group__mtx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>mtxStreamCreate</name></member>
-      <member refid="group__mtx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>mtxStreamDestroy</name></member>
-      <member refid="group__mtx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>mtxStreamSynchronize</name></member>
-      <member refid="group__mtx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>mtxStreamQuery</name></member>
-      <member refid="group__mtx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>mtxStreamWaitEvent</name></member>
-      <member refid="group__mtx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>mtxEventCreate</name></member>
-      <member refid="group__mtx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>mtxEventDestroy</name></member>
-      <member refid="group__mtx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>mtxEventRecord</name></member>
-      <member refid="group__mtx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>mtxEventSynchronize</name></member>
-      <member refid="group__mtx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>mtxEventQuery</name></member>
-      <member refid="group__mtx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>mtxEventElapsedTime</name></member>
+      <member refid="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>gxGetDriverVersion</name></member>
+      <member refid="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>gxGetRuntimeVersion</name></member>
+      <member refid="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>gxGetDeviceCount</name></member>
+      <member refid="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>gxGetDevice</name></member>
+      <member refid="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>gxSetDevice</name></member>
+      <member refid="group__gx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>gxGetDeviceProperties</name></member>
+      <member refid="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>gxDeviceGetAttribute</name></member>
+      <member refid="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>gxDeviceSynchronize</name></member>
+      <member refid="group__gx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>gxDeviceReset</name></member>
+      <member refid="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>gxDeviceSetLimit</name></member>
+      <member refid="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>gxDeviceGetLimit</name></member>
+      <member refid="group__gx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>gxMalloc</name></member>
+      <member refid="group__gx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>gxFree</name></member>
+      <member refid="group__gx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>gxMemcpy</name></member>
+      <member refid="group__gx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>gxMallocHost</name></member>
+      <member refid="group__gx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>gxFreeHost</name></member>
+      <member refid="group__gx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>gxMallocPitch</name></member>
+      <member refid="group__gx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>gxMemcpyAsync</name></member>
+      <member refid="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>gxStreamCreate</name></member>
+      <member refid="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>gxStreamDestroy</name></member>
+      <member refid="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>gxStreamSynchronize</name></member>
+      <member refid="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>gxStreamQuery</name></member>
+      <member refid="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>gxStreamWaitEvent</name></member>
+      <member refid="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>gxEventCreate</name></member>
+      <member refid="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>gxEventDestroy</name></member>
+      <member refid="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>gxEventRecord</name></member>
+      <member refid="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>gxEventSynchronize</name></member>
+      <member refid="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>gxEventQuery</name></member>
+      <member refid="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>gxEventElapsedTime</name></member>
     </sectiondef>
     <briefdescription>
-<para>MTX Device Runtime API (example stub, C-style, no real implementation). </para>
+<para>GX Device Runtime API (example stub, C-style, no real implementation). </para>
     </briefdescription>
     <detaileddescription>
-<para>This header is a <bold>stylistic sample modelled on Moore Threads&apos; MUSA runtime</bold> (a CUDA-like C API): opaque handles, enumerations, and free functions that return a status code. It is intentionally <emphasis>not</emphasis> a class-based API, mirroring how vendor GPU runtimes are usually exposed in C. The <computeroutput>mtx</computeroutput> prefix and the <computeroutput>MTX_*</computeroutput> enum/constant names are placeholders for this portfolio demo and are unrelated to any shipping product.</para>
+<para>This header is a <bold>stylistic sample modelled on a mainstream GPU vendor&apos; GXPU runtime</bold> (a CUDA-like C API): opaque handles, enumerations, and free functions that return a status code. It is intentionally <emphasis>not</emphasis> a class-based API, mirroring how vendor GPU runtimes are usually exposed in C. The <computeroutput>gx</computeroutput> prefix and the <computeroutput>GX_*</computeroutput> enum/constant names are placeholders for this portfolio demo and are unrelated to any shipping product.</para>
 <para>Source code stays private (excluded by .gitignore); only this interface contract is published through Doxygen + Breathe. Swap in your real internal headers to document an actual library. </para>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MTX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MTX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
@@ -316,143 +316,143 @@
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Opaque<sp/>handles<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">mtxDevice*<sp/><ref refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" kindref="member">mtxDevice_t</ref>;<sp/><sp/></highlight></codeline>
-<codeline lineno="31" refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">mtxStream*<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref>;<sp/><sp/></highlight></codeline>
-<codeline lineno="32" refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">mtxEvent*<sp/><sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">gxDevice*<sp/><ref refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" kindref="member">gxDevice_t</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="31" refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">gxStream*<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="32" refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">gxEvent*<sp/><sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref>;<sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Enumerations<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39" refid="device_8h_1a025c75c05892f575d65152340095b8d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="40" refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" kindref="member">MTX_SUCCESS</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="41" refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" kindref="member">MTX_ERROR_INVALID_ARG</ref>,<sp/><sp/></highlight></codeline>
-<codeline lineno="42" refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" kindref="member">MTX_ERROR_OUT_OF_MEMORY</ref>,</highlight></codeline>
-<codeline lineno="43" refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" kindref="member">MTX_ERROR_NOT_READY</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="44" refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" kindref="member">MTX_ERROR_UNKNOWN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="45"><highlight class="normal">}<sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref>;</highlight></codeline>
+<codeline lineno="40" refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" kindref="member">GX_SUCCESS</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" kindref="member">GX_ERROR_INVALID_ARG</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" kindref="member">GX_ERROR_OUT_OF_MEMORY</ref>,</highlight></codeline>
+<codeline lineno="43" refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" kindref="member">GX_ERROR_NOT_READY</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" kindref="member">GX_ERROR_UNKNOWN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref>;</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
 <codeline lineno="48" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="49" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" kindref="member">MTX_MEMCPY_HOST_TO_DEVICE</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
-<codeline lineno="50" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" kindref="member">MTX_MEMCPY_DEVICE_TO_HOST</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="51" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" kindref="member">MTX_MEMCPY_DEVICE_TO_DEVICE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="52" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" kindref="member">MTX_MEMCPY_HOST_TO_HOST</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="53"><highlight class="normal">}<sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref>;</highlight></codeline>
+<codeline lineno="49" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" kindref="member">GX_MEMCPY_HOST_TO_DEVICE</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" kindref="member">GX_MEMCPY_DEVICE_TO_HOST</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" kindref="member">GX_MEMCPY_DEVICE_TO_DEVICE</ref>,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" kindref="member">GX_MEMCPY_HOST_TO_HOST</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}<sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">gxMemcpyKind</ref>;</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56" refid="device_8h_1a27335c716b107535bc0a978de4bf0772" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="57" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" kindref="member">MTX_DEVICE_ATTR_CLOCK_RATE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="58" refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" kindref="member">MTX_DEVICE_ATTR_MEMORY_CLOCK_RATE</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="59" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" kindref="member">MTX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="60" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" kindref="member">MTX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</ref>,<sp/><sp/></highlight></codeline>
-<codeline lineno="61" refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" kindref="member">MTX_DEVICE_ATTR_L2_CACHE_SIZE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="62" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" kindref="member">MTX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</ref><sp/><sp/></highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}<sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kindref="member">mtxDeviceAttr</ref>;</highlight></codeline>
+<codeline lineno="57" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" kindref="member">GX_DEVICE_ATTR_CLOCK_RATE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58" refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" kindref="member">GX_DEVICE_ATTR_MEMORY_CLOCK_RATE</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" kindref="member">GX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</ref>,<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" kindref="member">GX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" kindref="member">GX_DEVICE_ATTR_L2_CACHE_SIZE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" kindref="member">GX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</ref><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}<sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kindref="member">gxDeviceAttr</ref>;</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="67" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" kindref="member">MTX_LIMIT_PERSISTING_L2_CACHE_SIZE</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
-<codeline lineno="68" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" kindref="member">MTX_LIMIT_STACK_SIZE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="69" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" kindref="member">MTX_LIMIT_MALLOC_HEAP_SIZE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}<sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">mtxLimit</ref>;</highlight></codeline>
+<codeline lineno="67" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" kindref="member">GX_LIMIT_PERSISTING_L2_CACHE_SIZE</ref><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" kindref="member">GX_LIMIT_STACK_SIZE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" kindref="member">GX_LIMIT_MALLOC_HEAP_SIZE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">gxLimit</ref>;</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="structmtx_device_prop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="74" refid="structmtx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" kindref="member">name</ref>[256];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="75" refid="structmtx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" kindref="member">clockRate</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="76" refid="structmtx_device_prop_1aaf3496874b9024857f2853259b1835ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1aaf3496874b9024857f2853259b1835ac" kindref="member">memoryClockRate</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="77" refid="structmtx_device_prop_1a25dd636077c475eb5c98b05532247980" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="structmtx_device_prop_1a25dd636077c475eb5c98b05532247980" kindref="member">totalGlobalMem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="78" refid="structmtx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" kindref="member">multiProcessorCount</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="79" refid="structmtx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" kindref="member">l2CacheSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="80" refid="structmtx_device_prop_1ab30c3789813112f18d695c617b46d233" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmtx_device_prop_1ab30c3789813112f18d695c617b46d233" kindref="member">maxThreadsPerBlock</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="81"><highlight class="normal">}<sp/><ref refid="structmtx_device_prop" kindref="compound">mtxDeviceProp</ref>;</highlight></codeline>
+<codeline lineno="73" refid="structgx_device_prop" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74" refid="structgx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" kindref="member">name</ref>[256];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="structgx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" kindref="member">clockRate</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="structgx_device_prop_1aaf3496874b9024857f2853259b1835ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1aaf3496874b9024857f2853259b1835ac" kindref="member">memoryClockRate</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77" refid="structgx_device_prop_1a25dd636077c475eb5c98b05532247980" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><ref refid="structgx_device_prop_1a25dd636077c475eb5c98b05532247980" kindref="member">totalGlobalMem</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78" refid="structgx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" kindref="member">multiProcessorCount</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79" refid="structgx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" kindref="member">l2CacheSize</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="structgx_device_prop_1ab30c3789813112f18d695c617b46d233" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structgx_device_prop_1ab30c3789813112f18d695c617b46d233" kindref="member">maxThreadsPerBlock</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}<sp/><ref refid="structgx_device_prop" kindref="compound">gxDeviceProp</ref>;</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Device<sp/>Management<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="group__mtx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kindref="member">mtxGetDriverVersion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>version);</highlight></codeline>
+<codeline lineno="96" refid="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kindref="member">gxGetDriverVersion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>version);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101" refid="group__mtx__device_1gafecb83abb09d84f8540676eba5b73016" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gafecb83abb09d84f8540676eba5b73016" kindref="member">mtxGetRuntimeVersion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>version);</highlight></codeline>
+<codeline lineno="101" refid="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" kindref="member">gxGetRuntimeVersion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>version);</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="group__mtx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kindref="member">mtxGetDeviceCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>count);</highlight></codeline>
+<codeline lineno="106" refid="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kindref="member">gxGetDeviceCount</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>count);</highlight></codeline>
 <codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111" refid="group__mtx__device_1gad2a082015098ce06c751b44ffb7aa9c2" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kindref="member">mtxGetDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>device);</highlight></codeline>
+<codeline lineno="111" refid="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kindref="member">gxGetDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>device);</highlight></codeline>
 <codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116" refid="group__mtx__device_1gaf4a387bad3dfb1b184786666359ee809" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gaf4a387bad3dfb1b184786666359ee809" kindref="member">mtxSetDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device);</highlight></codeline>
+<codeline lineno="116" refid="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" kindref="member">gxSetDevice</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device);</highlight></codeline>
 <codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122" refid="group__mtx__device_1ga1ec2d25054f547c973116d8530254246" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1ga1ec2d25054f547c973116d8530254246" kindref="member">mtxGetDeviceProperties</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device,<sp/><ref refid="structmtx_device_prop" kindref="compound">mtxDeviceProp</ref>*<sp/>prop);</highlight></codeline>
+<codeline lineno="122" refid="group__gx__device_1ga1ec2d25054f547c973116d8530254246" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1ga1ec2d25054f547c973116d8530254246" kindref="member">gxGetDeviceProperties</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device,<sp/><ref refid="structgx_device_prop" kindref="compound">gxDeviceProp</ref>*<sp/>prop);</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129" refid="group__mtx__device_1gafa179700b382e1832b6a9a95be9a8ce4" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kindref="member">mtxDeviceGetAttribute</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>value,<sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kindref="member">mtxDeviceAttr</ref><sp/>attr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device);</highlight></codeline>
+<codeline lineno="129" refid="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kindref="member">gxDeviceGetAttribute</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>value,<sp/><ref refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kindref="member">gxDeviceAttr</ref><sp/>attr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>device);</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="133" refid="group__mtx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kindref="member">mtxDeviceSynchronize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133" refid="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kindref="member">gxDeviceSynchronize</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137" refid="group__mtx__device_1ga80a459829a39c7053f456b37305e3473" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1ga80a459829a39c7053f456b37305e3473" kindref="member">mtxDeviceReset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137" refid="group__gx__device_1ga80a459829a39c7053f456b37305e3473" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1ga80a459829a39c7053f456b37305e3473" kindref="member">gxDeviceReset</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143" refid="group__mtx__device_1gacea65dfa85bc0b8fa915981d0af91e16" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kindref="member">mtxDeviceSetLimit</ref>(<ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">mtxLimit</ref><sp/>limit,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="143" refid="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kindref="member">gxDeviceSetLimit</ref>(<ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">gxLimit</ref><sp/>limit,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149" refid="group__mtx__device_1ga6f89dda46f27c663eefa476c284086c9" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__device_1ga6f89dda46f27c663eefa476c284086c9" kindref="member">mtxDeviceGetLimit</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>value,<sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">mtxLimit</ref><sp/>limit);</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>mtx_device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" kindref="member">gxDeviceGetLimit</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>value,<sp/><ref refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kindref="member">gxLimit</ref><sp/>limit);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>gx_device</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="152"><highlight class="normal"></highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Memory<sp/>Management<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="156"><highlight class="normal"></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="167" refid="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kindref="member">mtxMalloc</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>devPtr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="167" refid="group__gx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kindref="member">gxMalloc</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>devPtr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
 <codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="172" refid="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" kindref="member">mtxFree</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>devPtr);</highlight></codeline>
+<codeline lineno="172" refid="group__gx__memory_1ga52540db20c54c656346167f3cf72cb66" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga52540db20c54c656346167f3cf72cb66" kindref="member">gxFree</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>devPtr);</highlight></codeline>
 <codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180" refid="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" kindref="member">mtxMemcpy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count,<sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref><sp/>kind);</highlight></codeline>
+<codeline lineno="180" refid="group__gx__memory_1ga521aa545267f92d753f27e25cf823880" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga521aa545267f92d753f27e25cf823880" kindref="member">gxMemcpy</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count,<sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">gxMemcpyKind</ref><sp/>kind);</highlight></codeline>
 <codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186" refid="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" kindref="member">mtxMallocHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
+<codeline lineno="186" refid="group__gx__memory_1ga1969e567ed187652b3f238fe103fed17" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga1969e567ed187652b3f238fe103fed17" kindref="member">gxMallocHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>ptr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"></highlight></codeline>
-<codeline lineno="191" refid="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kindref="member">mtxFreeHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr);</highlight></codeline>
+<codeline lineno="191" refid="group__gx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kindref="member">gxFreeHost</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr);</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199" refid="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" kindref="member">mtxMallocPitch</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>devPtr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>pitch,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="199" refid="group__gx__memory_1ga1659d944514be072f79582315547c1d9" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga1659d944514be072f79582315547c1d9" kindref="member">gxMallocPitch</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">**<sp/>devPtr,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>pitch,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
 <codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="208" refid="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kindref="member">mtxMemcpyAsync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count,</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">mtxMemcpyKind</ref><sp/>kind,<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream);</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>mtx_memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="group__gx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kindref="member">gxMemcpyAsync</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>dst,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>src,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kindref="member">gxMemcpyKind</ref><sp/>kind,<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>gx_memory</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="212"><highlight class="normal"></highlight></codeline>
 <codeline lineno="213"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Stream<sp/>Management<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="215"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="216"><highlight class="normal"></highlight></codeline>
 <codeline lineno="222"><highlight class="normal"></highlight></codeline>
-<codeline lineno="226" refid="group__mtx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kindref="member">mtxStreamCreate</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref>*<sp/>stream);</highlight></codeline>
+<codeline lineno="226" refid="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kindref="member">gxStreamCreate</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref>*<sp/>stream);</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"></highlight></codeline>
-<codeline lineno="231" refid="group__mtx__stream_1ga4607a98affed433fd955c06a3ce9f79c" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kindref="member">mtxStreamDestroy</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream);</highlight></codeline>
+<codeline lineno="231" refid="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kindref="member">gxStreamDestroy</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream);</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"></highlight></codeline>
-<codeline lineno="236" refid="group__mtx__stream_1ga4bc0b32add85b985320b46f7636053e2" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__stream_1ga4bc0b32add85b985320b46f7636053e2" kindref="member">mtxStreamSynchronize</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream);</highlight></codeline>
+<codeline lineno="236" refid="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" kindref="member">gxStreamSynchronize</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream);</highlight></codeline>
 <codeline lineno="237"><highlight class="normal"></highlight></codeline>
-<codeline lineno="241" refid="group__mtx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kindref="member">mtxStreamQuery</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream);</highlight></codeline>
+<codeline lineno="241" refid="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kindref="member">gxStreamQuery</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream);</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"></highlight></codeline>
-<codeline lineno="248" refid="group__mtx__stream_1ga8c6dc8a8afda75b839e338813ea59647" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kindref="member">mtxStreamWaitEvent</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>event,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags);</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>mtx_stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248" refid="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kindref="member">gxStreamWaitEvent</ref>(<ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>event,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>gx_stream</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Event<sp/>&amp;<sp/>Timing<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="255"><highlight class="normal"></highlight></codeline>
 <codeline lineno="261"><highlight class="normal"></highlight></codeline>
-<codeline lineno="265" refid="group__mtx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kindref="member">mtxEventCreate</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref>*<sp/>event);</highlight></codeline>
+<codeline lineno="265" refid="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kindref="member">gxEventCreate</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref>*<sp/>event);</highlight></codeline>
 <codeline lineno="266"><highlight class="normal"></highlight></codeline>
-<codeline lineno="270" refid="group__mtx__event_1gaa438779f282c5bfc03dc11ceae57cddd" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kindref="member">mtxEventDestroy</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>event);</highlight></codeline>
+<codeline lineno="270" refid="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kindref="member">gxEventDestroy</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>event);</highlight></codeline>
 <codeline lineno="271"><highlight class="normal"></highlight></codeline>
-<codeline lineno="276" refid="group__mtx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kindref="member">mtxEventRecord</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>event,<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">mtxStream_t</ref><sp/>stream);</highlight></codeline>
+<codeline lineno="276" refid="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kindref="member">gxEventRecord</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>event,<sp/><ref refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kindref="member">gxStream_t</ref><sp/>stream);</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
-<codeline lineno="281" refid="group__mtx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kindref="member">mtxEventSynchronize</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>event);</highlight></codeline>
+<codeline lineno="281" refid="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kindref="member">gxEventSynchronize</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>event);</highlight></codeline>
 <codeline lineno="282"><highlight class="normal"></highlight></codeline>
-<codeline lineno="286" refid="group__mtx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kindref="member">mtxEventQuery</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>event);</highlight></codeline>
+<codeline lineno="286" refid="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kindref="member">gxEventQuery</ref>(<ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>event);</highlight></codeline>
 <codeline lineno="287"><highlight class="normal"></highlight></codeline>
-<codeline lineno="293" refid="group__mtx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">mtxError_t</ref><sp/><ref refid="group__mtx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kindref="member">mtxEventElapsedTime</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ms,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>start,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">mtxEvent_t</ref><sp/>end);</highlight></codeline>
-<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>mtx_event</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293" refid="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" refkind="member"><highlight class="normal"><ref refid="device_8h_1a025c75c05892f575d65152340095b8d4" kindref="member">gxError_t</ref><sp/><ref refid="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kindref="member">gxEventElapsedTime</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*<sp/>ms,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>start,<sp/><ref refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kindref="member">gxEvent_t</ref><sp/>end);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>gx_event</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="296"><highlight class="normal"></highlight></codeline>
 <codeline lineno="297"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="298"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="299"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight></codeline>
-<codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>MTX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight><highlight class="comment">//<sp/>GX_DEVICE_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx/device.h"/>
+    <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/device.h"/>
   </compounddef>
 </doxygen>

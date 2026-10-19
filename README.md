@@ -1,4 +1,4 @@
-# 曦望 Sunrise · AI 推理 GPU 软件栈开发者文档中心（作品集示例）
+# 示例 · AI 推理 GPU 软件栈开发者文档中心（作品集示例）
 
 > 定位：Docs-as-Code 技术文档体系设计示例（从 0 搭建的 AI 推理 GPU 软件栈开发者文档中心）。
 > 作者：在 AI 协助下独立设计并搭建
@@ -61,7 +61,7 @@ tw-portfolio/
 
 ---
 
-## 首页导航（对标 CUDA / MUSA 文档站结构）
+## 首页导航（对标 CUDA / CUDA-like 文档站结构）
 - 入门：快速开始、安装指南
 - 设计文档：**HLD（Release 级 3 个版本 + 功能级单页）**、需求文档
 - 参考：API 参考、库参考、工具链
@@ -136,10 +136,10 @@ Breathe 桥接进 Sphinx 自动渲染类 / 函数 / 分组，**零手写重复**
 
 | 目录 | 是否入库 | 说明 |
 | --- | --- | --- |
-| `api/` | ❌ 不入库（`.gitignore`） | C/C++ 示例库，含两套对比示例：① `include/sunrise/*.h` 类式 API（`sunrise::Device` + `memory` 分组）；② `include/mtx/device.h` C 风格 API（不透明句柄 `mtxDevice_t`/枚举 `mtxError_t`/返回状态码的自由函数，**仿摩尔线程 MUSA 风格**，29 个函数分 device/memory/stream/event 四组）。全部含完整 Doxygen 注释，纯英文。**换成你的真实私有库头文件即可，流程一字不改。** |
+| `api/` | ❌ 不入库（`.gitignore`） | C/C++ 示例库，含两套对比示例：① `include/gx/*.h` 类式 API（`gx::Device` + `memory` 分组）；② `include/gx/device.h` C 风格 API（不透明句柄 `gxDevice_t`/枚举 `gxError_t`/返回状态码的自由函数，**仿主流 GPU 厂商 CUDA-like 风格**，29 个函数分 device/memory/stream/event 四组）。全部含完整 Doxygen 注释，纯英文。**换成你的真实私有库头文件即可，流程一字不改。** |
 | `api-docs/` | ✅ 配置入库 | Doxygen + Breathe + Sphinx 的独立子工程（Doxyfile / conf.py / 说明页），用于本地预览与生成接口产物。 |
 | `api-docs/doxyxml/` | ✅ 入库（接口产物） | Doxygen 产物，**仅含接口签名 + 注释、不含 `.cpp` 实现**。`git add -f` 提交后，主站与 CI 都能渲染真实接口。 |
-| `docs/03_reference/api.md` | ✅ 入库 | 主站内「API 参考」节点（toctree 内、共享左侧导航）——**直接用 Breathe 渲染真实接口**（mtx C 风格为主 + sunrise 类式对照）。 |
+| `docs/03_reference/api.md` | ✅ 入库 | 主站内「API 参考」节点（toctree 内、共享左侧导航）——**直接用 Breathe 渲染真实接口**（gx C 风格为主 + gx 类式对照）。 |
 
 ### 本地预览（推荐一条命令）
 
@@ -156,7 +156,7 @@ Breathe 桥接进 Sphinx 自动渲染类 / 函数 / 分组，**零手写重复**
 ```
 
 打开 `docs/_build/html/index.html`：点击左侧**「参考 → API 参考」**，即可看到完整的
-摩尔线程风格 `mtx` C 接口（Device / Memory / Stream / Event 四组共 29 函数）与 `sunrise`
+主流 GPU 厂商风格 `gx` C 接口（Device / Memory / Stream / Event 四组共 29 函数）与 `gx`
 类式对照示例——全部由 Breathe 自动生成，与主站同 alabaster 主题、共享左侧导航。
 
 > 主站 `docs/conf.py` 已加载 Breathe，并把 `api-docs/doxyxml` 配置为项目；

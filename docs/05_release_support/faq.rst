@@ -1,8 +1,8 @@
-常见问题（FAQ，曦望 Sunrise 软件栈示例）
+常见问题（FAQ，示例 软件栈示例）
 ==============================================
 
 .. note::
-   本文为 **曦望 Sunrise AI 推理 GPU 软件栈 FAQ 样例** ：把高频问题结构化，降低支持成本。
+   本文为 **示例 AI 推理 GPU 软件栈 FAQ 样例** ：把高频问题结构化，降低支持成本。
    条目为示意口径，答案需可验证、不臆测。
 
 安装类
@@ -27,7 +27,7 @@ A：按 :doc:`../04_development/porting_guide` 检查清单逐项核对语义差
 ----------------------------
 **Q：内核启动后无结果 / 报错？**
 A：检查返回值（见 :doc:`../03_reference/api` 错误模型）；
-确认内存拷贝方向与同步（``sunriseStreamSynchronize``）。
+确认内存拷贝方向与同步（``gxStreamSynchronize``）。
 
 **Q：性能远低于预期？**
 A：按 :doc:`../04_development/performance_tuning` 排查 occupancy / 合并访存 / 流重叠。
@@ -38,7 +38,7 @@ API 类
 A：每个 API 返回状态码必须检查，错误码含义见 :doc:`../03_reference/api` 词汇表。
 
 **Q：异步 API 什么时候生效？**
-A：绑定 stream，需 ``sunriseStreamSynchronize`` 或事件等待确认完成。
+A：绑定 stream，需 ``gxStreamSynchronize`` 或事件等待确认完成。
 
 提交问题
 ----------------------------

@@ -1,8 +1,8 @@
-# Doxyfile —— Sunrise API 示例
+# Doxyfile —— GXPU API 示例
 # 作用：只解析 api/include 下的头文件，生成 XML 供 Breathe 读取。
 # 不生成 HTML/LaTeX（文档渲染交给 Sphinx + Breathe）。
 
-PROJECT_NAME           = "Sunrise API (示例)"
+PROJECT_NAME           = "GXPU API (示例)"
 PROJECT_NUMBER         = 0.1.0
 OUTPUT_DIRECTORY       = .
 

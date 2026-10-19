@@ -17,7 +17,7 @@
 | Testable | 可测试 — 站点可访问；目录结构 lint 通过；公开/内部/机密三级权限生效 |
 | 对应底层级需求 | LL-001（存储平台） / LL-002（目录命名规范） / LL-003（权限访问控制） |
 
-**Owner**: 技术写作组（示例邮箱 `doc-team@sunrise.example`）
+**Owner**: 技术写作组（示例邮箱 `doc-team@gx.example`）
 
 ## 2. Purpose
 

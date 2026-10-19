@@ -1,134 +1,134 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.18.0" xml:lang="en-US">
-  <compound refid="classsunrise_1_1_device" kind="class"><name>sunrise::Device</name>
-    <member refid="classsunrise_1_1_device_1aa2a4f613772e973c0d9c3837a36b53da" kind="function"><name>GetDeviceCount</name></member>
-    <member refid="classsunrise_1_1_device_1a664041aded6a202171a2088f605caad7" kind="function"><name>SetDevice</name></member>
-    <member refid="classsunrise_1_1_device_1a5c8908b935a639728f73423ab1bd5b6c" kind="function"><name>GetDeviceInfo</name></member>
-    <member refid="classsunrise_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" kind="function"><name>GetDeviceCount</name></member>
+  <compound refid="classgx_1_1_device" kind="class"><name>gx::Device</name>
+    <member refid="classgx_1_1_device_1aa2a4f613772e973c0d9c3837a36b53da" kind="function"><name>GetDeviceCount</name></member>
+    <member refid="classgx_1_1_device_1a664041aded6a202171a2088f605caad7" kind="function"><name>SetDevice</name></member>
+    <member refid="classgx_1_1_device_1a5c8908b935a639728f73423ab1bd5b6c" kind="function"><name>GetDeviceInfo</name></member>
+    <member refid="classgx_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" kind="function"><name>GetDeviceCount</name></member>
   </compound>
-  <compound refid="structsunrise_1_1_device_info" kind="struct"><name>sunrise::DeviceInfo</name>
-    <member refid="structsunrise_1_1_device_info_1a5946b882d0ff37fdf94866e22aabd5ef" kind="variable"><name>id</name></member>
-    <member refid="structsunrise_1_1_device_info_1af935298bd9e25a12268c6e75bd64d6ab" kind="variable"><name>name</name></member>
-    <member refid="structsunrise_1_1_device_info_1a30cd84aa5e56f14316b4a505ae81a3ff" kind="variable"><name>memoryBytes</name></member>
+  <compound refid="structgx_1_1_device_info" kind="struct"><name>gx::DeviceInfo</name>
+    <member refid="structgx_1_1_device_info_1a5946b882d0ff37fdf94866e22aabd5ef" kind="variable"><name>id</name></member>
+    <member refid="structgx_1_1_device_info_1af935298bd9e25a12268c6e75bd64d6ab" kind="variable"><name>name</name></member>
+    <member refid="structgx_1_1_device_info_1a30cd84aa5e56f14316b4a505ae81a3ff" kind="variable"><name>memoryBytes</name></member>
   </compound>
-  <compound refid="structmtx_device_prop" kind="struct"><name>mtxDeviceProp</name>
-    <member refid="structmtx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" kind="variable"><name>name</name></member>
-    <member refid="structmtx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" kind="variable"><name>clockRate</name></member>
-    <member refid="structmtx_device_prop_1aaf3496874b9024857f2853259b1835ac" kind="variable"><name>memoryClockRate</name></member>
-    <member refid="structmtx_device_prop_1a25dd636077c475eb5c98b05532247980" kind="variable"><name>totalGlobalMem</name></member>
-    <member refid="structmtx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" kind="variable"><name>multiProcessorCount</name></member>
-    <member refid="structmtx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" kind="variable"><name>l2CacheSize</name></member>
-    <member refid="structmtx_device_prop_1ab30c3789813112f18d695c617b46d233" kind="variable"><name>maxThreadsPerBlock</name></member>
+  <compound refid="structgx_device_prop" kind="struct"><name>gxDeviceProp</name>
+    <member refid="structgx_device_prop_1a3ac6c43cecfad722c6e653733b64e022" kind="variable"><name>name</name></member>
+    <member refid="structgx_device_prop_1a18cfc2f8aa4f2a10c8afb2c35a0e47cc" kind="variable"><name>clockRate</name></member>
+    <member refid="structgx_device_prop_1aaf3496874b9024857f2853259b1835ac" kind="variable"><name>memoryClockRate</name></member>
+    <member refid="structgx_device_prop_1a25dd636077c475eb5c98b05532247980" kind="variable"><name>totalGlobalMem</name></member>
+    <member refid="structgx_device_prop_1afffbff4dbd3b0bf92d6a7648df6075f0" kind="variable"><name>multiProcessorCount</name></member>
+    <member refid="structgx_device_prop_1a3874d298f98531caf978f8aec4ac55cd" kind="variable"><name>l2CacheSize</name></member>
+    <member refid="structgx_device_prop_1ab30c3789813112f18d695c617b46d233" kind="variable"><name>maxThreadsPerBlock</name></member>
   </compound>
-  <compound refid="namespacesunrise" kind="namespace"><name>sunrise</name>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83" kind="enum"><name>Status</name></member>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a505a83f220c02df2f85c3810cd9ceb38" kind="enumvalue"><name>Success</name></member>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83aa85cb2e691f2edb9dc680946001a07af" kind="enumvalue"><name>ErrorInvalidArg</name></member>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a52c7ed92706a4c890c8326f69d4646fc" kind="enumvalue"><name>ErrorOutOfMemory</name></member>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a56ffb650d5f6c69139a4dac036e7fad2" kind="enumvalue"><name>ErrorNotReady</name></member>
-    <member refid="namespacesunrise_1a6fa502bda47a00fb7a4aa76da2d7fd83a3cabc605300c5d86602e943fcf77672b" kind="enumvalue"><name>ErrorUnknown</name></member>
+  <compound refid="namespacegx" kind="namespace"><name>gx</name>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83" kind="enum"><name>Status</name></member>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83a505a83f220c02df2f85c3810cd9ceb38" kind="enumvalue"><name>Success</name></member>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83aa85cb2e691f2edb9dc680946001a07af" kind="enumvalue"><name>ErrorInvalidArg</name></member>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83a52c7ed92706a4c890c8326f69d4646fc" kind="enumvalue"><name>ErrorOutOfMemory</name></member>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83a56ffb650d5f6c69139a4dac036e7fad2" kind="enumvalue"><name>ErrorNotReady</name></member>
+    <member refid="namespacegx_1a6fa502bda47a00fb7a4aa76da2d7fd83a3cabc605300c5d86602e943fcf77672b" kind="enumvalue"><name>ErrorUnknown</name></member>
     <member refid="group__memory_1gad3390bee9da3ba6de0e2afee49c56874" kind="typedef"><name>DevicePtr</name></member>
     <member refid="group__memory_1ga14c8e4c12fc0074151e8651f9d6b98ea" kind="function"><name>Malloc</name></member>
     <member refid="group__memory_1ga7401e88b790fb90637d59f8ddd19b209" kind="function"><name>Free</name></member>
     <member refid="group__memory_1gadd5962affd5135bb1bb004a0edac612f" kind="function"><name>Memcpy</name></member>
-    <member refid="classsunrise_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" kind="function"><name>GetDeviceCount</name></member>
+    <member refid="classgx_1_1_device_1acc76355b33665f592a16e34cba2fe5f7" kind="function"><name>GetDeviceCount</name></member>
   </compound>
   <compound refid="device_8h" kind="file"><name>device.h</name>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4" kind="enum"><name>mtxError_t</name></member>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" kind="enumvalue"><name>MTX_SUCCESS</name></member>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" kind="enumvalue"><name>MTX_ERROR_INVALID_ARG</name></member>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" kind="enumvalue"><name>MTX_ERROR_OUT_OF_MEMORY</name></member>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" kind="enumvalue"><name>MTX_ERROR_NOT_READY</name></member>
-    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" kind="enumvalue"><name>MTX_ERROR_UNKNOWN</name></member>
-    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kind="enum"><name>mtxMemcpyKind</name></member>
-    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" kind="enumvalue"><name>MTX_MEMCPY_HOST_TO_DEVICE</name></member>
-    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" kind="enumvalue"><name>MTX_MEMCPY_DEVICE_TO_HOST</name></member>
-    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" kind="enumvalue"><name>MTX_MEMCPY_DEVICE_TO_DEVICE</name></member>
-    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" kind="enumvalue"><name>MTX_MEMCPY_HOST_TO_HOST</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kind="enum"><name>mtxDeviceAttr</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" kind="enumvalue"><name>MTX_DEVICE_ATTR_CLOCK_RATE</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" kind="enumvalue"><name>MTX_DEVICE_ATTR_MEMORY_CLOCK_RATE</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" kind="enumvalue"><name>MTX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" kind="enumvalue"><name>MTX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" kind="enumvalue"><name>MTX_DEVICE_ATTR_L2_CACHE_SIZE</name></member>
-    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" kind="enumvalue"><name>MTX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</name></member>
-    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kind="enum"><name>mtxLimit</name></member>
-    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" kind="enumvalue"><name>MTX_LIMIT_PERSISTING_L2_CACHE_SIZE</name></member>
-    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" kind="enumvalue"><name>MTX_LIMIT_STACK_SIZE</name></member>
-    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" kind="enumvalue"><name>MTX_LIMIT_MALLOC_HEAP_SIZE</name></member>
-    <member refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" kind="typedef"><name>mtxDevice_t</name></member>
-    <member refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kind="typedef"><name>mtxStream_t</name></member>
-    <member refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kind="typedef"><name>mtxEvent_t</name></member>
-    <member refid="group__mtx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>mtxGetDriverVersion</name></member>
-    <member refid="group__mtx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>mtxGetRuntimeVersion</name></member>
-    <member refid="group__mtx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>mtxGetDeviceCount</name></member>
-    <member refid="group__mtx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>mtxGetDevice</name></member>
-    <member refid="group__mtx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>mtxSetDevice</name></member>
-    <member refid="group__mtx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>mtxGetDeviceProperties</name></member>
-    <member refid="group__mtx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>mtxDeviceGetAttribute</name></member>
-    <member refid="group__mtx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>mtxDeviceSynchronize</name></member>
-    <member refid="group__mtx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>mtxDeviceReset</name></member>
-    <member refid="group__mtx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>mtxDeviceSetLimit</name></member>
-    <member refid="group__mtx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>mtxDeviceGetLimit</name></member>
-    <member refid="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>mtxMalloc</name></member>
-    <member refid="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>mtxFree</name></member>
-    <member refid="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>mtxMemcpy</name></member>
-    <member refid="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>mtxMallocHost</name></member>
-    <member refid="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>mtxFreeHost</name></member>
-    <member refid="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>mtxMallocPitch</name></member>
-    <member refid="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>mtxMemcpyAsync</name></member>
-    <member refid="group__mtx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>mtxStreamCreate</name></member>
-    <member refid="group__mtx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>mtxStreamDestroy</name></member>
-    <member refid="group__mtx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>mtxStreamSynchronize</name></member>
-    <member refid="group__mtx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>mtxStreamQuery</name></member>
-    <member refid="group__mtx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>mtxStreamWaitEvent</name></member>
-    <member refid="group__mtx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>mtxEventCreate</name></member>
-    <member refid="group__mtx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>mtxEventDestroy</name></member>
-    <member refid="group__mtx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>mtxEventRecord</name></member>
-    <member refid="group__mtx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>mtxEventSynchronize</name></member>
-    <member refid="group__mtx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>mtxEventQuery</name></member>
-    <member refid="group__mtx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>mtxEventElapsedTime</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4" kind="enum"><name>gxError_t</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4aa3c689c645e3b36c3cee2509ea7f337f" kind="enumvalue"><name>GX_SUCCESS</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4a417a529a5c483af7b2bcc1d8079c5eb1" kind="enumvalue"><name>GX_ERROR_INVALID_ARG</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4a1bf63ac4a5dca53d12343b09df75a25d" kind="enumvalue"><name>GX_ERROR_OUT_OF_MEMORY</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4ae9fbe5b1f762d2ba3c2fa5de1ed110b5" kind="enumvalue"><name>GX_ERROR_NOT_READY</name></member>
+    <member refid="device_8h_1a025c75c05892f575d65152340095b8d4aefed083bb54dd6b59e2fb92cb9c4dd6a" kind="enumvalue"><name>GX_ERROR_UNKNOWN</name></member>
+    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1" kind="enum"><name>gxMemcpyKind</name></member>
+    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a2ad76bba07b3b72f84c12ade7ca1ec83" kind="enumvalue"><name>GX_MEMCPY_HOST_TO_DEVICE</name></member>
+    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa0153cf11f6d23ea2094ea5ab42454ed" kind="enumvalue"><name>GX_MEMCPY_DEVICE_TO_HOST</name></member>
+    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1aa2521424c9f5b775d7130aa8befaf019" kind="enumvalue"><name>GX_MEMCPY_DEVICE_TO_DEVICE</name></member>
+    <member refid="device_8h_1ac5a90c947af39e461c6e1eae2e4f16b1a14a6923351e83c365704f5653f94f0b5" kind="enumvalue"><name>GX_MEMCPY_HOST_TO_HOST</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772" kind="enum"><name>gxDeviceAttr</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a708bef27170fc39028759c1af091b436" kind="enumvalue"><name>GX_DEVICE_ATTR_CLOCK_RATE</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772ab5e34278580afb7d9b79fae18e93810a" kind="enumvalue"><name>GX_DEVICE_ATTR_MEMORY_CLOCK_RATE</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a41b52cbe5ab131034c625e2f6d0f49b8" kind="enumvalue"><name>GX_DEVICE_ATTR_TOTAL_GLOBAL_MEM</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a7fe8783a55c62861e767fbaff4c5092e" kind="enumvalue"><name>GX_DEVICE_ATTR_MULTIPROCESSOR_COUNT</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772ae4ae11ae6cd3be6f8e42f9a84aa4b073" kind="enumvalue"><name>GX_DEVICE_ATTR_L2_CACHE_SIZE</name></member>
+    <member refid="device_8h_1a27335c716b107535bc0a978de4bf0772a816b659b9cc5db7859f7ea13ea14e0d5" kind="enumvalue"><name>GX_DEVICE_ATTR_MAX_THREADS_PER_BLOCK</name></member>
+    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120fa" kind="enum"><name>gxLimit</name></member>
+    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa104e0c9189aef2331239b35b55c9e3df" kind="enumvalue"><name>GX_LIMIT_PERSISTING_L2_CACHE_SIZE</name></member>
+    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa05b43634d3251d17c5675e933ceedd51" kind="enumvalue"><name>GX_LIMIT_STACK_SIZE</name></member>
+    <member refid="device_8h_1aa0dd034234f337b7ed6657e1f32120faa04cb8012985f78b48499aad550f8756e" kind="enumvalue"><name>GX_LIMIT_MALLOC_HEAP_SIZE</name></member>
+    <member refid="device_8h_1accb519084d0f7d472bdcc0fcbe537f80" kind="typedef"><name>gxDevice_t</name></member>
+    <member refid="device_8h_1a10c977c2c197cf47d0963bb28faeacd5" kind="typedef"><name>gxStream_t</name></member>
+    <member refid="device_8h_1a11790b48add6a71d27b92edd5fa644e4" kind="typedef"><name>gxEvent_t</name></member>
+    <member refid="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>gxGetDriverVersion</name></member>
+    <member refid="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>gxGetRuntimeVersion</name></member>
+    <member refid="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>gxGetDeviceCount</name></member>
+    <member refid="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>gxGetDevice</name></member>
+    <member refid="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>gxSetDevice</name></member>
+    <member refid="group__gx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>gxGetDeviceProperties</name></member>
+    <member refid="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>gxDeviceGetAttribute</name></member>
+    <member refid="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>gxDeviceSynchronize</name></member>
+    <member refid="group__gx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>gxDeviceReset</name></member>
+    <member refid="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>gxDeviceSetLimit</name></member>
+    <member refid="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>gxDeviceGetLimit</name></member>
+    <member refid="group__gx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>gxMalloc</name></member>
+    <member refid="group__gx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>gxFree</name></member>
+    <member refid="group__gx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>gxMemcpy</name></member>
+    <member refid="group__gx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>gxMallocHost</name></member>
+    <member refid="group__gx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>gxFreeHost</name></member>
+    <member refid="group__gx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>gxMallocPitch</name></member>
+    <member refid="group__gx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>gxMemcpyAsync</name></member>
+    <member refid="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>gxStreamCreate</name></member>
+    <member refid="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>gxStreamDestroy</name></member>
+    <member refid="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>gxStreamSynchronize</name></member>
+    <member refid="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>gxStreamQuery</name></member>
+    <member refid="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>gxStreamWaitEvent</name></member>
+    <member refid="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>gxEventCreate</name></member>
+    <member refid="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>gxEventDestroy</name></member>
+    <member refid="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>gxEventRecord</name></member>
+    <member refid="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>gxEventSynchronize</name></member>
+    <member refid="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>gxEventQuery</name></member>
+    <member refid="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>gxEventElapsedTime</name></member>
   </compound>
   <compound refid="memory_8h" kind="file"><name>memory.h</name>
   </compound>
   <compound refid="runtime_8h" kind="file"><name>runtime.h</name>
   </compound>
-  <compound refid="group__mtx__device" kind="group"><name>mtx_device</name>
-    <member refid="group__mtx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>mtxGetDriverVersion</name></member>
-    <member refid="group__mtx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>mtxGetRuntimeVersion</name></member>
-    <member refid="group__mtx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>mtxGetDeviceCount</name></member>
-    <member refid="group__mtx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>mtxGetDevice</name></member>
-    <member refid="group__mtx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>mtxSetDevice</name></member>
-    <member refid="group__mtx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>mtxGetDeviceProperties</name></member>
-    <member refid="group__mtx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>mtxDeviceGetAttribute</name></member>
-    <member refid="group__mtx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>mtxDeviceSynchronize</name></member>
-    <member refid="group__mtx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>mtxDeviceReset</name></member>
-    <member refid="group__mtx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>mtxDeviceSetLimit</name></member>
-    <member refid="group__mtx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>mtxDeviceGetLimit</name></member>
+  <compound refid="group__gx__device" kind="group"><name>gx_device</name>
+    <member refid="group__gx__device_1ga3cf4ac36c400a6810806a2d65c8a4e16" kind="function"><name>gxGetDriverVersion</name></member>
+    <member refid="group__gx__device_1gafecb83abb09d84f8540676eba5b73016" kind="function"><name>gxGetRuntimeVersion</name></member>
+    <member refid="group__gx__device_1gaa59f3008f1e8fd65adfa11352ec55e0c" kind="function"><name>gxGetDeviceCount</name></member>
+    <member refid="group__gx__device_1gad2a082015098ce06c751b44ffb7aa9c2" kind="function"><name>gxGetDevice</name></member>
+    <member refid="group__gx__device_1gaf4a387bad3dfb1b184786666359ee809" kind="function"><name>gxSetDevice</name></member>
+    <member refid="group__gx__device_1ga1ec2d25054f547c973116d8530254246" kind="function"><name>gxGetDeviceProperties</name></member>
+    <member refid="group__gx__device_1gafa179700b382e1832b6a9a95be9a8ce4" kind="function"><name>gxDeviceGetAttribute</name></member>
+    <member refid="group__gx__device_1gaa26136d6dab8fb79c15fbbf0b4fc2e47" kind="function"><name>gxDeviceSynchronize</name></member>
+    <member refid="group__gx__device_1ga80a459829a39c7053f456b37305e3473" kind="function"><name>gxDeviceReset</name></member>
+    <member refid="group__gx__device_1gacea65dfa85bc0b8fa915981d0af91e16" kind="function"><name>gxDeviceSetLimit</name></member>
+    <member refid="group__gx__device_1ga6f89dda46f27c663eefa476c284086c9" kind="function"><name>gxDeviceGetLimit</name></member>
   </compound>
-  <compound refid="group__mtx__memory" kind="group"><name>mtx_memory</name>
-    <member refid="group__mtx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>mtxMalloc</name></member>
-    <member refid="group__mtx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>mtxFree</name></member>
-    <member refid="group__mtx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>mtxMemcpy</name></member>
-    <member refid="group__mtx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>mtxMallocHost</name></member>
-    <member refid="group__mtx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>mtxFreeHost</name></member>
-    <member refid="group__mtx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>mtxMallocPitch</name></member>
-    <member refid="group__mtx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>mtxMemcpyAsync</name></member>
+  <compound refid="group__gx__memory" kind="group"><name>gx_memory</name>
+    <member refid="group__gx__memory_1ga2ea0995500fcdae3de894598e9d1e73b" kind="function"><name>gxMalloc</name></member>
+    <member refid="group__gx__memory_1ga52540db20c54c656346167f3cf72cb66" kind="function"><name>gxFree</name></member>
+    <member refid="group__gx__memory_1ga521aa545267f92d753f27e25cf823880" kind="function"><name>gxMemcpy</name></member>
+    <member refid="group__gx__memory_1ga1969e567ed187652b3f238fe103fed17" kind="function"><name>gxMallocHost</name></member>
+    <member refid="group__gx__memory_1ga26e70ed1f1d129a42de35c65943b32c0" kind="function"><name>gxFreeHost</name></member>
+    <member refid="group__gx__memory_1ga1659d944514be072f79582315547c1d9" kind="function"><name>gxMallocPitch</name></member>
+    <member refid="group__gx__memory_1ga7299b419bcffc5e8aff4c7db95ceab69" kind="function"><name>gxMemcpyAsync</name></member>
   </compound>
-  <compound refid="group__mtx__stream" kind="group"><name>mtx_stream</name>
-    <member refid="group__mtx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>mtxStreamCreate</name></member>
-    <member refid="group__mtx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>mtxStreamDestroy</name></member>
-    <member refid="group__mtx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>mtxStreamSynchronize</name></member>
-    <member refid="group__mtx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>mtxStreamQuery</name></member>
-    <member refid="group__mtx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>mtxStreamWaitEvent</name></member>
+  <compound refid="group__gx__stream" kind="group"><name>gx_stream</name>
+    <member refid="group__gx__stream_1gad8fa8a320ed1d970c6d30e19512bfc92" kind="function"><name>gxStreamCreate</name></member>
+    <member refid="group__gx__stream_1ga4607a98affed433fd955c06a3ce9f79c" kind="function"><name>gxStreamDestroy</name></member>
+    <member refid="group__gx__stream_1ga4bc0b32add85b985320b46f7636053e2" kind="function"><name>gxStreamSynchronize</name></member>
+    <member refid="group__gx__stream_1gab9541e77e673fb39bc1101a9fe432a3b" kind="function"><name>gxStreamQuery</name></member>
+    <member refid="group__gx__stream_1ga8c6dc8a8afda75b839e338813ea59647" kind="function"><name>gxStreamWaitEvent</name></member>
   </compound>
-  <compound refid="group__mtx__event" kind="group"><name>mtx_event</name>
-    <member refid="group__mtx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>mtxEventCreate</name></member>
-    <member refid="group__mtx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>mtxEventDestroy</name></member>
-    <member refid="group__mtx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>mtxEventRecord</name></member>
-    <member refid="group__mtx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>mtxEventSynchronize</name></member>
-    <member refid="group__mtx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>mtxEventQuery</name></member>
-    <member refid="group__mtx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>mtxEventElapsedTime</name></member>
+  <compound refid="group__gx__event" kind="group"><name>gx_event</name>
+    <member refid="group__gx__event_1ga38865c0b1df1b8314cca6f8a765b6f95" kind="function"><name>gxEventCreate</name></member>
+    <member refid="group__gx__event_1gaa438779f282c5bfc03dc11ceae57cddd" kind="function"><name>gxEventDestroy</name></member>
+    <member refid="group__gx__event_1gaae3ea4abdc35c6a2f0fd652bae365126" kind="function"><name>gxEventRecord</name></member>
+    <member refid="group__gx__event_1ga55be5ffec1d3d1151fb821c00d5f536a" kind="function"><name>gxEventSynchronize</name></member>
+    <member refid="group__gx__event_1ga8b9c1d2efc2461b695a7e84de2626c53" kind="function"><name>gxEventQuery</name></member>
+    <member refid="group__gx__event_1gad42122bb4d6ea6f5691ebb3640fb2611" kind="function"><name>gxEventElapsedTime</name></member>
   </compound>
   <compound refid="group__memory" kind="group"><name>memory</name>
     <member refid="group__memory_1gad3390bee9da3ba6de0e2afee49c56874" kind="typedef"><name>DevicePtr</name></member>
@@ -136,12 +136,12 @@
     <member refid="group__memory_1ga7401e88b790fb90637d59f8ddd19b209" kind="function"><name>Free</name></member>
     <member refid="group__memory_1gadd5962affd5135bb1bb004a0edac612f" kind="function"><name>Memcpy</name></member>
   </compound>
-  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>E:/AI/WorkBuddy/sunrise/tw-portfolio/api</name>
+  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>E:/AI/WorkBuddy/gx/tw-portfolio/api</name>
   </compound>
-  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include</name>
+  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>E:/AI/WorkBuddy/gx/tw-portfolio/api/include</name>
   </compound>
-  <compound refid="dir_97a23fb29dc0861945686da251aaaffe" kind="dir"><name>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/mtx</name>
+  <compound refid="dir_97a23fb29dc0861945686da251aaaffe" kind="dir"><name>E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx</name>
   </compound>
-  <compound refid="dir_2085da3e8288ba1bd35ab166a2691029" kind="dir"><name>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise</name>
+  <compound refid="dir_2085da3e8288ba1bd35ab166a2691029" kind="dir"><name>E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx</name>
   </compound>
 </doxygenindex>

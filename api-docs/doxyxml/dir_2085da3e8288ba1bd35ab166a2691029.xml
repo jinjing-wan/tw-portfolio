@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.18.0" xml:lang="en-US">
   <compounddef id="dir_2085da3e8288ba1bd35ab166a2691029" kind="dir">
-    <compoundname>E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise</compoundname>
+    <compoundname>E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx</compoundname>
     <innerfile refid="memory_8h">memory.h</innerfile>
     <innerfile refid="runtime_8h">runtime.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="E:/AI/WorkBuddy/sunrise/tw-portfolio/api/include/sunrise/"/>
+    <location file="E:/AI/WorkBuddy/gx/tw-portfolio/api/include/gx/"/>
   </compounddef>
 </doxygen>
