@@ -1,6 +1,6 @@
-# 示例 · AI 推理 GPU 软件栈开发者文档中心（作品集示例）
+# 技术文档作品集
 
-> 定位：Docs-as-Code 技术文档体系设计示例（从 0 搭建的 AI 推理 GPU 软件栈开发者文档中心）。
+> 定位：Docs-as-Code 技术文档体系作品集，内含一个 AI 推理 GPU 软件栈示例项目与跨域文档类型样例，展示技术写作与文档工程能力。
 > 作者：在 AI 协助下独立设计并搭建
 > 构建方式：Sphinx + Markdown（MyST）+ reStructuredText（Docs-as-Code 全流程，详见 `methodology.rst`）
 

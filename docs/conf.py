@@ -1,7 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
-# 示例 AI 推理 GPU 软件栈文档中心 —— Docs-as-Code 全流程
+# 技术文档作品集 —— Docs-as-Code 全流程
 
-project = "示例 AI 推理 GPU 软件栈文档中心"
+project = "技术文档作品集"
 author = "在 AI 协助下独立设计并搭建"
 copyright = "2026, 在 AI 协助下独立设计并搭建"
 

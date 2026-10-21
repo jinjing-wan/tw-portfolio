@@ -22,7 +22,7 @@ check_internal_leak.py —— 公开站 objects.inv 隐私泄露校验（防御�
 用法：
     python scripts/check_internal_leak.py
     python scripts/check_internal_leak.py --inv docs/_build/html/objects.inv
-    python scripts/check_internal_leak.py --project "示例 AI 推理 GPU 软件栈文档中心"
+    python scripts/check_internal_leak.py --project "技术文档作品集"
 退出码：0=无泄露 / 1=检出泄露 / 2=用法或文件错误。
 """
 from __future__ import annotations
@@ -34,7 +34,7 @@ from pathlib import Path
 
 DEFAULT_INV = "docs/_build/html/objects.inv"
 DEFAULT_MARKERS = "docs/_internal/scripts/internal_markers.txt"
-DEFAULT_PROJECT = "示例 AI 推理 GPU 软件栈文档中心"
+DEFAULT_PROJECT = "技术文档作品集"
 INTERNAL_PROJECT_HINT = "公司文档初始化"  # 内部工程 project 字符串特征
 
 
