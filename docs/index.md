@@ -107,6 +107,21 @@ feature/requirements_writing_guide
 changerequest/change_requests
 ```
 
+## 文档类型样例（跨域作品）
+
+:::{note}
+以下样本用于展示**跨领域的技术文档类型写作能力**：它们**并非「AI 推理 GPU 软件栈」的一部分**，
+而是基于真实项目经验脱敏改编的**独立文档样例**，证明同一套信息架构与写作方法可迁移到任意技术域。
+文中所有产品代号、告警编号、硬件型号与接口名称均为脱敏或虚构示例，非任何企业内部资料。
+:::
+
+```{toctree}
+:maxdepth: 1
+:caption: 文档类型样例（跨域作品）
+
+cross_domain_samples/troubleshooting_radio_power_down
+```
+
 ## 关于本文档体系
 
 ```{toctree}

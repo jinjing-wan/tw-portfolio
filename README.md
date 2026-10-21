@@ -50,7 +50,8 @@ tw-portfolio/
 │   ├── 06_release_pipeline/  # 文档发布流水线
 │   ├── 07_about/             # 文档体系方法论（Docs-as-Code + 三方评审）
 │   ├── changerequest/        # 变更请求（Change Request）
-│   └── feature/              # 特性规格样例 + 需求文档书写规范（提示词）
+│   ├── feature/              # 特性规格样例 + 需求文档书写规范（提示词）
+│   └── cross_domain_samples/ # 跨域文档类型样例（独立样例，非 GPU 栈一部分）
 └── .nojekyll              # 部署 GitHub Pages 用
 ```
 
@@ -67,6 +68,7 @@ tw-portfolio/
 - 参考：API 参考、库参考、工具链
 - 开发实践：编程指南、性能优化、移植指南
 - 发布与支持：发布说明、FAQ
+- 文档类型样例（跨域作品）：射频单元掉电排障指南
 - 关于本文档体系：methodology
 
 > 技术内容板块（编程指南 / 库 / 工具 / 性能 / 移植）为体系骨架：章节结构、术语、评审与发布流程
